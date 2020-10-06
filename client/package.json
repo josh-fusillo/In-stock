@@ -40,6 +40,5 @@
   "devDependencies": {},
   "author": "BrainStation Students",
   "license": "ISC",
-
   "proxy": "http://localhost:8080/"
 }
