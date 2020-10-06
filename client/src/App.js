@@ -6,8 +6,12 @@ import WarehouseList from './Components/WarehouseList/WarehouseList'
 // import Warehouse from '';
 import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
+import WarehousesList from './components/Warehouses/WarehousesList.jsx';
 // import Inventory from '';
 // import InventoryDetails from '';
+
+import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
+import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
 
 class App extends React.Component {
   render() {
@@ -19,6 +23,8 @@ class App extends React.Component {
         <WarehouseList />
         <InventoryList />
         <Switch>
+          <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
+          <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/>
           {/* <Redirect exact from = '/' to = '/warehouse'/>
           <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouse/:id' component = {WarehouseDetails}/>
