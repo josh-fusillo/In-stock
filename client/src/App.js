@@ -3,8 +3,9 @@ import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header'
 // import Warehouse from '';
-import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
-import WarehousesList from './components/Warehouses/WarehousesList.jsx';
+
+import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
+
 // import Inventory from '';
 // import InventoryDetails from '';
 
