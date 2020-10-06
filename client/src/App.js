@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Header from './components/Header/Header'
-import Warehouse from '';
+import Header from './Components/Header/Header'
+// import Warehouse from '';
 import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
-import Inventory from '';
-import InventoryDetails from '';
+// import Inventory from '';
+// import InventoryDetails from '';
 
 class App extends React.Component {
   render() {
@@ -15,11 +15,11 @@ class App extends React.Component {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Redirect exact from = '/' to = '/warehouse'/>
-          <Route exact = '/warehouse' component {Warehouse}/>
+          {/* <Redirect exact from = '/' to = '/warehouse'/>
+          <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouse/:id' component = {WarehouseDetails}/>
-          <Route exact = '/inventory' component = {Inventory}/>
-          <Route exact path = '/inventory/:id' component = {InventoryDetails}/>
+          {/* <Route exact = '/inventory' component = {Inventory}/>
+          <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
         </Switch>
       </BrowserRouter>
      </div>
