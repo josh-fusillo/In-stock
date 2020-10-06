@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../WarehouseAdd/warehouseAdd.scss';
 
 class WarehouseAdd extends React.Component {
     render() {
