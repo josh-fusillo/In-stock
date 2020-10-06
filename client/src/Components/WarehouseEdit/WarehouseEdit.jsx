@@ -7,7 +7,7 @@ class WarehouseEdit extends React.Component {
         return (
             <>
               <div className = 'header'>
-                //put in 'edit warehouse' part
+                //put in 'edit warehouse' part here 
               </div>
 
                 <div className = 'form'>
