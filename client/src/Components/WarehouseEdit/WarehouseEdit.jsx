@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../WarehouseEdit/warehouseEdit.scss';
 
 class WarehouseEdit extends React.Component {
     render() {

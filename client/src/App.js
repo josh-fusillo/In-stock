@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Header from './components/Header/Header'
 import Warehouse from '';
 import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
 import Inventory from '';
 import InventoryDetails from '';
-import Header from './Components/Header/Header'
 
 class App extends React.Component {
   render() {
   return (
     <>
+     <div className="App">
       <BrowserRouter>
         <Header />
         <Switch>
@@ -21,6 +22,7 @@ class App extends React.Component {
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/>
         </Switch>
       </BrowserRouter>
+     </div>
     </>
   );
   }
