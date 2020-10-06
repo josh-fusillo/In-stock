@@ -4,6 +4,6 @@ const warehouseList = require('../data/warehouses.json');
 
 // Get request for all warehouse 
 
-router.get("/", (req, res) => {res.json(warehouseList);});
+router.get("/", (_req, res) => {res.json(warehouseList);});
 
 module.exports = router;
