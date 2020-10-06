@@ -4,7 +4,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './components/Header/Header'
 import Warehouse from '';
 import WarehouseDetails from '';
-import WarehouseEdit from './WarehouseEdit';
+import WarehouseEdit from './Components/WarehouseEdit';
 
 class App extends React.Component {
   render() {
