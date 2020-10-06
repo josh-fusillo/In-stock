@@ -4,7 +4,8 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header'
 import WarehouseList from './Components/WarehouseList/WarehouseList'
 // import Warehouse from '';
-import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
+
+import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
 import WarehousesList from './components/Warehouses/WarehousesList.jsx';
 // import Inventory from '';
