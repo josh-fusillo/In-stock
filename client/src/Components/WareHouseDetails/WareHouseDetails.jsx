@@ -53,6 +53,8 @@ function WareHouseDetails () {
         </div>
 
         <hr className="warehouseBreak"/>
+
+        <p>Change</p>
        
         </>
     )
