@@ -5,14 +5,23 @@ import '../WarehouseEdit/warehouseEdit.scss';
 class WarehouseEdit extends React.Component {
     render() {
         return (
-            <>
-              <div className = 'header'>
-                //put in 'edit warehouse' part here 
-              </div>
+          <>
+          <div className = 'card'>
+           <div className='card__container'>
+             <div className='card__content-wrapper'>              
 
                 <div className = 'form'>
+
                   <form onSubmit = {this}>
                     <div className = 'form__details'>
+                      <div className = 'form__details-header'>
+                        <h1 className = 'form__details-header-txt'>Edit Warehouse</h1>
+                      </div>
+                      
+                      <div>
+                        <div className = 'border'></div>
+                      </div>
+
                         <h2 className = 'form__details-heading'>Warehouse Details</h2>
 
                         <div className = 'form__details-input'>
@@ -128,7 +137,10 @@ class WarehouseEdit extends React.Component {
 
                   </form>
                 </div>
-            </>
+              </div>
+            </div>
+          </div>
+          </>
         )
     }
 }

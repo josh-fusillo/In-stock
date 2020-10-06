@@ -7,12 +7,54 @@
     padding: 0;
 }
 
+.card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -75px;
+
+    &__container{
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        width: 345px;
+        margin-bottom: 100px;
+        background-color: white;
+    }
+
+    &__content-wrapper{
+        display: flex;
+        
+    }
+}
+
+
+.border {
+    display: flex;
+    border-bottom: 1px solid black;
+    width: 343px;
+    margin-left: -0px;
+}
+
 .form {
+
     display: flex;
     justify-content: flex-start;
-    margin-left: 20px;
+    margin-left: 50px;
+
+
 
     &__details {
+
+        &-header {
+            margin-top: 20px;
+
+            &-txt {
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+        }
+
         &-heading {
             font-size: 1.1rem;
             font-weight: 600;
