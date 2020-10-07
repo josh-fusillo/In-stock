@@ -2,7 +2,7 @@ import React from 'react'
 import './Modal.scss'
 import close from '../../assets/Icons/close-24px.svg'
 
-export default function DeleteModal() {
+export default function WarehouseModal() {
     return (
         <div classNameName="modal">
             <div className="modal-container">
