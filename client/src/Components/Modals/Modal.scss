@@ -1,0 +1,183 @@
+@import '../../styles/partials/common-styles';
+
+
+.modal {
+    
+    &__header {
+        font-size: 1.75rem;
+        width: 22rem;
+        margin-top: 2rem;
+
+        @include tablet {
+          width: 100%;
+          margin-left: 2rem;
+          margin-right: 0;
+
+        }
+    }
+
+    &__text {
+        font-size: 0.938rem;;
+        margin-top: 1rem;
+        line-height: 1.625rem;
+        
+        @include tablet {
+          width: 85%;
+          font-size: 1rem;
+          margin-left: 2rem;
+          margin-right: 0;
+        }
+    }
+}
+
+.modal-container {
+    margin: 0 auto;
+    padding-top: 60px;
+    position: relative;
+    width: 50px;
+  }
+  
+  .modal-container button {
+    background-image: url('../../assets/Icons/delete_outline-24px.svg');
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $secondary-font-color;
+    border: none;
+  }
+  
+  .modal-container .modal-backdrop {
+    height: 0;
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease-in;
+  }
+  
+  .modal-container #modal-toggle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+
+.modal-container #modal-toggle:checked {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  opacity: 0;
+}
+
+.modal-container #modal-toggle:checked ~ .modal-backdrop {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 9;
+  pointer-events: none;
+  opacity: 1;
+}
+
+.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content {
+  background-color: $secondary-font-color;
+  max-width: 375px;
+  width: 100%;
+  height: 667px;
+  padding: 10px 30px;
+  position: absolute;
+  left: calc(53% - 200px);
+  top: 12%;
+  border-radius: 2px;
+  z-index: 999;
+  pointer-events: auto;  
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {    
+    height: 17rem;
+    max-width: 768px;
+    width: 45rem;
+    left: calc(29.25% - 200px);
+    top: 11.7rem; 
+    margin: auto;   
+    
+  }
+
+  @include desktop {
+    width: 42rem;
+    height: 16.375rem;
+    left: calc(40% - 200px);
+    top: 11.7rem;
+    margin: auto;
+
+  }
+}
+
+
+
+.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-close {
+  color: $instock-black;
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  padding-top: 7px;
+  background: #fff;
+  font-size: 16px;
+  width: 25px;
+  height: 28px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-cancel.button {
+    position: relative;
+    top: 24.5rem;
+    left: 0;      
+    color: $instock-slate;
+    padding: .25rem 3.5rem;
+    border: 1px solid #BDC5D5;
+    border-radius: 1rem;
+    font-size: 13px;
+    font-weight: normal;
+
+    @include tablet {
+      top: 2rem;
+      padding: .5rem 1rem;
+      left: 28rem;
+
+    }
+  }
+
+.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-close.button {
+  position: relative;
+  top: 24.5rem;
+  bottom: 20px;
+  left: 1rem; 
+  background-color: $delete-color;
+  color: #fff;
+  padding: .25rem 3.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 14px;
+  font-weight: normal;
+
+  @include tablet {
+    top: 2rem;
+    left: 29rem;
+    padding: .5rem 1rem;
+    
+  }
+}
+
+
