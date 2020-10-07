@@ -1,0 +1,116 @@
+// responsive breakpoints
+@mixin breakpoint($class) {
+    @if $class == 'phone' {
+        @media only screen and (max-width: 767px){
+            @content;
+        }
+    } 
+
+    @else if $class == 'table' {
+        @media only screen and (min-width: 768px){
+            @content;
+        }
+    }
+
+    @else if $class == 'desktop'{
+        @media screen and (min-width: 1200px){
+            @content;
+        }
+    }
+
+    @else{
+        @warn "Breakpoint mixin supports: phone, table, desktop";
+    }
+}
+
+
+// typography
+@mixin type ($tag, $breakpoint, $weight: null) {
+    // h1
+    @if $tag == 'h1'{
+        @if $breakpoint == 'phone' {
+            font-size: 28px;
+            line-height: 36px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 32px;
+            line-height: 40px;
+        }
+    }
+
+    // h2
+    @if $tag == 'h2'{
+        @if $breakpoint == 'phone' {
+            font-size: 20px;
+            line-height: 28px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+
+    // h3 - labels, links & buttons
+    @if $tag == 'h3' {
+        @if $breakpoint == 'phone' {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+
+    // h4 - table header
+    @if $tag == 'h4' {
+        @if $breakpoint == 'phone' {
+            font-size: 11px;
+            line-height: 16px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 12px;
+            line-height: 18px;
+        }
+    }
+
+    // p1 - body large
+    @if $tag == 'p1' {
+        @if $breakpoint == 'phone' {
+            font-size: 15px;
+            line-height: 26px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 16px;
+            line-height: 28px;
+        }
+    }
+    
+    // p2 - body medium
+    @if $tag == 'p2' {
+        @if $breakpoint == 'phone' {
+            font-size: 13px;
+            line-height: 20px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 14px;
+            line-height: 22px;
+        }
+    }
+    
+    // p3 - body small
+    @if $tag == 'p3' {
+        @if $breakpoint == 'phone' {
+            font-size: 11px;
+            line-height: 16px;
+        }
+        @else if $breakpoint == 'table'{
+            font-size: 12px;
+            line-height: 18 px;
+        }
+    }
+
+    @if $weight != null {
+        font-weight: $weight;
+    }
+}

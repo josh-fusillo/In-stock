@@ -1,0 +1,14 @@
+// helpers
+@import './styles/helpers/mixins';
+@import './styles/helpers/variables';
+
+// partials
+@import './styles/partials/global';
+@import './styles/partials/typography';
+
+// components
+@import './styles/components/warehouses';
+@import './styles/components/container';
+@import './styles/components/card';
+@import './styles/components/btn';
+@import './styles/components/wrapper';
