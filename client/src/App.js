@@ -11,7 +11,6 @@ import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
 class App extends React.Component {
   render() {
   return (
-    // <>
      <div className="App">
        <BrowserRouter>
         <Header />
