@@ -82,6 +82,12 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
                 
             </form>
 
+            <footer className="footer">
+                <div className="footer-label">
+                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
+                </div>
+            </footer>
+
         </main>
     )
 }

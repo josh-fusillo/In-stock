@@ -2,10 +2,12 @@
 
 main {
  position: relative;
+ background-color: $light-grey;
+ padding-bottom: 2.5em;
 }
 
 .edit {
-    display: absolute;
+    position: absolute;
     background-color: #ffffff;
     width: 92%;
     margin-left: 4%;
@@ -258,7 +260,7 @@ main {
         @include tablet {
             @include commonFlex(none,row,none);
             justify-content: flex-end;
-            margin-right: 2em;
+
         }
 
         
@@ -286,10 +288,33 @@ main {
             background-color: $instock-indigo;
 
             @include tablet {
+                margin-right: 2em;
                 margin-left: 1em;
                 width: 98px;
                 height: 38px;
             }
         }
     }     
+}
+
+.footer {
+    @include titilliumReg;
+    font-size: 11px;
+    color: #5C667E;
+
+    &-label {
+        padding-top: 2.5em;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include tablet {
+        padding-top: 18em;
+        }
+
+        &__text {
+            text-align: center;
+
+        }
+    }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import './editInventory.scss';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
+import {Link} from 'react-router-dom'
 
  function EditInventory(props) {
 
@@ -10,7 +11,7 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
             <form className="edit">
 
                 <div className="edit-head" >
-                    <h1 className="edit-head__header"> <img src= {arrowLogo} alt="return-logo"/> Edit Inventory Item</h1>
+                    <h1 className="edit-head__header"> <Link to="/"><img src= {arrowLogo} alt="return-logo"/></Link> Edit Inventory Item</h1>
                 </div>
 
                 <div className="edit-inventory">
@@ -79,6 +80,12 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
                 </div>
                 
             </form>
+
+            <footer className="footer">
+                <div className="footer-label">
+                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
+                </div>
+            </footer>
 
         </main>
     )
