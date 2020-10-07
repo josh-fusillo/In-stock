@@ -12,7 +12,7 @@ function WarehouseDetails () {
         <div className="warehouseHeader">
             <img className="warehouseHeader__arrow" src={ArrowBack} alt=""/>
             <h1 className="warehouseHeader__title">King West</h1>
-            <button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/></button>
+            <button className="warehouseHeader__  btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/></button>
         </div>
 
         <hr className="warehouseBreak"/>
