@@ -5,6 +5,7 @@ import Edit from '../../assets/Icons/edit-24px.svg';
 import EditWhite from '../../assets/Icons/edit-24px-white.svg'
 import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
+import Sort from '../../assets/Icons/sort-24px.svg';
 
 function WarehouseDetails () {
     return(
@@ -12,45 +13,87 @@ function WarehouseDetails () {
         <div className="warehouseHeader">
             <img className="warehouseHeader__arrow" src={ArrowBack} alt=""/>
             <h1 className="warehouseHeader__title">King West</h1>
-            <button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/></button>
+            <button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/><p className="warehouseHeader__btnText">Edit</p></button>
         </div>
 
         <hr className="warehouseBreak"/>
 
-        <div className="warehouseInfoTop">
-            <h4 className="warehouseInfoTop__label">WAREHOUSE ADDRESS:</h4>
-            <p className="warehouseInfoTop__data">469 King Street West, Toronto, CAN</p>
+        <div className="warehouseInfo">
+            <div className="warehouseInfoTop">
+                <h4 className="warehouseInfoTop__label">WAREHOUSE ADDRESS:</h4>
+                <p className="warehouseInfoTop__data">469 King Street West, Toronto, CAN</p>
+            </div>
+
+            <div className="warehouseInfo__vl"></div>
+
+            <div className='warehouseInfoBottom'>
+             <div className="warehouseInfoBottom__containerLeft">
+                    <h4 className="warehouseInfoBottom__label">CONTACT NAME:</h4>
+                    <p className="warehouseInfoBottom__data">Graeme Lyon</p>
+                    <p className="warehouseInfoBottom__data">Warehouse Manager</p>
+                </div>
+                <div className="warehouseInfoBottom__containerRight">
+                    <h4 className="warehouseInfoBottom__label">CONTACT INFORMATION:</h4>
+                    <p className="warehouseInfoBottom__data">+1 647-504-0911</p>
+                    <p className="warehouseInfoBottom__data">glyon@instock.com</p>
+                </div>
+            </div>
         </div>
 
-
-        <div className='warehouseInfoBottom'>
-            <div className="warehouseInfoBottom__containerLeft">
-                <h4 className="warehouseInfoBottom__label">CONTACT NAME:</h4>
-                <p className="warehouseInfoBottom__data">Graeme Lyon</p>
-                <p className="warehouseInfoBottom__data">Warehouse Manager</p>
-            </div>
-            <div className="warehouseInfoBottom__containerRight">
-                <h4 className="warehouseInfoBottom__label">CONTACT INFORMATION:</h4>
-                <p className="warehouseInfoBottom__data">+1 647-504-0911</p>
-                <p className="warehouseInfoBottom__data">glyon@instock.com</p>
-            </div>
-        </div>
-
-        <hr className="warehouseBreak"/>    
+        <hr className="warehouseInfo__break"/>    
 
         <div className="warehouseInventory">
-            <div className="warehouseInventory__containerTop">
-                <h4 className="warehouseInventory__label">INVENTORY ITEM</h4>
-                <p className="warehouseInventory__item">Television<img src={ChevronRight} /></p>
-                <h4 className="warehouseInventory__label">CATEGORY</h4>
-                <p className="warehouseInventory__cat">Electronics</p>
-                
+            <div className="warehouseInventory__topContainer">
+                <div className="warehouseInventory__groupLeft">
+                    <h4 className="warehouseInventory__label">INVENTORY ITEM<img className="warehouseInventory__sort" src={Sort} /></h4>
+                    <p className="warehouseInventory__item">Television<img src={ChevronRight} /></p>
+                </div>
+                <div className="warehouseInventory__groupRight">
+                    <h4 className="warehouseInventory__label">CATEGORY<img className="warehouseInventory__sort" src={Sort} /></h4>
+                    <p className="warehouseInventory__cat">Electronics</p>
+                </div>
             </div>
-            <div className="warehouseInventory__containerBottom">
-                <h4 className="warehouseInventory__label">STATUS</h4>
-                <button className="warehouseInventory__status">IN STOCK</button>
-                <h4 className="warehouseInventory__label">QTY</h4>
-                <p className="warehouseInventory__qty">500</p>
+            <div className="warehouseInventory__bottomContainer">
+                <div className="warehouseInventory__groupLeft">
+                    <h4 className="warehouseInventory__label">STATUS<img className="warehouseInventory__sort" src={Sort} /></h4>
+                    <button className="warehouseInventory__status">IN STOCK</button>
+                </div>
+                <div className="warehouseInventory__groupRight">
+                    <h4 className="warehouseInventory__label">QTY<img className="warehouseInventory__sort" src={Sort} /></h4>
+                    <p className="warehouseInventory__qty">500</p>
+                </div>
+            </div>     
+        </div>
+
+        <div className="warehouseInventoryTabletDesk">
+            <div className="warehouseInventoryTabletDesk__headers">
+                <div className="warehouseInventoryTabletDesk__startGroup">
+                    <h4 className="warehouseInventoryTabletDesk__label">INVENTORY ITEM<img className="warehouseInventoryTabletDesk__sort" src={Sort} /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">CATEGORY<img className="warehouseInventoryTabletDesk__sort" src={Sort} /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">STATUS<img className="warehouseInventoryTabletDesk__sort" src={Sort} /></h4>
+                </div>  
+                <div className="warehouseInventoryTabletDesk__endGroup">
+                    <h4 className="warehouseInventoryTabletDesk__label">QUANTITY<img className="warehouseInventoryTabletDesk__sort" src={Sort} /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__labelActions">ACTIONS</h4>
+                </div>
+            </div>
+        </div>
+
+        <div className="warehouseInventoryCard">
+            <div className="warehouseInventoryCard__container">
+                <div className="warehouseInventoryCard__startGroup">
+                    <p className="warehouseInventoryCard__item">Television<img src={ChevronRight} /></p>
+                    <p className="warehouseInventoryCard__cat">Electronics</p>
+                    <button className="warehouseInventoryCard__status">IN STOCK</button>
+                </div>
+                <div className="warehouseInventoryCard__endGroup">
+                    <p className="warehouseInventoryCard__qty">500</p>
+                    <div className="warehouseInventoryCard__actions">
+                        <img className="warehouseInventoryCard__icon" src={Delete} alt=""/>
+                        <img className="warehouseInventoryCard__icon" src={Edit} alt=""/>
+                    </div>
+                    
+                </div>
             </div>
         </div>
 

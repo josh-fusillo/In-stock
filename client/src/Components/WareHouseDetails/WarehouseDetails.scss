@@ -3,6 +3,13 @@
 .warehouseHeader {
     display: flex;
     align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    @include tablet {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
 
     &__arrow {
         margin-left: 9vw;
@@ -13,21 +20,56 @@
         font-size: 1.75rem;
         color: $instock-black;
         margin-left: 2vw;
+
+        @include desktop {
+            font-size: $h1-font-size;
+        }
     }
 
     &__btn {
         background-color: $instock-indigo;
-        height: 6vh;
-        width: 10
-        vw;
+        height: 5vh;
+        width: 10vw;
         border-radius: 50%;
         border-color: $instock-indigo;
         border-style: solid;
-        margin-left: 30vw;
+        margin-left: 24vw;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            height: 4vh;
+            width:10vw;
+            border-radius: 20px;
+            margin-left: 50vw;
+        }
+
+        @include desktop {
+            margin-left: 57vw;
+            width: 8vw;
+            border-radius: 30px;
+        }
+    }
+
+    &__btnText {
+        display: none;
+
+        @include tablet {
+            @include titilliumReg;
+            display: block;
+            color: white;
+            padding-left: 1vw;
+        }
     }
 
     &__icon {
 
+        height: 3vh;
+
+        @include tablet {
+            padding-left: 1.5vw;
+            height: 2vh;
+        }
     }
     
 }
@@ -36,6 +78,45 @@
     width: 91%;
     color: $primary-border-color;
     margin-left: 4%;
+
+    @include tablet {
+        margin-bottom: 0vh;
+    }
+}
+
+.warehouseInfo {
+    
+    @include tablet {
+        display: flex;
+    }
+
+    &__vl {
+        display: none;
+
+        @include tablet {
+            display: block;
+            border-right: 1px solid $primary-border-color;
+            height: 8vh;
+            margin-top: 2vh;
+            margin-left: 10vw;
+        }
+
+        @include desktop {
+            margin-bottom: 2vh;
+            height: 6vh;
+            margin-left: 20vw;
+        }
+    }
+
+    &__break {
+        width: 91%;
+        color: $primary-border-color;
+        margin-left: 4%;
+
+        @include tablet {
+            margin-bottom: 2vh;
+        }
+    }
 }
 
 .warehouseInfoTop {
@@ -49,6 +130,11 @@
         font-family: Titillium;
         color: $instock-slate;
         margin-bottom: 0.4rem;
+        margin-top: 2vh;
+
+        @include tablet {
+            font-size:$h4-font-size;
+        }
     }
 
     &__data {
@@ -57,6 +143,15 @@
         color: $instock-black;
         width: 40%;
         margin: 0;
+
+        @include tablet {
+            width: 80%;
+            font-size: $p-font-size;
+        }
+
+        @include desktop {
+            width: 100%;
+        }
     }
 }
 
@@ -65,15 +160,32 @@
     display: flex;
     margin-bottom: 1rem;
 
+    @include tablet {
+        width: 70%;
+        margin-left: 5vw;
+    }
+
 
     &__containerLeft {
         text-align: left;
         margin-left: 9%;
+
+        @include tablet {
+            margin-left: 1vw;
+        }
+
+        @include desktop {
+            margin-left: 0vw;
+        }
     }
 
     &__containerRight {
         text-align: left;
         margin-left: 13%;
+
+        @include tablet {
+            margin-left: 6vw;
+        }
     }
 
     &__label {
@@ -82,6 +194,12 @@
         font-family: Titillium;
         color: $instock-slate;
         margin-bottom: 0.4rem;
+        margin-top: 3vh;
+
+        @include tablet {
+            margin-top: 2vh;
+            font-size:$h4-font-size;
+        }
     }
 
     &__data {
@@ -89,6 +207,11 @@
         font-size: $m-p-font-size;
         color: $instock-black;
         margin: 0;
+
+        @include tablet {
+            width: 100%;
+            font-size: $p-font-size;
+        }        
     }
 }
 
@@ -96,16 +219,20 @@
 
     display: flex;
 
-    &__containerTop {
-        text-align: left;
-        margin-left: 9%;
-        
+    @include tablet {
+        display: none;
     }
 
-    &__containerBottom {
+    &__topContainer {
         text-align: left;
         margin-left: 9%;
-        margin-left: 21%;
+        margin-top: 1vh;
+    }
+
+    &__bottomContainer {
+        text-align: left;
+        margin-left: 22vw;
+        margin-top: 1vh;
     }
 
     &__label {
@@ -116,6 +243,15 @@
         margin: 0;
         margin-bottom: 0.4rem;
         margin-top: 0.4rem;
+    }
+
+    &__sort {
+        display: none;
+
+        @include tablet {
+            display: block;
+            height: 2vh;
+        }
     }
 
     &__item {
@@ -145,7 +281,6 @@
         margin: 0;
     }
 
-
     &__qty {
         @include titilliumReg;
         font-size: $m-p-font-size;
@@ -160,5 +295,211 @@
         margin-right: 8vw;
         margin-top: 2vh;
         margin-bottom: 3vh;
+
+        @include tablet {
+            display: none;
+        }
+    }
+}
+
+.warehouseInventoryTabletDesk {
+
+    display: none;
+
+    @include tablet {
+        display: block;
+    }
+
+    &__headers {
+
+        @include tablet {
+            display: flex;
+            // justify-content: space-evenly;
+            margin-left: 4vw;
+            background-color: $inventory-header-color;
+            width: 91%;
+        }
+    }
+
+    &__startGroup {
+
+        @include tablet{ 
+            display: flex;
+            padding-left: 5vw;
+        }
+    }
+
+    &__endGroup {
+
+        @include tablet {
+            display: flex;
+            margin-left: 10.5vw;
+        }
+
+        @include desktop {
+            margin-left: 5vw;
+        }
+    }
+
+    &__label {
+
+        @include tablet {
+            font-size: $m-h4-font-size;
+            font-weight: 600;
+            font-family: Titillium;
+            color: $instock-slate;
+            margin: 0;
+            margin-bottom: 0.4rem;
+            margin-top: 0.4rem;
+            display: flex;
+            align-items: center;
+            margin-right: 6vw;
+        }
+
+        @include desktop {
+            margin-right: 6vw;
+            font-size: $h4-font-size;
+            width: 10vw;
+        }
+    }
+
+    &__labelActions {
+        @include tablet {
+            font-size: $m-h4-font-size;
+            font-weight: 600;
+            font-family: Titillium;
+            color: $instock-slate;
+            margin: 0;
+            margin-bottom: 0.4rem;
+            margin-top: 0.4rem;
+            display: flex;
+            align-items: center;
+            margin-right: 6vw;
+        }
+
+        @include desktop {
+            margin-left: 5vw;
+            font-size: $h4-font-size;
+            width: 10vw;
+        }
+    }
+
+    &__sort {
+
+        @include tablet {
+            height: 2vh;
+        }
+    }
+}
+
+.warehouseInventoryCard {
+
+    display: none;
+
+    @include tablet {
+        display: block;
+        margin-left: 9vw;
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__startGroup {
+        @include tablet{ 
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__endGroup {
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            margin-left: 17vw;
+        }
+
+        @include desktop {
+        }
+    }
+
+    &__item {
+        @include tablet {
+            @include titilliumSemi;
+            font-size: $p-font-size;
+            color: $instock-indigo;
+            margin: 0;
+            margin-bottom: 2vh;
+            display: flex;
+            margin-right: 6vw;
+            margin-top: 2vh;
+        }
+    }
+
+    &__cat {
+        @include tablet {
+            @include titilliumReg;
+            font-size: $p-font-size;
+            color: $instock-black;
+            margin: 0;
+            margin-left: 2.5vw;
+        }
+
+        @include desktop {
+            margin-left: 3.5vw;
+        }
+    }
+
+    &__status {
+        @include tablet {
+            @include titilliumReg;
+            font-size: $m-h4-font-size;
+            color: $stock-color;
+            background-color: $stock-background-color;
+            border-color: $stock-background-color;
+            border-radius: 20px;
+            border: 0;
+            margin-bottom: 1.75vh;
+            margin-left: 8vw;
+            margin-top: 2vh;
+        }
+
+        @include desktop {
+            margin-left: 11.5vw;
+        }
+    }
+
+    &__qty {
+        @include tablet {
+            @include titilliumReg;
+            font-size: $p-font-size;
+            color: $instock-black;
+            margin: 0;
+        }
+
+        @include desktop {
+        }
+    }
+
+    &__actions {
+        @include tablet {
+            margin-left: 10vw;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include desktop {
+            margin-left: 18vw;
+        }
+    }
+
+    &__icon {
+        @include tablet {
+            margin-right: 2vw;
+        }
     }
 }
