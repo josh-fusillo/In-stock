@@ -9,8 +9,10 @@
   "author": "BrainStation Students",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "node": "^14.13.0",
-    "parser": "^0.1.4"
+    "parser": "^0.1.4",
+    "router-middleware": "^4.0.2"
   }
 }

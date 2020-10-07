@@ -1,3 +1,5 @@
+@import '../partials/common-styles';
+
 .card{
 
     &__container{
@@ -58,6 +60,7 @@
 
             @include breakpoint('table'){
                 max-width: 13.75rem;
+                @include type ('h3', 'table');
             }
         }
 
