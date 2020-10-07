@@ -1,11 +1,18 @@
 import React from 'react';
+
+// import './App.css';
+
 import './App.scss';
+
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header'
 import WarehousesList from './Components/Warehouses/WarehousesList';
-import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
+import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
-import WarehousesList from './components/Warehouses/WarehousesList.jsx';
+
+import WarehousesList from './Components/Warehouses/WarehousesList.jsx';
+// import Inventory from '';
+// import InventoryDetails from '';
 
 // import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 // import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
@@ -29,9 +36,14 @@ class App extends React.Component {
           {/* <Route exact path = '/warehouse/:id' component = {WarehouseDetails}/> */}
           {/* <Route exact = '/inventory' component = {Inventory}/>
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
+
+        </Switch>
+      </BrowserRouter>
+
         {/* </Switch>
       </BrowserRouter> */}
       {/* <WarehousesList /> */}
+
      </div>
     // </>
   );
