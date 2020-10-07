@@ -1,0 +1,164 @@
+@import '../../styles/partials/common-styles';
+
+.warehouseHeader {
+    display: flex;
+    align-items: center;
+
+    &__arrow {
+        margin-left: 9vw;
+    }
+
+    &__title {
+        @include titilliumSemi;
+        font-size: 1.75rem;
+        color: $instock-black;
+        margin-left: 2vw;
+    }
+
+    &__btn {
+        background-color: $instock-indigo;
+        height: 6vh;
+        width: 10
+        vw;
+        border-radius: 50%;
+        border-color: $instock-indigo;
+        border-style: solid;
+        margin-left: 30vw;
+    }
+
+    &__icon {
+
+    }
+    
+}
+
+.warehouseBreak {
+    width: 91%;
+    color: $primary-border-color;
+    margin-left: 4%;
+}
+
+.warehouseInfoTop {
+
+    text-align: left;
+    margin-left: 9%;
+
+    &__label {
+        font-size: $m-h4-font-size;
+        font-weight: 600;
+        font-family: Titillium;
+        color: $instock-slate;
+        margin-bottom: 0.4rem;
+    }
+
+    &__data {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        width: 40%;
+        margin: 0;
+    }
+}
+
+.warehouseInfoBottom {
+
+    display: flex;
+    margin-bottom: 1rem;
+
+
+    &__containerLeft {
+        text-align: left;
+        margin-left: 9%;
+    }
+
+    &__containerRight {
+        text-align: left;
+        margin-left: 13%;
+    }
+
+    &__label {
+        font-size: $m-h4-font-size;
+        font-weight: 600;
+        font-family: Titillium;
+        color: $instock-slate;
+        margin-bottom: 0.4rem;
+    }
+
+    &__data {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+    }
+}
+
+.warehouseInventory {
+
+    display: flex;
+
+    &__containerTop {
+        text-align: left;
+        margin-left: 9%;
+        
+    }
+
+    &__containerBottom {
+        text-align: left;
+        margin-left: 9%;
+        margin-left: 21%;
+    }
+
+    &__label {
+        font-size: $m-h4-font-size;
+        font-weight: 600;
+        font-family: Titillium;
+        color: $instock-slate;
+        margin: 0;
+        margin-bottom: 0.4rem;
+        margin-top: 0.4rem;
+    }
+
+    &__item {
+        @include titilliumSemi;
+        font-size: $m-p-font-size;
+        color: $instock-indigo;
+        margin: 0;
+        margin-bottom: 2vh;
+        display: flex;
+    }
+
+    &__status {
+        @include titilliumReg;
+        font-size: $m-h4-font-size;
+        color: $stock-color;
+        background-color: $stock-background-color;
+        border-color: $stock-background-color;
+        border-radius: 20px;
+        border: 0;
+        margin-bottom: 1.75vh;
+    }
+
+    &__cat {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+    }
+
+
+    &__qty {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+    }
+
+    &__foot {
+        display: flex;
+        justify-content: space-between;
+        margin-left: 8vw;
+        margin-right: 8vw;
+        margin-top: 2vh;
+        margin-bottom: 3vh;
+    }
+}
