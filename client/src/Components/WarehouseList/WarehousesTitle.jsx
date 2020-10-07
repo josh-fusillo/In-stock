@@ -10,7 +10,7 @@ class WarehousesTitle extends Component {
                     <IconSort />
                 </div>
 
-                <div className="warehouses__title">
+                <div className="warehouses__title warehouses__title-address">
                     address
                     <IconSort />
                 </div>
@@ -20,13 +20,13 @@ class WarehousesTitle extends Component {
                     <IconSort />
                 </div>
 
-                <div className="warehouses__title">
+                <div className="warehouses__title warehouses__title-contact">
                     contact information
                     <IconSort />
                 </div>
 
                 <div className="warehouses__title">
-                    action
+                    actions
                 </div>
             </div>
         )
