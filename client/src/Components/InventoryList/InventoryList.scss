@@ -95,6 +95,14 @@
     &__info{
         width: initial;
     }
+
+    &__detail{
+        &-item{
+            @include tablet{
+                width: 20%;
+            }
+        }
+    }
 }
 
 .input{
