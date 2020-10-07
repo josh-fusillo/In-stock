@@ -17,10 +17,6 @@ class WarehouseEdit extends React.Component {
                       <div className = 'form__details-header'>
                         <h1 className = 'form__details-header-txt'>Edit Warehouse</h1>
                       </div>
-                      
-                      <div>
-                        <div className = 'border'></div>
-                      </div>
 
                         <h2 className = 'form__details-heading'>Warehouse Details</h2>
 
