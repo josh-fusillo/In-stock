@@ -2,11 +2,7 @@
 
 # dependencies
 **/node_modules
-<<<<<<< HEAD
-/node_modules/
-=======
 node_modules
->>>>>>> developer
 /.pnp
 .pnp.js
 
