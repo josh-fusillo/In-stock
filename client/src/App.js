@@ -5,12 +5,12 @@ import React from 'react';
 import './App.scss';
 
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-import Header from './Components/Header/Header'
+import Header from './Components/Header/Header';
 import WarehousesList from './Components/Warehouses/WarehousesList';
 import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
 
-import WarehousesList from './Components/Warehouses/WarehousesList.jsx';
+// import WarehousesList from './Components/Warehouses/WarehousesList.jsx';
 // import Inventory from '';
 // import InventoryDetails from '';
 
@@ -37,12 +37,15 @@ class App extends React.Component {
           {/* <Route exact = '/inventory' component = {Inventory}/>
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
 
-        </Switch>
-      </BrowserRouter>
+        {/* </Switch> */}
+        
+      {/* </BrowserRouter> */}
 
         {/* </Switch>
       </BrowserRouter> */}
       {/* <WarehousesList /> */}
+      <Header />
+      <WarehouseDetails />
 
      </div>
     // </>
