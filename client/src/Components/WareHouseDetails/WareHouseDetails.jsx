@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/WarehouseDetails.scss';
+import './WarehouseDetails.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
 import EditWhite from '../../assets/Icons/edit-24px-white.svg'
@@ -12,7 +12,7 @@ function WarehouseDetails () {
         <div className="warehouseHeader">
             <img className="warehouseHeader__arrow" src={ArrowBack} alt=""/>
             <h1 className="warehouseHeader__title">King West</h1>
-            <button className="warehouseHeader__  btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/></button>
+            <button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/></button>
         </div>
 
         <hr className="warehouseBreak"/>
