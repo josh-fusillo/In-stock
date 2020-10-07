@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../WarehouseEdit/warehouseEditAdd.scss';
+import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
 class WarehouseEdit extends React.Component {
     render() {
@@ -11,13 +12,21 @@ class WarehouseEdit extends React.Component {
              <div className='card__content-wrapper'>              
 
                 <div className = 'form'>
-
                   <form onSubmit = {this}>
-                    <div className = 'form__details'>
-                      <div className = 'form__details-header'>
-                        <h1 className = 'form__details-header-txt'>Edit Warehouse</h1>
-                      </div>
 
+                      <div className = 'form__details-card'>
+                        <div className = 'form__details-header'>
+                        <img className="form__details-header-arrow" src={ArrowBack} alt=""/>
+                          <h1 className = 'form__details-header-txt'>Edit Warehouse</h1>
+                        </div>
+                       </div>
+
+                      <div className = 'form__divider1'></div>
+
+                  <div className = 'form__card-wrapper'>
+                      <div className = 'form__details'>
+          
+                      <div className = 'form__details-card'>
                         <h2 className = 'form__details-heading'>Warehouse Details</h2>
 
                         <div className = 'form__details-input'>
@@ -68,11 +77,16 @@ class WarehouseEdit extends React.Component {
                             />
                           </div>
                         </div>
-                    </div>
+                       </div>
+                      </div>
+                  </div>
 
 
+                    <div className = 'form__divider2'></div>
 
+              <div className = 'form__card-wrapper'>
                      <div className = 'form__details'>
+                      <div className = 'form__details-card'>
                         <h2 className = 'form__details-heading'>Contact Details</h2>
 
                         <div className = 'form__details-input'>
@@ -122,15 +136,17 @@ class WarehouseEdit extends React.Component {
                                 value = {this}
                             />
                           </div>
-
+                          </div>
                         </div>
                     </div>
+                  </div>
 
+                  <div className = 'form__details-button-container'>
                     <div className = 'form__details-button'>
                         <button className = 'form__details-button-cancel'>Cancel</button>
                         <button className = 'form__details-button-change'>Save</button>
                     </div>
-
+                  </div>
                   </form>
                 </div>
               </div>

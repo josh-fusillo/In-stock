@@ -1,49 +1,92 @@
 @import '../../styles/partials/common-styles';
 
 .card{
-    margin: 0;
-    padding: 0;
-    font-family: 'Titillium';
-    position: relative;
     display: flex;
     justify-content: center;
-    margin-top: -75px;
+    position: relative;
+    font-family: 'Titillium';
+    margin: 0;
+    padding: 0;
+    margin-top: -60px;
     background-color: $gallery-background-color;
 
+    @include tablet {
+        margin-top: -96px;
+    }
+
     &__container{
-        border: 1px solid $gallery-background-color;
-        box-shadow: 0px 0px 4px $box-border-color;
         display: flex;
         justify-content: flex-start;
-        width: 345px;
+        position: absolute;
+        border: 1px solid $gallery-background-color;
+        border-radius: 5px;
+        box-shadow: 0px 0px 4px $box-border-color;
+        width: 92vw;
         margin-bottom: 100px;
         background-color: $secondary-font-color;
     }
 
     &__content-wrapper{
-        display: flex;
-        
+        display: flex;        
     }
 }
 
 
 .form {
-
-    margin: 0;
-    padding: 0;
-    font-family: 'Titillium';
     display: flex;
     justify-content: flex-start;
-    margin-left: 25px;
+    font-family: 'Titillium';
+    margin: 0;
+    padding: 0;
+
+    &__card-wrapper {
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__divider1 {
+        border-bottom: 1px solid $primary-border-color;
+        margin-top: 25px;
+        margin-bottom: -5px;
+        width: 92vw;
+    }
+
+    &__divider2 {
+        border-bottom: 1px solid $primary-border-color;
+        margin-top: 25px;
+        margin-bottom: -5px;
+        width: 92vw;
+
+        @include tablet {
+            display: none;
+        }
+    }
 
     &__details {
+        margin-left: 25px;
+
+        &-card {
+            margin-top: 20px;
+        }
 
         &-header {
-            margin-top: 20px;
+            display: flex;
+            margin: 26px 0 0 -5px;
+
+            &-arrow {
+               margin-left: 6vw;
+               margin-right: 9px;
+            }
 
             &-txt {
                 font-weight: 600;
                 font-size: 1.75rem;
+                color: $instock-black;
+
+                @include tablet {
+                    font-size: 2rem;
+                }
             }
         }
 
@@ -53,6 +96,11 @@
             text-align: left;
             margin-bottom: 20px;
             margin-top: 20px;
+
+            @include tablet {
+                font-size: 24px;
+                font-weight: 600;
+            }
         }
 
         &-input {
@@ -61,46 +109,63 @@
                 display: flex;
                 text-align: left;
                 margin-top: 10px;
+                margin-bottom: 5px;
                 font-size: 0.8rem;
                 font-weight: 600;
-                margin-bottom: 5px;
             }
 
             &-text {
                 border: 1px solid $primary-border-color;
                 border-radius: 20px;
-                width: 78vw;
-                height: 5.5vh;
+                width: 292px;
+                height: 36px;
                 padding-left: 15px;
                 color: $instock-black;
+                font-weight: 400;
 
             }
         
         }
 
+        &-button-container {
+            display: flex;
+            margin: -15px 0 -12px 0;
+            height: 20vh;
+        }
+
         &-button {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-evenly;
+            align-items: center;
             margin-top: 40px;
-            margin-bottom: 17px;
+            background-color: $gallery-background-color;
+            height: 68px;
+            width: 91.5vw;
 
             &-cancel {
+                font-family: 'Titillium';
+                font-weight: 600;
                 border-radius: 20px;
                 border: 1px solid $primary-border-color;
-                width: 36.5vw;
-                height: 5.3vh;
+                width: 36.8vw;
+                height: 36px;
                 background-color: $secondary-font-color;
-
+                margin-right: -3px;
+                font-size: 13px;
+                color: $instock-slate;
             }
 
             &-change {
+                font-weight: 600;
+                font-family: 'Titillium';
                 border-radius: 20px;
                 border: 1px solid $primary-border-color;
-                width: 36.5vw;
-                height: 5.3vh;
+                width: 36.8vw;
+                height: 36px;
                 background-color: $instock-indigo;
                 color: $secondary-font-color;
-
+                margin-left: -3px;
+                font-size: 13px;
             }
         }
 

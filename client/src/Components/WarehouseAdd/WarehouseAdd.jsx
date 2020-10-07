@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import '../WarehouseEdit/warehouseEditAdd.scss';
+import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
 
 class WarehouseAdd extends React.Component {
@@ -12,13 +13,20 @@ class WarehouseAdd extends React.Component {
              <div className='card__content-wrapper'>              
 
                 <div className = 'form'>
-
                   <form onSubmit = {this}>
-                    <div className = 'form__details'>
-                      <div className = 'form__details-header'>
-                        <h1 className = 'form__details-header-txt'>Add New Warehouse</h1>
-                      </div>
 
+                      <div className = 'form__details-card'>
+                        <div className = 'form__details-header'>
+                        <img className="form__details-header-arrow" src={ArrowBack} alt=""/>
+                          <h1 className = 'form__details-header-txt'>Add New Warehouse</h1>
+                        </div>
+                       </div>
+
+                      <div className = 'form__divider'></div>
+
+                      <div className = 'form__details'>
+          
+                      <div className = 'form__details-card'>
                         <h2 className = 'form__details-heading'>Warehouse Details</h2>
 
                         <div className = 'form__details-input'>
@@ -29,8 +37,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'Warehouse Name'
+                                name = "name"
                             />
                           </div>
 
@@ -40,8 +48,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'Street Address'
+                                name = 'street'
                             />
                           </div>
 
@@ -52,8 +60,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'City'
+                                name = 'city'
                             />
                           </div>
 
@@ -64,16 +72,18 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
-                            />
+                                placeholder = 'Country'
+                                name = 'country'                            
+                              />
                           </div>
                         </div>
-                    </div>
+                       </div>
+                      </div>
 
-
+                    <div className = 'form__divider'></div>
 
                      <div className = 'form__details'>
+                      <div className = 'form__details-card'>
                         <h2 className = 'form__details-heading'>Contact Details</h2>
 
                         <div className = 'form__details-input'>
@@ -84,8 +94,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'Contact Name'
+                                name = 'contactName'
                             />
                           </div>
 
@@ -95,8 +105,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'Position'
+                                name = 'position'
                             />
                           </div>
 
@@ -107,8 +117,8 @@ class WarehouseAdd extends React.Component {
                                 type = 'text'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
+                                placeholder = 'Phone Number'
+                                name = 'phone'
                             />
                           </div>
 
@@ -119,25 +129,28 @@ class WarehouseAdd extends React.Component {
                                 type = 'email'
                                 id = {this}
                                 className = 'form__details-input-text'
-                                name = {this}
-                                value = {this}
-                            />
+                                placeholder = 'Email'
+                                name = 'email'                            
+                              />
                           </div>
 
                         </div>
                     </div>
+                  </div>
 
+                  <div className = 'form__details-button-container'>
                     <div className = 'form__details-button'>
                         <button className = 'form__details-button-cancel'>Cancel</button>
                         <button className = 'form__details-button-change'>+ Add Warehouse</button>
                     </div>
+                  </div>
 
                   </form>
                 </div>
               </div>
             </div>
           </div>
-        </>
+          </>
         )
     }
 }
