@@ -9,7 +9,7 @@ class InventoryListing extends Component {
         return (
             <div className="container">
                 <div className="inventory">
-                    <div className="card__container wrapper">
+                    <div className="inventory__card-wrapper wrapper">
                         <div className="inventory__card-content">
                             <div className="inventory__header-container">
                                 <div className="inventory__header-left">Inventory</div>

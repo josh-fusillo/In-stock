@@ -9,7 +9,7 @@ class WarehousesListing extends Component {
         return (
             <div className="container">
                 <div className="warehouses">
-                    <div className="warehouses__card-container wrapper">
+                    <div className="warehouses__card-wrapper wrapper">
                         <div className="warehouses__card-content">
                             <div className="warehouses__header-container">
                                 <div className="warehouses__header-left">Warehouses</div>
