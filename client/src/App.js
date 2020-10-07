@@ -2,10 +2,12 @@ import React from 'react';
 import './App.css';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header'
+import WarehouseList from './Components/WarehouseList/WarehouseList'
 // import Warehouse from '';
 
 import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
-
+import InventoryList from './Components/InventoryList/InventoryList';
+import WarehousesList from './components/Warehouses/WarehousesList.jsx';
 // import Inventory from '';
 // import InventoryDetails from '';
 
@@ -19,6 +21,8 @@ class App extends React.Component {
      <div className="App">
       <BrowserRouter>
         <Header />
+        <WarehouseList />
+        <InventoryList />
         <Switch>
           <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/>
