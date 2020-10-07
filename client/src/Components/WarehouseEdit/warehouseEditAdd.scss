@@ -1,0 +1,108 @@
+@import '../../styles/partials/common-styles';
+
+.card{
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium';
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -75px;
+    background-color: $gallery-background-color;
+
+    &__container{
+        border: 1px solid $gallery-background-color;
+        box-shadow: 0px 0px 4px $box-border-color;
+        display: flex;
+        justify-content: flex-start;
+        width: 345px;
+        margin-bottom: 100px;
+        background-color: $secondary-font-color;
+    }
+
+    &__content-wrapper{
+        display: flex;
+        
+    }
+}
+
+
+.form {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Titillium';
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 25px;
+
+    &__details {
+
+        &-header {
+            margin-top: 20px;
+
+            &-txt {
+                font-weight: 600;
+                font-size: 1.75rem;
+            }
+        }
+
+        &-heading {
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-align: left;
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        &-input {
+
+            &-subheading {
+                display: flex;
+                text-align: left;
+                margin-top: 10px;
+                font-size: 0.8rem;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            &-text {
+                border: 1px solid $primary-border-color;
+                border-radius: 20px;
+                width: 78vw;
+                height: 5.5vh;
+                padding-left: 15px;
+                color: $instock-black;
+
+            }
+        
+        }
+
+        &-button {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            margin-bottom: 17px;
+
+            &-cancel {
+                border-radius: 20px;
+                border: 1px solid $primary-border-color;
+                width: 36.5vw;
+                height: 5.3vh;
+                background-color: $secondary-font-color;
+
+            }
+
+            &-change {
+                border-radius: 20px;
+                border: 1px solid $primary-border-color;
+                width: 36.5vw;
+                height: 5.3vh;
+                background-color: $instock-indigo;
+                color: $secondary-font-color;
+
+            }
+        }
+
+    }
+}

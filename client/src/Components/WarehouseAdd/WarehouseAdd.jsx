@@ -1,18 +1,24 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../WarehouseAdd/warehouseAdd.scss';
+import '../WarehouseEdit/warehouseEditAdd.scss';
+
 
 class WarehouseAdd extends React.Component {
     render() {
         return (
-            <>
-              <div className = 'header'>
-                //put in 'add new warehouse' part
-              </div>
+          <>
+          <div className = 'card'>
+           <div className='card__container'>
+             <div className='card__content-wrapper'>              
 
                 <div className = 'form'>
+
                   <form onSubmit = {this}>
                     <div className = 'form__details'>
+                      <div className = 'form__details-header'>
+                        <h1 className = 'form__details-header-txt'>Add New Warehouse</h1>
+                      </div>
+
                         <h2 className = 'form__details-heading'>Warehouse Details</h2>
 
                         <div className = 'form__details-input'>
@@ -122,13 +128,16 @@ class WarehouseAdd extends React.Component {
                     </div>
 
                     <div className = 'form__details-button'>
-                        <button>Cancel</button>
-                        <button>+ Add Warehouse</button>
+                        <button className = 'form__details-button-cancel'>Cancel</button>
+                        <button className = 'form__details-button-change'>+ Add Warehouse</button>
                     </div>
 
                   </form>
                 </div>
-            </>
+              </div>
+            </div>
+          </div>
+        </>
         )
     }
 }
