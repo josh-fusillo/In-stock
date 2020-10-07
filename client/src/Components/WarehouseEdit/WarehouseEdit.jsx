@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../WarehouseEdit/warehouseEdit.scss';
+import '../WarehouseEdit/warehouseEditAdd.scss';
 
 class WarehouseEdit extends React.Component {
     render() {
@@ -127,8 +127,8 @@ class WarehouseEdit extends React.Component {
                     </div>
 
                     <div className = 'form__details-button'>
-                        <button>Cancel</button>
-                        <button>Save</button>
+                        <button className = 'form__details-button-cancel'>Cancel</button>
+                        <button className = 'form__details-button-change'>Save</button>
                     </div>
 
                   </form>
