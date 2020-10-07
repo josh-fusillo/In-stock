@@ -26,7 +26,7 @@ class WarehousesTitle extends Component {
                 </div>
 
                 <div className="warehouses__title">
-                    action
+                    actions
                 </div>
             </div>
         )

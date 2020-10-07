@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import IconRight from '../Icons/IconRight';
-import Control from './Control';
+import IconDelete from '../Icons/IconDelete';
+import IconEdit from '../Icons/IconEdit';
 
 class WarehousesCard extends Component {
     render() {
@@ -33,7 +34,10 @@ class WarehousesCard extends Component {
                             
                         </div>
                     </div>
-                    <Control />
+                    <div className="card__control">
+                        <IconDelete />
+                        <IconEdit />
+                    </div>
                 </div>
             </div>
         )

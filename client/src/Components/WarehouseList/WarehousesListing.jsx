@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import SearchBox from './SearchBox';
-import AddWarehouseBtn from './AddWarehouseBtn';
 import WarehousesCard from './WarehousesCard';
 import WarehousesTitle from './WarehousesTitle';
+import IconSearch from '../Icons/IconSearch';
+import './WarehouseList.scss';
 
-class Warehouses extends Component {
+class WarehousesListing extends Component {
     render() {
         return (
             <div className="container">
@@ -15,8 +15,15 @@ class Warehouses extends Component {
                                 <div className="warehouses__header-left">Warehouses</div>
 
                                 <div className="warehouses__header-right">
-                                    <SearchBox />
-                                    <AddWarehouseBtn />
+                                <div className="warehouses__search-container input">
+                                    <input type="search"
+                                    placeholder="Search ..."
+                                    className="warehouses__search-input" />
+                                    <IconSearch />
+                                </div>
+                                    <div className="warehouses__add-btn btn-large">
+                                        + Add New Warehouse
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -30,4 +37,4 @@ class Warehouses extends Component {
     }
 }
 
-export default Warehouses;
+export default WarehousesListing;

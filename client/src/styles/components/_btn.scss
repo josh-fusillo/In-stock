@@ -1,18 +1,22 @@
+@import '../partials/common-styles';
+
 .btn{
-    height: 36px;
-    width: 100%;
-    text-align: center;
-    padding: 0.375rem;
-    color: $white;
-    background-color: $instock-indigo;
-    border: none;
-    border-radius: $default-border-radius;
+    &-large{
+        height: 36px;
+        width: 100%;
+        text-align: center;
+        padding: 0.375rem;
+        color: $secondary-font-color;
+        background-color: $instock-indigo;
+        border: none;
+        border-radius: 20px;
 
-    &:hover {
-        background-color: $grapgite;
-    }
+        &:hover {
+            background-color: $nav-background-color;
+        }
 
-    @include breakpoint('table'){
-        max-width: 10.5rem;
+        @include tablet{
+            max-width: 10.5rem;
+        }
     }
 }

@@ -2,10 +2,10 @@ import React from 'react';
 import './App.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header'
-import WarehousesList from './Components/Warehouses/WarehousesList';
+import WarehousesListing from './Components/WarehouseList/WarehousesListing';
 import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
-import WarehousesList from './components/Warehouses/WarehousesList.jsx';
+import InventoryListing from './Components/InventoryList/InventoryListing';
 
 // import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 // import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
@@ -31,7 +31,8 @@ class App extends React.Component {
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
         {/* </Switch>
       </BrowserRouter> */}
-      {/* <WarehousesList /> */}
+      {/* <WarehousesListing /> */}
+      <InventoryListing />
      </div>
     // </>
   );

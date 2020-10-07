@@ -1,12 +1,15 @@
+@import '../../styles/partials/common-styles';
+
 .warehouses{
-    border-radius: $board-default-border-radius;
+    border-radius: 3px;
     // NEED TO CHANGE BACKGROUND-COLOR TO WHITE
     // background-color: $white;
-    background-color: $light-grey;
+    background-color: #F7F8F9;
+    @include titilliumReg;
 
     &__header{
         &-container{
-            @include breakpoint('table'){
+            @include tablet{
                 display: flex;
             }
         }
@@ -14,11 +17,16 @@
         &-left{
             padding-top: 2rem;
             margin-bottom: 1rem;
-            @include type ('h1', 'phone', 600);
+            font-size: $m-h1-font-size;
+            @include titilliumSemi;
+
+            @include tablet{
+                font-size: $h1-font-size;
+            }
         }
 
         &-right{
-            @include breakpoint('table'){
+            @include tablet{
                 display: flex;
                 padding-top: 2rem;
                 margin-left: auto;
@@ -31,14 +39,14 @@
         &-container{
             display: flex;
             align-items: center;
-            border: 1px solid $cloud;
+            border: 1px solid $primary-border-color;
             margin-bottom: 1rem;
 
             &:focus{
                 border: 2px solid $instock-indigo;
             }
 
-            @include breakpoint('table'){
+            @include tablet{
                 margin-right: 1rem;
             }
         }
@@ -57,25 +65,50 @@
 
     &__add-btn{
         margin-bottom: 1.5rem;
+        font-size: $m-h3-font-size;
+
+        @include tablet{
+            font-size: $h3-font-size;
+        }
     }
 
     &__title{
         display: flex;
         align-items: center;
         text-transform: uppercase;
-        color: $slate;
+        color: $instock-slate;
 
         &-container{
             display: none;
             // NEED TO CHANGE BACKGROUND-COLOR TO LIGHT GREY
             // background-color: $light-grey;
-            background-color: $white;
+            background-color: #FFFFFF;
             height: 2.5rem;
             justify-content: space-between;
 
-            @include breakpoint('table'){
+            @include tablet{
                 display: flex;
             }
         }
+    }
+}
+
+.input{
+    padding: 0 1rem;
+    height: 2.25rem;
+    width: 100%;
+    color: $instock-slate;
+    background-color: #FFF;
+    border: 1px solid $primary-border-color;
+    border-radius: 20px;
+    font-size: $m-h3-font-size;
+
+    @include tablet{
+        font-size: $h3-font-size;
+    }
+
+    &:focus{
+        outline: none;
+        border: 2px solid $instock-indigo;
     }
 }
