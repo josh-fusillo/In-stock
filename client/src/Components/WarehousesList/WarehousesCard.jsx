@@ -37,7 +37,7 @@ class WarehousesCard extends Component {
                         </div>
                     </div>
                     <div className="warehouses__card-control">
-                        <WarehouseModal className="warehouses__card-modal" />
+                        <WarehouseModal />
                         <img src={Edit} alt="Edit icon" />
                     </div>
                 </div>
