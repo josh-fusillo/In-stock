@@ -1,13 +1,17 @@
+@import '../partials/common-styles';
+
 .container {
     width: 100%;
     padding: 0 1rem;
     margin: 0 auto;
+    position: absolute;
+    margin-top: -60px;
 
-    @include breakpoint ('table'){
+    @include tablet{
         padding: 0 2rem;
     }
 
-    @include breakpoint ('desktop'){
+    @include desktop{
         padding: 0 auto;
     }
 }
