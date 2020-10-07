@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
+import Header from './Components/Header/Header'
+// import Warehouse from '';
 
-function App() {
+import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
+
+// import Inventory from '';
+// import InventoryDetails from '';
+
+import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
+import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
+
+class App extends React.Component {
+  render() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <div className="App">
+      <BrowserRouter>
+        <Header />
+        <Switch>
+          <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
+          <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/>
+          {/* <Redirect exact from = '/' to = '/warehouse'/>
+          <Route exact = '/warehouse' component {Warehouse}/> */}
+          <Route exact path = '/warehouse/:id' component = {WarehouseDetails}/>
+          {/* <Route exact = '/inventory' component = {Inventory}/>
+          <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
+        </Switch>
+      </BrowserRouter>
+     </div>
+    </>
   );
+  }
 }
 
 export default App;

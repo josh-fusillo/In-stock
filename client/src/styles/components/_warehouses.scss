@@ -1,0 +1,81 @@
+.warehouses{
+    border-radius: $board-default-border-radius;
+    // NEED TO CHANGE BACKGROUND-COLOR TO WHITE
+    // background-color: $white;
+    background-color: $light-grey;
+
+    &__header{
+        &-container{
+            @include breakpoint('table'){
+                display: flex;
+            }
+        }
+
+        &-left{
+            padding-top: 2rem;
+            margin-bottom: 1rem;
+            @include type ('h1', 'phone', 600);
+        }
+
+        &-right{
+            @include breakpoint('table'){
+                display: flex;
+                padding-top: 2rem;
+                margin-left: auto;
+            }
+        }
+    }
+
+    &__search{
+
+        &-container{
+            display: flex;
+            align-items: center;
+            border: 1px solid $cloud;
+            margin-bottom: 1rem;
+
+            &:focus{
+                border: 2px solid $instock-indigo;
+            }
+
+            @include breakpoint('table'){
+                margin-right: 1rem;
+            }
+        }
+
+        &-input{
+            width: 100%;
+            height: 36px;
+            background: transparent;
+            border: none;
+
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+
+    &__add-btn{
+        margin-bottom: 1.5rem;
+    }
+
+    &__title{
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        color: $slate;
+
+        &-container{
+            display: none;
+            // NEED TO CHANGE BACKGROUND-COLOR TO LIGHT GREY
+            // background-color: $light-grey;
+            background-color: $white;
+            height: 2.5rem;
+            justify-content: space-between;
+
+            @include breakpoint('table'){
+                display: flex;
+            }
+        }
+    }
+}
