@@ -4,11 +4,10 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header';
 import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
-import WarehouseList from './Components/WarehouseList/WarehouseList';
 import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
 import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
-import WarehousesListing from './Components/WarehouseList/WarehousesListing';
+import WarehousesList from './Components/WarehousesList/WarehousesList';
 import InventoryListing from './Components/InventoryList/InventoryListing';
 import AddInventory from './Components/AddInventory/AddInventory';
 
@@ -17,9 +16,8 @@ class App extends React.Component {
   return (
      <div className="App">
        <BrowserRouter>
-        <Header />
-         {/* <Switch> */}
-          <Route exact path = '/warehouse/warehouseList' component = {WarehouseList}/>
+        <Header />        
+        {/* <Switch> */}          
           <Route exact path = '/warehouse/warehouseDetails' component = {WarehouseDetails}/>
           <Route exact path = '/warehouse/inventoryList' component = {InventoryList}/>
           <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
@@ -33,7 +31,7 @@ class App extends React.Component {
           {/* <Route exact = '/inventory' component = {Inventory}/>
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
          {/* </Switch> */}
-        <Route exact path = '/warehouse/warehouseList' component = {WarehousesListing}/>
+        <Route exact path = '/warehouse/warehouseList' component = {WarehousesList}/>
         <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/>
       </BrowserRouter>
      </div>

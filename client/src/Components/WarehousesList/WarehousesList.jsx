@@ -1,10 +1,25 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import WarehousesCard from './WarehousesCard';
 import WarehousesTitle from './WarehousesTitle';
 import IconSearch from '../Icons/IconSearch';
-import './WarehouseList.scss';
+import './WarehousesList.scss';
 
-class WarehousesListing extends Component {
+class WarehousesList extends Component {
+    state ={
+               
+    }
+       
+    getWarehousesList = () => {
+        axios
+            .get(`http://localhost:8080/warehouses/`)
+            .then(res => console.log(res.data))        
+    }    
+        
+    componentDidMount() {
+        this.getWarehousesList();        
+    }    
+
     render() {
         return (
             <div className="container">
@@ -37,4 +52,4 @@ class WarehousesListing extends Component {
     }
 }
 
-export default WarehousesListing;
+export default WarehousesList;

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import IconRight from '../Icons/IconRight';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
+import WarehouseModal from '../Modals/WarehouseModal'
 
 class WarehousesCard extends Component {
     render() {
@@ -36,7 +37,7 @@ class WarehousesCard extends Component {
                         </div>
                     </div>
                     <div className="warehouses__card-control">
-                        <img src={Delete} alt="Delete icon" />
+                        <WarehouseModal className="warehouses__card-modal" />
                         <img src={Edit} alt="Edit icon" />
                     </div>
                 </div>
