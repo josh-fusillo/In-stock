@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const warehouseList = require('../data/warehouses.json');
+const uuid = require ('uuid');
 
 // Get request for all warehouse 
 
@@ -22,4 +23,48 @@ router.get('/:id', (req, res) => {
     })
   })
 
-module.exports = router;
+
+  router.post("/warehouses", (req, res) => {
+    const newWarehouse = {
+        id: uuid.v4(),
+        warehouseName: req,
+        street: req,
+        city: req,
+        country: req,
+        contactName: req,
+        position: req,
+        phone: req,
+        email: req.body
+    };
+
+    const newWarehouseList = {
+        id: newWarehouse.id,
+        warehouseName: req,
+        address: {
+            street: req,
+            city: req,
+            country: req
+        },
+        contactName: req,
+        contactInfo: {
+            phone: req,
+            email: req.body
+        }
+    }
+
+    if (req.body) {
+    warehouseList.push(newWarehouseList);
+    res.send(201).send(warehouseList);
+    console.log(req.body);
+    }
+
+    else {
+        res.status(400).send ("Error: invalid request body");
+    }
+});
+
+
+module.exports = router; 
+
+
+

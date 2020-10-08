@@ -66,9 +66,4 @@ class WarehouseDetails extends React.Component {
     }
 }
 
-<<<<<<< HEAD:client/src/Components/WareHouseDetails/WareHouseDetails.jsx
-
 export default WarehouseDetails;
-=======
-export default WarehouseDetails;
->>>>>>> developer:client/src/Components/WarehouseDetails/WarehouseDetails.jsx
