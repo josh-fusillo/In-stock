@@ -10,8 +10,5 @@ router.get("/warehouses/:warehouseid", (_req, res) => {
     })
 });
 
-// router.get("/warehouses/:warehouseid", (_req, res) => {
-//     res.json(warehouseList.map(warehouse => warehouse))
-// });
 
 module.exports = router; 

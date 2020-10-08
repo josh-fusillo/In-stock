@@ -122,6 +122,8 @@ main {
 
            &__arrow {
                margin-right: -12px;
+               display: flex;
+               margin-top: 38px;
 
                @include tablet {
                    margin-right: -30px;
