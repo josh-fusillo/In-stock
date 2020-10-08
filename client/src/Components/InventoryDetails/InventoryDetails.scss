@@ -1,0 +1,248 @@
+@import '../../styles/partials/common-styles';
+
+.inventoryDetailsHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+
+    @include tablet {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+    }
+
+    &__arrow {
+        margin-left: 9vw;
+    }
+
+    &__title {
+        @include titilliumSemi;
+        font-size: 1.75rem;
+        color: $instock-black;
+        margin-left: 2vw;
+
+        @include tablet {
+            font-size: $h1-font-size;
+        }
+    }
+
+    &__btn {
+        background-color: $instock-indigo;
+        height: 5vh;
+        width: 10vw;
+        border-radius: 50%;
+        border-color: $instock-indigo;
+        border-style: solid;
+        margin-left: 28vw;
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            height: 4vh;
+            width:10vw;
+            border-radius: 20px;
+            margin-left: 50vw;
+        }
+
+        @include desktop {
+            margin-left: 60vw;
+            width: 8vw;
+            height: 3vh;
+            border-radius: 30px;
+        }
+    }
+
+    &__btnText {
+        display: none;
+
+        @include tablet {
+            @include titilliumReg;
+            display: block;
+            color: white;
+            padding-left: 1vw;
+        }
+    }
+
+    &__icon {
+
+        height: 3vh;
+
+        @include tablet {
+            padding-left: 1.5vw;
+            height: 2vh;
+        }
+
+        @include desktop {
+            padding-left: 1vw;
+        }
+    }
+    
+}
+
+.inventoryDetailsBreak {
+    width: 91%;
+    color: $primary-border-color;
+    margin-left: 4%;
+    margin-bottom: 2vh;
+
+    @include tablet {
+        margin-bottom: 2vh;
+    }
+}
+
+.warehouseInfo {
+
+    &__vl {
+        display: none;
+
+        @include tablet {
+            display: block;
+            border-right: 1px solid $primary-border-color;
+            height: 8vh;
+            margin-top: 2vh;
+            margin-left: 10vw;
+        }
+
+        @include desktop {
+            margin-bottom: 2vh;
+            height: 6vh;
+            margin-left: 20vw;
+        }
+    }
+} 
+
+.inventoryDetails {
+
+    @include tablet {
+        display: flex;
+    }
+
+    &__topContainer {
+        text-align: left;
+        margin-left: 9vw;
+        margin-top: 1vh;
+
+        @include tablet {
+            width: 40%;
+        }
+    }
+
+    &__middleContainer {
+        text-align: left;
+        margin-left: 9vw;
+        margin-top: 1vh;
+        display: flex;
+
+        @include tablet {
+            margin-left: 0;
+        }
+    }
+
+    &__bottomContainer {
+        text-align: left;
+        margin-left: 9vw;
+        margin-top: 1vh;
+
+        @include tablet {
+            margin-left: 0;
+        }
+    }
+
+    &__middleGroupRight {
+        margin-left: 35vw;
+
+        @include tablet {
+            margin-left: 10vw;
+        }
+        @include desktop {
+            margin-left: 15vw;
+        }
+    }
+
+    &__vl {
+        display: none;
+
+        @include tablet {
+            display: block;
+            border-right: 1px solid $primary-border-color;
+            height: 17vh;
+            margin-top: 0vh;
+            margin-right: 6vw;
+        }
+    }
+
+    &__label {
+        font-size: $m-h4-font-size;
+        font-weight: 600;
+        font-family: Titillium;
+        color: $instock-slate;
+        margin: 0;
+        margin-bottom: 0.4rem;
+        margin-top: 0.4rem;
+
+        @include tablet {
+            font-size: $h4-font-size;
+        }
+    }
+
+    &__item {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+        margin-bottom: 2vh;
+        width: 85%;
+
+        @include tablet {
+            width: 85%;
+            margin-right: 0;
+            font-size: $p-font-size;
+        }
+    }
+
+    &__status {
+        @include titilliumSemi;
+        font-size: $m-h4-font-size;
+        color: $stock-color;
+        background-color: $stock-background-color;
+        border-color: $stock-background-color;
+        border-radius: 20px;
+        border: 0;
+        margin-bottom: 1.75vh;
+        width: 15vw;
+        height: 4vh;
+
+        @include tablet {
+            width: 9vw;
+            height: 3vh;
+            font-size: $p-font-size;
+        }
+
+        @include desktop {
+            width: 6vw;
+            height: 2vh;
+        }
+    }
+
+    &__cat {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+
+        @include tablet {
+            font-size: $p-font-size;
+        }
+    }
+
+    &__qty {
+        @include titilliumReg;
+        font-size: $m-p-font-size;
+        color: $instock-black;
+        margin: 0;
+
+        @include tablet {
+            font-size: $p-font-size;
+        }
+    }
+}
