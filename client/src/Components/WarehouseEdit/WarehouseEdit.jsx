@@ -24,19 +24,27 @@ return (
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Warehouse Name</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Warehouse Name'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Warehouse Name'/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Street Address'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Street Address'/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>City</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='City'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='City'/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Country</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Country'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Country'/>
               </div>
       
           </div>

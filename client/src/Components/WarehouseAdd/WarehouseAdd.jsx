@@ -24,22 +24,36 @@ return (
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Warehouse Name</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Warehouse Name'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Warehouse Name'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Street Address'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Street Address'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>City</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='City'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='City'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Country</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Country'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Country'
+                         required/>
               </div>
       
           </div>
+
+          {/* <div className = 'add-border-container'> */}
 
       <div className = 'add__divider2'></div>
 
@@ -49,29 +63,43 @@ return (
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Contact Name</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Contact Name'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Contact Name'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Position</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Position'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Position'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Phone Number'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Phone Number'
+                         required/>
               </div>
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Email</label>
-                  <input className = 'add-warehouse__details-info-input' type='email' placeholder='Email'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='email' 
+                         placeholder='Email'
+                         required/>
               </div>
           </div>
 
       </div>
+      </div>
+
 
         <div className='add-buttons'>
           <button className='add-buttons__cancel'>Cancel</button>
           <button className='add-buttons__add'>+ Add Warehouse</button>
         </div>
-      </div>
+      {/* </div> */}
     </form>
     </div>
   </main>
