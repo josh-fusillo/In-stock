@@ -2,7 +2,7 @@ import React from 'react';
 import './App.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header';
-import WarehouseDetails from './Components/WareHouseDetails/WareHouseDetails';
+import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
 import InventoryList from './Components/InventoryList/InventoryList';
 import WarehouseList from './Components/WarehouseList/WarehouseList';
 import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
