@@ -4,6 +4,7 @@ import Edit from '../../assets/Icons/edit-24px.svg';
 import WarehouseModal from '../Modals/WarehouseModal'
 import React from 'react'
 
+
 export default function WarehousesCard (props) {    
         return (
             <div className="warehouses__card-container wrapper">

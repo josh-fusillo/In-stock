@@ -22,8 +22,7 @@ class WarehousesList extends Component {
     }   
         
     componentDidMount() {
-        this.getWarehousesList();
-               
+        this.getWarehousesList();               
     }
     
     

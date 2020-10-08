@@ -8,7 +8,7 @@ import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
 import InventoryDetails from './Components/InventoryDetails/InventoryDetails';
 import WarehousesList from './Components/WarehousesList/WarehousesList';
-import InventoryListing from './Components/InventoryList/InventoryListing';
+// import InventoryListing from './Components/InventoryList/InventoryListing';
 import AddInventory from './Components/AddInventory/AddInventory';
 
 class App extends React.Component {
@@ -32,7 +32,7 @@ class App extends React.Component {
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
          {/* </Switch> */}
         <Route exact path = '/warehouse/warehouseList' component = {WarehousesList}/>
-        <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/>
+        {/* <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/> */}
       </BrowserRouter>
      </div>
   );
