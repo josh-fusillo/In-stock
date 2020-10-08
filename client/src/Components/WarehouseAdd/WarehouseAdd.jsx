@@ -6,11 +6,16 @@ import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 function WarehouseAdd(props) {
 return (
   <main>
+    <div className = 'wrap'>
     <form className = 'add'>
 
+    <div className = 'add-wrap'>
       <div className = 'add-top'>
-        <h1 className = 'add-top__header'> <img src= {ArrowBack} alt='return-logo'/>Add New Warehouse</h1>
+        <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
+        <h1 className = 'add-top__header'>Add New Warehouse</h1>
       </div>
+
+      <div className = 'add__divider1'></div>
 
       <div className = 'add-warehouse'>
       
@@ -36,7 +41,7 @@ return (
       
           </div>
 
-      <div className = 'add__divider'></div>
+      <div className = 'add__divider2'></div>
 
 
           <div className = 'add-warehouse__details'>
@@ -66,7 +71,9 @@ return (
           <button className='add-buttons__cancel'>Cancel</button>
           <button className='add-buttons__add'>+ Add Warehouse</button>
         </div>
+      </div>
     </form>
+    </div>
   </main>
 
 // class WarehouseAdd extends React.Component {

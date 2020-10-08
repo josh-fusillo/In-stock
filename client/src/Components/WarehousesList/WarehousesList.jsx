@@ -56,6 +56,7 @@ class WarehousesList extends Component {
                     {this.state.warehousesInfo.map(data => 
                     <WarehousesCard 
                         key={data.id} 
+                        warehouseId={data.id}
                         name={data.name} 
                         address={data.address} 
                         city={data.city} 

@@ -3,10 +3,15 @@ const router = express.Router();
 const warehouseList = require('../data/warehouses.json');
 
 router.get("/warehouses/:warehouseid", (_req, res) => {
-    const selectedWarehouse = warehousesRoute.find(warehouse => warehouse.id === req.params.id);
+    const selectedWarehouse = warehouseList.find(warehouse => warehouse.id === "2922c286-16cd-4d43-ab98-c79f698aeab0");
     res.json({
-        selectedWarehouse
+        city:selectedWarehouse.city
+        // selectedWarehouse
     })
 });
 
-module.exports = router;
+// router.get("/warehouses/:warehouseid", (_req, res) => {
+//     res.json(warehouseList.map(warehouse => warehouse))
+// });
+
+module.exports = router; 
