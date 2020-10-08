@@ -37,7 +37,7 @@ export default function InventoryCard (props) {
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-location">
                                     <div className="inventory__card-detail-label">warehouse</div>
-                                    <div className="inventory__card-detail-text">Manhattan</div>
+                                    <div className="inventory__card-detail-text">{props.warehouseName}</div>
                                 </div>
                             </div>
                             
