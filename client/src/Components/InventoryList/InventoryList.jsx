@@ -67,6 +67,7 @@ export default class InventoryList extends Component {
                     <InventoryCard 
                        key={data.id}
                        warehouseID={data.warehouseID}
+                       warehouseName={data.warehouseName}
                        itemname={data.itemName} 
                        category={data.category}
                        status={data.status}
