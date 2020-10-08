@@ -21,8 +21,14 @@ class WarehouseDetails extends React.Component {
     }
 
     getWarehouses = () => {
-        const warehouseId = 
-        axios.get('http://localhost:8080/warehouses/' + )
+        const warehouseId = this.props.match.params.warehouseId;
+        axios.get('/warehouses/' + "2922c286-16cd-4d43-ab98-c79f698aeab0")
+            .then(res => {
+                console.log("data",res.data)
+                this.setState({
+                    // WarehouseInfo
+                })
+            });
     }
 
     componentDidMount() {
