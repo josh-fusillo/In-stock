@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import IconRight from '../Icons/IconRight';
-import Delete from '../../assets/Icons/delete_outline-24px.svg';
+import InventoryModal from '../Modals/InventoryModal';
 import Edit from '../../assets/Icons/edit-24px.svg';
 
-class InventoryCard extends Component {
-    render() {
+export default function InventoryCard (props) {
+    
         return (
             <div className="inventory__card-container wrapper">
                 <div className="inventory__card-content-wrapper">
@@ -14,25 +14,25 @@ class InventoryCard extends Component {
                                 <div className="inventory__card-detail-item inventory__card-detail-item-nametype">
                                     <div className="inventory__card-detail-label">inventory item</div>
                                     <div className="inventory__card-detail-text inventory__card-detail-name">
-                                        Television <IconRight />
+                                        {props.itemname} <IconRight />
                                     </div>
                                 </div>
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-type">
                                     <div className="inventory__card-detail-label">category</div>
-                                    <div className="inventory__card-detail-text">Electronics</div>
+                                    <div className="inventory__card-detail-text">{props.category}</div>
                                 </div>
                             </div>
 
                             <div className="inventory__card-detail-info--cl3">
                                 <div className="inventory__card-detail-item inventory__card-detail-item-status">
                                     <div className="inventory__card-detail-label">status</div>
-                                    <div className="inventory__card-detail-text">In stock</div>
+                                    <div className="inventory__card-detail-text">{props.status}</div>
                                 </div>
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-qty">
                                     <div className="inventory__card-detail-label">qty</div>
-                                    <div className="inventory__card-detail-text">500</div>
+                                    <div className="inventory__card-detail-text">{props.quantity}</div>
                                 </div>
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-location">
@@ -44,13 +44,12 @@ class InventoryCard extends Component {
                         </div>
                     </div>
                     <div className="inventory__card-control">
-                        <img src={Delete} alt="Delete icon" />
+                        <InventoryModal />
                         <img src={Edit} alt="Edit icon" />
                     </div>
                 </div>
             </div>
         )
-    }
+    
 }
 
-export default InventoryCard;

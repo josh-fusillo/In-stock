@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(cors());
 app.use('/warehouses', warehousesRoute);
 app.use('/inventory', inventoryRoute);
-app.use('/warehouses/:warehouseid', dynamicwarehouse)
+app.use('/warehouses/:warehouseid', dynamicwarehouse);
 
 
 app.listen(port, () => console.log(`We're live on ${port}`))
