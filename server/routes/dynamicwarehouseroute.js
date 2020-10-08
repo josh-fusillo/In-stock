@@ -7,16 +7,8 @@ const app = express();
 app.use(bodyParser.json());
 const port = process.env.PORT || process.argv[2] || 8080
 
-
-
-// app.get('/warehouses', (_req, res) => {
-//  res.json(warehouseList)
-// })
-
-router.get('/', (req, res) => {
-    const selected = warehouseList.find (warehouse => warehouse.id === req.params.id);
-    console.log(req)
-    req
+router.get("/warehouses/:warehouseid", (_req, res) => {
+    const selectedWarehouse = warehouseList.find(warehouse => warehouse.id === "2922c286-16cd-4d43-ab98-c79f698aeab0");
     res.json({
       selected
       // id: selected.id,
@@ -29,4 +21,4 @@ router.get('/', (req, res) => {
     console.log(selected);
   })
 
-module.exports = router;
+module.exports = router; 

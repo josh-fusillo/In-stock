@@ -1,7 +1,7 @@
 @import '../../styles/partials/common-styles';
 
 
-.modal {
+.modal{
     
     &__header {
         font-size: 1.75rem;
@@ -30,14 +30,8 @@
     }
 }
 
-.modal-container {
-    margin: 0 auto;
-    margin-top: .5rem;
-    position: relative;
-    width: 50px;
-  }
-  
-  .modal-container button {
+
+  .delete__button {
     background-image: url('../../assets/Icons/delete_outline-24px.svg');
     height: 50px;
     width: 50px;
@@ -45,61 +39,21 @@
     background-position: center;
     background-color: $secondary-font-color;
     border: none;
+    
+    @include tablet {
+      margin-top: .5rem;
+    }
   }
   
-  .modal-container .modal-backdrop {
-    height: 0;
-    width: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: opacity 0.2s ease-in;
-  }
-  
-  .modal-container #modal-toggle {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
 
-
-.modal-container #modal-toggle:checked {
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9;
-  opacity: 0;
-}
-
-.modal-container #modal-toggle:checked ~ .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  z-index: 9;
-  pointer-events: none;
-  opacity: 1;
-}
-
-.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content {
+.delete__modal {
   background-color: $secondary-font-color;
   max-width: 375px;
-  width: 100%;
+  margin-right: .75rem;
+  width: 370px;
   height: 667px;
   padding: 10px 30px;
-  position: absolute;
-  left: calc(53% - 200px);
-  top: 12%;
-  border-radius: 2px;
-  z-index: 999;
+  border-radius: 3px; 
   pointer-events: auto;  
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
@@ -108,8 +62,7 @@
     max-width: 768px;
     width: 45rem;
     left: calc(29.25% - 200px);
-    top: 11.7rem; 
-    margin: auto;   
+    top: 9.7rem;      
     
   }
 
@@ -124,28 +77,13 @@
 }
 
 
-
-.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-close {
-  color: $instock-black;
-  position: absolute;
-  right: 1rem;
-  top: 0;
-  padding-top: 7px;
-  background: #fff;
-  font-size: 16px;
-  width: 25px;
-  height: 28px;
-  font-weight: bold;
-  text-align: center;
-  cursor: pointer;
-}
-
-.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-cancel.button {
+.modal-cancel.button {
     position: relative;
     top: 24.5rem;
-    left: 0;      
+     
+       
     color: $instock-slate;
-    padding: .25rem 3.5rem;
+    padding: .5rem 3.5rem;
     border: 1px solid #BDC5D5;
     border-radius: 1rem;
     font-size: 13px;
@@ -159,14 +97,14 @@
     }
   }
 
-.modal-container #modal-toggle:checked ~ .modal-backdrop .modal-content .modal-close.button {
+.modal-delete.button {
   position: relative;
   top: 24.5rem;
   bottom: 20px;
   left: 1rem; 
   background-color: $delete-color;
   color: #fff;
-  padding: .25rem 3.5rem;
+  padding: .5rem 3.5rem;
   border: none;
   border-radius: 1rem;
   font-size: 14px;
@@ -178,6 +116,22 @@
     padding: .5rem 1rem;
     
   }
+}
+
+.close__X {
+  position: relative;
+  left: 19.5rem;
+  bottom: 15rem;
+
+  @include tablet {
+    left: 32.5rem;
+  bottom: 9rem;
+  }
+
+  @include desktop {
+    left: 28.5rem;
+  }
+
 }
 
 

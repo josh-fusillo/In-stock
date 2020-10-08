@@ -15,4 +15,31 @@ router.get('/:id', (req, res) => {
     })
   })
 
+  app.post('/intentory', (req, res) => {
+    const {
+      id,
+      warehouseID,
+      warehouseName,
+      itemName,
+      description,
+      category,
+      status,
+      quantity,
+      } = req.body
+    res.json([
+      ...videos,
+      {
+        id,
+        warehouseID,
+        warehouseName,
+        itemName,
+        description,
+        category,
+        status,
+        quantity,
+      }
+    ])
+    inventoryList.push(req.body);
+  })
+
 module.exports = router;

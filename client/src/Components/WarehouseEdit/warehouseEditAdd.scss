@@ -1,108 +1,288 @@
 @import '../../styles/partials/common-styles';
 
-.card{
-    margin: 0;
-    padding: 0;
-    font-family: 'Titillium';
+
+main {
     position: relative;
-    display: flex;
-    justify-content: center;
-    margin-top: -75px;
-    background-color: $gallery-background-color;
-
-    &__container{
-        border: 1px solid $gallery-background-color;
-        box-shadow: 0px 0px 4px $box-border-color;
-        display: flex;
-        justify-content: flex-start;
-        width: 345px;
-        margin-bottom: 100px;
-        background-color: $secondary-font-color;
-    }
-
-    &__content-wrapper{
-        display: flex;
-        
-    }
-}
+    margin-top: 0px;   
 
 
-.form {
+   .wrap {
+       display: flex;
+       background-color: $gallery-background-color;
+       height: 900px;
 
-    margin: 0;
-    padding: 0;
-    font-family: 'Titillium';
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 25px;
+       @include tablet {
+           height: 800px;
+       }
+   
+   .add {
+       position: absolute;
+       width: 92%;
+       border-radius: 3px;
+       margin-top: -5em;
+       margin-bottom: 100px;
+       border: 1px solid $gallery-background-color;
+       box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+       
 
-    &__details {
-
-        &-header {
-            margin-top: 20px;
-
-            &-txt {
-                font-weight: 600;
-                font-size: 1.75rem;
-            }
+       @include tablet {
+        margin-top: -5.9em;
         }
 
-        &-heading {
-            font-size: 1.25rem;
-            font-weight: 600;
-            text-align: left;
-            margin-bottom: 20px;
-            margin-top: 20px;
+       @include desktop {
+           width: 80%;
+           margin-left: 10%;
         }
 
-        &-input {
-
-            &-subheading {
-                display: flex;
-                text-align: left;
-                margin-top: 10px;
-                font-size: 0.8rem;
-                font-weight: 600;
-                margin-bottom: 5px;
-            }
-
-            &-text {
-                border: 1px solid $primary-border-color;
-                border-radius: 20px;
-                width: 78vw;
-                height: 5.5vh;
-                padding-left: 15px;
-                color: $instock-black;
-
-            }
-        
-        }
-
-        &-button {
+        &-border-container {
+            border-top: 1px solid $primary-border-color;
+            margin-top: -5px;
+            margin-bottom: -5px;
+            width: 91.5vw;
             display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-            margin-bottom: 17px;
 
-            &-cancel {
-                border-radius: 20px;
-                border: 1px solid $primary-border-color;
-                width: 36.5vw;
-                height: 5.3vh;
-                background-color: $secondary-font-color;
-
-            }
-
-            &-change {
-                border-radius: 20px;
-                border: 1px solid $primary-border-color;
-                width: 36.5vw;
-                height: 5.3vh;
-                background-color: $instock-indigo;
-                color: $secondary-font-color;
-
-            }
+            @include tablet {
+                // transform: rotate(-90deg);
+                border-top: none;
+                border-left: 1px solid $primary-border-color;
+                // position: absolute;
+                width: 400px;
+                height: 350px;
+                margin-top: 15px;
+                margin-left: -270px;
+                margin-right: 37px;
+                // left: 153px
+                }
+    
+                @include desktop {
+                    transform: rotate(-90deg);
+                    position: absolute;
+                    top: 330px;
+                    width: 470px;
+                    height: 1px;
+                    left: 275px;                
+                }
         }
 
-    }
+        &__divider1 {
+            border-bottom: 1px solid $primary-border-color;
+            margin-top: -5px;
+            margin-bottom: -5px;
+            width: 91vw;
+
+            @include tablet {
+                margin-top: -18px;
+                width: 92vw;
+            }
+
+            @include desktop {
+                margin-top: 0;
+                width: 79.9vw;
+            }
+       }
+
+       &__divider2 {
+            border-bottom: 1px solid $primary-border-color;
+            margin-top: -15px;
+            margin-bottom: -5px;
+            width: 91vw;
+
+            @include tablet {
+                display: none;
+                justify-content: center;
+                transform: rotate(-90deg);
+                position: absolute;
+                top: 330px;
+                width: 400px;
+                height: 1px;
+                left: 153px
+            }
+
+            @include desktop {
+                display: none;
+                transform: rotate(-90deg);
+                position: absolute;
+                top: 330px;
+                width: 470px;
+                height: 1px;
+                left: 275px;                
+            }
+       }
+
+   
+       &-top {
+
+            display: flex;
+            justify-content: center;
+
+            @include tablet {
+                justify-content: flex-start;
+                margin-left: 30px;
+            }
+
+           &__arrow {
+               margin-right: -12px;
+
+               @include tablet {
+                   margin-right: -30px;
+               }
+           }
+   
+           &__header {
+               margin: 0 6%;
+               padding: 1em 0;;
+               @include titilliumSemi;
+               font-size: $m-h1-font-size;
+   
+               @include tablet {
+                   font-size: $h1-font-size;
+                   margin: 0.5% 6%;
+                   margin-top: -5px;
+               }
+
+               @include desktop {
+                   margin: -1% 4%;
+               }
+
+           }
+       }
+   
+           &-warehouse {
+               @include tablet {
+                   @include commonFlex(space-between,row,none);
+                   margin: -3.2% 0;
+                   margin-left: 9px;
+                   
+
+               }
+
+               @include desktop {
+                   margin: -1.5% 0;
+               }
+       
+   
+               &__details {
+                   padding-bottom : 1.5em;
+   
+                   @include tablet {
+                    width: 100%;
+                    margin: 3% 0;
+                   }
+           
+   
+                   &-header {
+                       @include titilliumSemi;
+                       font-size: $m-h2-font-size;
+                       margin: 0 6%;
+                       padding: 1em 0;
+   
+                       @include tablet {
+                           font-size: $h2-font-size;
+                       }
+                   }
+           
+                   &-info {
+                       margin-bottom: 16px;
+                       @include commonFlex(none,column,none);
+                       margin: 0 6%;
+                       margin-bottom: 1em;
+                       
+               
+                       &-label {
+                           margin-bottom: 4px;
+                           @include titilliumSemi;
+                           font-size: $m-h3-font-size;
+   
+                           @include tablet {
+                           font-size: $h3-font-size; 
+                           margin-bottom: 5px;
+                           margin-top: 7px;                       
+                           }
+                       }   
+           
+                       &-input {
+                           border-radius: 20px;
+                           height: 36px;
+                           border: 1px solid $box-border-color;
+                           padding-left: 1em;
+
+                           @include tablet {
+                               width: 38vw;
+                           }
+
+                           @include desktop {
+                               width: 34.5vw;
+                               height: 40px;
+                           }
+                       }
+                   }
+               }
+           } 
+   
+   
+       &-buttons {
+           @include titilliumSemi;
+           @include commonFlex(space-around,row,none);
+           font-size: $m-p-font-size;
+           background-color: $light-grey;
+           padding: 1em 0;
+           width: 91.5vw;
+           height: 68px;
+           margin-top: -1.3em;
+
+   
+           @include tablet {
+               @include commonFlex(none,row,none);
+               justify-content: flex-end;
+               margin-right: 2em;
+               margin-top: -2.2em;
+               height: 68px;
+               width: 91.8vw;
+               padding: 1.25em 2.4em;
+           }
+
+           @include desktop {
+                width: 79.9vw;
+           }
+   
+           &__cancel {
+               font-family: 'Titillium';
+               width: 139px;
+               border-radius: 20px;
+               height: 36px;
+               border: 1px solid $primary-border-color;
+               background-color: white;
+               margin-right: -15px;
+   
+               @include tablet {
+                   width: 72px;
+                   height: 38px;
+               }
+           }
+   
+           &__add {
+               font-family: 'Titillium';
+               color: white;
+               width: 139px;
+               border-radius: 20px;
+               height: 36px;
+               border: 1px solid $box-border-color;
+               background-color: $instock-indigo;
+               margin-left: -15px;
+   
+               @include tablet {
+                   margin-left: 2.5em;
+                   width: 140px;
+                   height: 38px;
+                   justify-content: flex-end;
+                   margin-right: -5px;
+               }
+
+               @include desktop {
+                margin-right: 10px;
+               }
+           }
+       }   
+     }  
+   }
 }
