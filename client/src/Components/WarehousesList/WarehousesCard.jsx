@@ -3,6 +3,7 @@ import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
 import WarehouseModal from '../Modals/WarehouseModal'
 import React from 'react'
+import {Link} from 'react-router-dom';
 
 export default function WarehousesCard (props) {    
         return (
@@ -12,9 +13,9 @@ export default function WarehousesCard (props) {
                         <div className="warehouses__card-detail-info">
                             <div className="warehouses__card-detail-item">
                                 <div className="warehouses__card-detail-label">Warehouse</div>
-                                <div className="warehouses__card-detail-text warehouses__card-detail-name">
+                                <Link to={`/warehouses/${props.warehouseId}`}><div className="warehouses__card-detail-text warehouses__card-detail-name">
                                     {props.name} <IconRight />
-                                </div>
+                                </div></Link>
                             </div>
                             <div className="warehouses__card-detail-item warehouses__card-detail-item-address">
                                 <div className="warehouses__card-detail-label">Address</div>
