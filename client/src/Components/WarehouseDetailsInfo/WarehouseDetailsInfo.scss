@@ -5,16 +5,13 @@
     align-items: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
-
     @include tablet {
         margin-top: 2vh;
         margin-bottom: 2vh;
     }
-
     &__arrow {
         margin-left: 9vw;
     }
-
     &__title {
         @include titilliumSemi;
         font-size: 1.75rem;
@@ -25,7 +22,6 @@
             font-size: $h1-font-size;
         }
     }
-
     &__btn {
         background-color: $instock-indigo;
         height: 5vh;
@@ -50,7 +46,6 @@
             border-radius: 30px;
         }
     }
-
     &__btnText {
         display: none;
 
@@ -61,7 +56,6 @@
             padding-left: 1vw;
         }
     }
-
     &__icon {
 
         height: 3vh;
@@ -70,7 +64,5 @@
             padding-left: 1.5vw;
             height: 2vh;
         }
-    }
-    
+    } 
 }
-
