@@ -109,6 +109,14 @@
         &-container{
             border-bottom: 1px solid $primary-border-color;
         }
+
+        &-wrapper{
+            border-bottom: 1px solid $primary-border-color;
+
+            @include tablet{
+                border-bottom: initial;
+            }
+        }
     
         &-content-wrapper{
             display: flex;
