@@ -12,36 +12,59 @@ import WarehouseDetailsCard from '../WarehouseDetailsCard/WarehouseDetailsCard';
 
 class WarehouseDetails extends React.Component {
     state = {          
-        WarehouseInfo: [
+        WarehouseDetails: [
             'Loading...'
         ],
-        WarehouseCard: [
+        WarehouseInventory: [
             'Loading...'
         ]
     }
 
     getWarehouses = () => {
         const warehouseId = this.props.match.params.warehouseId;
-        axios.get('/warehouses/' + "2922c286-16cd-4d43-ab98-c79f698aeab0")
+        axios.get('/warehouses/' + warehouseId)
             .then(res => {
-                console.log("data",res.data)
+                axios.get('/inventory')
+                console.log("data", res.data)
                 this.setState({
-                    // WarehouseInfo
+                    WarehouseDetails: res.data,
+                    WarehouseInventory: res.data
                 })
             });
     }
 
     componentDidMount() {
-        axios.get()
+        this.getWarehouses();
     }
+
+
     render() {
         return(
             <>  
-            <WarehouseDetailsInfo />   
-            <WarehouseDetailsCard />
+            <WarehouseDetailsInfo 
+                name={this.state.WarehouseDetails.contact.name}
+                warehouse={this.state.WarehouseDetails.warehouse}
+                position={this.state.WarehouseDetails.position}
+                address={this.state.WarehouseDetails.address}
+                city={this.state.WarehouseDetails.city}
+                country={this.state.WarehouseDetails.country}
+                email={this.state.WarehouseDetails.contact.email}
+                phone={this.state.WarehouseDetails.contact.phone}
+                />  
+            {/* {const inventory = this.state.WarehouseInventory.find(item => item.warehouseID === this.state.WarehouseDetails.id)
+            inventory.forEach(item => 
+                <WarehouseDetailsCard 
+                item={item.itemName}
+                description={item.description}
+                category={item.category}
+                qty={item.quantity}
+                status={item.status}/>
+            )} */}
+            
             </>
         )
     }
 }
+
 
 export default WarehouseDetails;
