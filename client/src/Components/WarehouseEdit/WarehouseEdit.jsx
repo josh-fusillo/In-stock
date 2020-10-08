@@ -28,18 +28,21 @@ return (
                          type='text' 
                          placeholder='Warehouse Name'/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Street Address'/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>City</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='City'/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Country</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -59,14 +62,17 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Contact Name</label>
                   <input className = 'add-warehouse__details-info-input' type='text' placeholder='Contact Name'/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Position</label>
                   <input className = 'add-warehouse__details-info-input' type='text' placeholder='Position'/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
                   <input className = 'add-warehouse__details-info-input' type='text' placeholder='Phone Number'/>
               </div>
+              
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Email</label>
                   <input className = 'add-warehouse__details-info-input' type='email' placeholder='Email'/>

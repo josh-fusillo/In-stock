@@ -29,6 +29,7 @@ return (
                          placeholder='Warehouse Name'
                          required/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -36,6 +37,7 @@ return (
                          placeholder='Street Address'
                          required/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>City</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -43,6 +45,7 @@ return (
                          placeholder='City'
                          required/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Country</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -68,6 +71,7 @@ return (
                          placeholder='Contact Name'
                          required/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Position</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -75,6 +79,7 @@ return (
                          placeholder='Position'
                          required/>
               </div>
+
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
                   <input className = 'add-warehouse__details-info-input' 
@@ -82,6 +87,7 @@ return (
                          placeholder='Phone Number'
                          required/>
               </div>
+              
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Email</label>
                   <input className = 'add-warehouse__details-info-input' 
