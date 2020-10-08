@@ -11,7 +11,9 @@ return (
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
-        <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
+        <Link to={{ pathname: '/warehouses '}}>
+          <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
+        </Link>
         <h1 className = 'add-top__header'>Edit Warehouse</h1>
       </div>
 
@@ -60,22 +62,30 @@ return (
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Contact Name</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Contact Name'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Contact Name'/>
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Position</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Position'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Position'/>
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
-                  <input className = 'add-warehouse__details-info-input' type='text' placeholder='Phone Number'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='text' 
+                         placeholder='Phone Number'/>
               </div>
               
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Email</label>
-                  <input className = 'add-warehouse__details-info-input' type='email' placeholder='Email'/>
+                  <input className = 'add-warehouse__details-info-input' 
+                         type='email' 
+                         placeholder='Email'/>
               </div>
           </div>
 

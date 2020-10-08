@@ -3,15 +3,32 @@ import {Link} from 'react-router-dom';
 import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 
-function WarehouseAdd(props) {
+class WarehouseAdd extends React.Component {
+
+state = {
+  name: ''
+
+}
+
+
+
+
+render() {
 return (
   <main>
     <div className = 'wrap'>
-    <form className = 'add'>
+    <form 
+      className='add'
+      action='/warehouses'
+      name='EditWarehouse'
+      method='POST'
+      onSubmit={this.editWarehouse}>
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
-        <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
+        <Link to={{ pathname: '/warehouses '}}>
+          <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
+        </Link>
         <h1 className = 'add-top__header'>Add New Warehouse</h1>
       </div>
 
@@ -27,6 +44,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Warehouse Name'
+                         value={this.props.warehouseName}
                          required/>
               </div>
 
@@ -35,6 +53,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Street Address'
+                         value={this.props.street}
                          required/>
               </div>
 
@@ -43,6 +62,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='City'
+                         value={this.props.city}
                          required/>
               </div>
 
@@ -51,6 +71,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Country'
+                         value={this.props.country}
                          required/>
               </div>
       
@@ -69,6 +90,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Contact Name'
+                         value={this.props.contactName}
                          required/>
               </div>
 
@@ -77,6 +99,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Position'
+                         value={this.props.position}
                          required/>
               </div>
 
@@ -85,6 +108,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
                          placeholder='Phone Number'
+                         value={this.props.number}
                          required/>
               </div>
               
@@ -93,6 +117,7 @@ return (
                   <input className = 'add-warehouse__details-info-input' 
                          type='email' 
                          placeholder='Email'
+                         value={this.props.email}
                          required/>
               </div>
           </div>
@@ -102,13 +127,14 @@ return (
 
 
         <div className='add-buttons'>
-          <button className='add-buttons__cancel'>Cancel</button>
-          <button className='add-buttons__add'>+ Add Warehouse</button>
+          <button type='submit' className='add-buttons__cancel'>Cancel</button>
+          <button type='submit' className='add-buttons__add'>+ Add Warehouse</button>
         </div>
       {/* </div> */}
     </form>
     </div>
   </main>
 )
+}
 }
 export default WarehouseAdd;
