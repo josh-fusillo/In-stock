@@ -13,62 +13,96 @@ import WarehouseDetailsCard from '../WarehouseDetailsCard/WarehouseDetailsCard';
 class WarehouseDetails extends React.Component {
     state = {          
         WarehouseDetails: [
-            'Loading...'
+            
         ],
         WarehouseInventory: [
-            'Loading...'
+            
         ]
     }
 
+    
+
     getWarehouses = () => {
-        const warehouseId = this.props.match.params.warehouseId;
+        const warehouseId = this.props.match.params.id;
+        console.log("This", this)
         axios.get('/warehouses/' + warehouseId)
             .then(res => {
-                axios.get('/inventory')
                 console.log("data", res.data)
                 this.setState({
-                    WarehouseDetails: res.data,
+                    WarehouseDetails: res.data
+                })
+                // .catch(err => {
+                //     console.log(err);
+                // })
+            }); 
+    }
+
+    getInventory = () => {
+        axios.get('/inventory')
+            .then(res => {
+                console.log(res.data)
+                this.setState({
                     WarehouseInventory: res.data
                 })
-            });
+            })
     }
 
     componentDidMount() {
         this.getWarehouses();
+        this.getInventory();
     }
 
 
     render() {
+        const list = this.state.WarehouseInventory.find(item => item.warehouseID === this.props.match.params.id)
+        console.log(list)
         return(
-            <>  
+            <> 
             <WarehouseDetailsInfo 
-                name={this.state.WarehouseDetails.contact.name}
+                name={this.state.WarehouseDetails.name}
                 warehouse={this.state.WarehouseDetails.warehouse}
                 position={this.state.WarehouseDetails.position}
                 address={this.state.WarehouseDetails.address}
                 city={this.state.WarehouseDetails.city}
                 country={this.state.WarehouseDetails.country}
-                email={this.state.WarehouseDetails.contact.email}
-                phone={this.state.WarehouseDetails.contact.phone}
+                email={this.state.WarehouseDetails.email}
+                phone={this.state.WarehouseDetails.phone}
                 />  
-            {/* {const inventory = this.state.WarehouseInventory.find(item => item.warehouseID === this.state.WarehouseDetails.id)
-            inventory.forEach(item => 
-                <WarehouseDetailsCard 
+            {/* {this.state.WarehouseInventory &&  this.state.WarehouseInventory.find(item => item.warehouseID === this.props.match.params.id)
+            .forEach(item => {
+                return <WarehouseDetailsCard 
                 item={item.itemName}
                 description={item.description}
                 category={item.category}
                 qty={item.quantity}
-                status={item.status}/>
+                status={item.status} />
+            }
+                
             )} */}
-            
+            {/* {this.state.WarehouseInventory && this.state.WarehouseInventory.map(item => {
+                return <WarehouseDetailsCard
+                item={item.itemName}
+                description={item.description}
+                category={item.category}
+                qty={item.quantity}
+                status={item.status} />
+                }
+                )} */}
+                
+                
+                {this.state.WarehouseInventory && list.map(item => {
+                    return <WarehouseDetailsCard
+                    item={item.itemName}
+                    description={item.description}
+                    category={item.category}
+                    qty={item.quantity}
+                    status={item.status} />
+                    }
+                    )
+                    }
             </>
         )
     }
 }
 
-<<<<<<< HEAD:client/src/Components/WareHouseDetails/WareHouseDetails.jsx
-
 export default WarehouseDetails;
-=======
-export default WarehouseDetails;
->>>>>>> developer:client/src/Components/WarehouseDetails/WarehouseDetails.jsx
