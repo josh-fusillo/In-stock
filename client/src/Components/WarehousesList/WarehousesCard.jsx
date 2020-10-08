@@ -1,11 +1,10 @@
-import React, { Component } from 'react';
 import IconRight from '../Icons/IconRight';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Edit from '../../assets/Icons/edit-24px.svg';
 import WarehouseModal from '../Modals/WarehouseModal'
+import React from 'react'
 
-class WarehousesCard extends Component {
-    render() {
+export default function WarehousesCard (props) {    
         return (
             <div className="warehouses__card-container wrapper">
                 <div className="warehouses__card-content-wrapper">
@@ -14,24 +13,24 @@ class WarehousesCard extends Component {
                             <div className="warehouses__card-detail-item">
                                 <div className="warehouses__card-detail-label">Warehouse</div>
                                 <div className="warehouses__card-detail-text warehouses__card-detail-name">
-                                    Manhattan <IconRight />
+                                    {props.name} <IconRight />
                                 </div>
                             </div>
                             <div className="warehouses__card-detail-item warehouses__card-detail-item-address">
                                 <div className="warehouses__card-detail-label">Address</div>
-                                <div className="warehouses__card-detail-text">503 Broadway, New York, USA</div>
+                                <div className="warehouses__card-detail-text">{props.address}, {props.city}, {props.country}</div>
                             </div>
 
                             <div className="warehouses__card-detail-item">
                                 <div className="warehouses__card-detail-label">Contact name</div>
                                 <div className="warehouses__card-detail-text">
-                                    Parmin Aujla
+                                    {props.contactname}
                                 </div>
                             </div>
                             <div className="warehouses__card-detail-item warehouses__card-detail-item-contact">
                                 <div className="warehouses__card-detail-label">Contact information</div>
-                                <div className="warehouses__card-detail-text">+1 (629) 555-0129</div>
-                                <div className="warehouses__card-detail-text">paujla@instock.com</div>
+                                <div className="warehouses__card-detail-text">{props.phone}</div>
+                                <div className="warehouses__card-detail-text">{props.email}</div>
                             </div>
                             
                         </div>
@@ -43,7 +42,6 @@ class WarehousesCard extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
-export default WarehousesCard;

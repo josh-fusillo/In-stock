@@ -7,19 +7,26 @@ import './WarehousesList.scss';
 
 class WarehousesList extends Component {
     state ={
-               
+        warehousesInfo: [],      
+
     }
        
     getWarehousesList = () => {
         axios
             .get(`http://localhost:8080/warehouses/`)
-            .then(res => console.log(res.data))        
-    }    
+            .then(res => {
+                        this.setState({                        
+                        warehousesInfo: res.data
+                    })                
+            })                  
+    }   
         
     componentDidMount() {
-        this.getWarehousesList();        
-    }    
-
+        this.getWarehousesList();
+               
+    }
+    
+    
     render() {
         return (
             <div className="container">
@@ -45,7 +52,19 @@ class WarehousesList extends Component {
                     </div>
 
                     <WarehousesTitle />
-                    <WarehousesCard />
+
+                    {this.state.warehousesInfo.map(data => 
+                    <WarehousesCard 
+                        key={data.id} 
+                        name={data.name} 
+                        address={data.address} 
+                        city={data.city} 
+                        country={data.country} 
+                        contactname={data.contact.name}
+                        phone={data.contact.phone}
+                        email={data.contact.email}        
+                     />)}
+                    
                 </div>
             </div>
         )
