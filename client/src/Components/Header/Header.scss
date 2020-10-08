@@ -1,5 +1,18 @@
 @import '../../styles/partials/common-styles';
 
+a {
+  text-decoration: none;
+  font-family: "Titillium";
+
+  &:active {
+    color: $secondary-font-color;
+  }
+
+  &:visited {
+    color: $primary-border-color;
+  }
+
+}
 
 .nav {
     width: 23.438rem;
@@ -11,7 +24,7 @@
     width: 100%;
     height: 12.5rem;
     position: relative;
-    font-family: "Titillium Web";
+    font-family: "Titillium";
     
     @include tablet {
       flex-direction: row;
@@ -24,7 +37,7 @@
         padding-top: 1rem;
       
       @include tablet {
-        margin: 0 2rem 5rem 2rem;
+        margin: 0 10rem 5rem 2rem;
         padding-top: 0;
         
       }
@@ -38,7 +51,7 @@
         display: flex;
         justify-content: space-evenly;
         width: 100%;        
-        margin-right: 3rem;
+        margin-right: 2rem;
        
 
         @include tablet {
@@ -52,18 +65,19 @@
       .nav__menu {
         display: flex;
         margin-left: 2rem;
-        padding: 1rem 2rem;
+        padding: 1rem 0;
         color: $secondary-font-color;
         font-size: .813rem;
+        text-decoration: none;
+        
        
       
         @include tablet {
           display: flex;
           justify-content: flex-end;
-          margin-right: 0;
-          margin-right: 2rem;
+          margin-right: 1rem;          
           padding-right: 0rem;
-         
+          font-size: 0.875rem;
           
         }
   
@@ -71,47 +85,56 @@
           width: 10rem;
           padding-right: 2rem;
         }
-  
-        &-button {
-                         
+        
+        
+        &-button {                         
           text-align: center;          
-          border-radius: 1.25rem; 
 
-          @include tablet {
-            
-            margin-left: 50px;
-            text-align: left;
-            width: 50%  
-          }
-  
-          @include desktop {
-            
-            width: 100%;
-            font-size: 16px;
-  
-          }  
-
-          &-warehouses {
+          &--active {
+            color: $secondary-font-color;
             background: $instock-black;
-            padding: .5rem 2rem;   
+            border-radius: 1.25rem; 
+          }
+         
+          &-warehouses {            
+            padding: .5rem 0 .5rem 1rem; 
+            margin-left: 2rem;
+            margin-right: 3rem;
             
-            @include desktop {
+            @include tablet {
+              margin-left: 1rem;
               margin-right: 1rem;
-              width: 10.5rem;
+              padding: .5rem 0;
+            }
+            
+            @include desktop {              
+              margin-right: 0;
+              margin-left: 0;
+              padding-right: 1rem;
+              padding-left: 1.25rem;
+              
             }
 
             
           }
           
           &-inventory {
-            margin-right: 1rem;
-            margin-left: 5rem;
-            margin-top: .5rem; 
-            color: $primary-border-color;
+            margin: .5rem .85rem 0 3rem; 
+            padding: 0 2.5rem 0 .5rem; 
+            
+            
 
             @include tablet {
+              margin: .5rem 0 0 1rem; 
+              padding: 0 1.25rem 0 .5rem;
 
-              margin-left: 1rem;
+
+            }
+
+            @include desktop {
+              margin-top: .5rem;
+              margin-right: 0;
+              margin-left: .75rem;
 
             }
             
