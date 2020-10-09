@@ -26,7 +26,8 @@ class App extends React.Component {
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/> 
           <Route exact path = '/inventory/inventoryDetails' component = {InventoryDetails}/>
           <Route exact path = '/inventory/addInventory' component = {AddInventory}/> 
-          <Route exact path = '/inventory/editInventory' component = {EditInventory}/> 
+          <Route exact path = '/inventory/editInventory/:id' component = {EditInventory}/> 
+          
           {/* <Redirect exact from = '/' to = '/warehouse'/>
           <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouses/:id' component = {WarehouseDetails}/>
