@@ -31,7 +31,7 @@ export default class InventoryModal extends Component {
                         <p className="modal__text">Please confirm that you'd like to delete Television from the inventory list.  You won't be able to undo this action.</p>
                         <button onClick={() => this.closeModal()} className="modal-cancel button">Cancel</button>
                         <button className="modal-delete button">Delete</button>
-                        <a href="javascript:void(0);" onClick={() => this.closeModal()}><img className="close__X" src={closeButton} alt="Close Button" /></a>
+                        <a href="" onClick={() => this.closeModal()}><img className="close__X" src={closeButton} alt="Close Button" /></a>
                     </div>
                 </Modal>
             </section>
