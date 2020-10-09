@@ -7,9 +7,6 @@
     border-color: $stock-background-color;
     border-radius: 20px;
     border: 0;
-    margin-bottom: 1.75vh;
-    margin-left: 1vw;
-    margin-top: 2vh;
     width: 18vw;
     height: 4vh;
 
@@ -21,16 +18,13 @@
         border-color: $stock-background-color;
         border-radius: 20px;
         border: 0;
-        margin-bottom: 1.75vh;
-        margin-left: 1vw;
-        margin-top: 0vh;
         width: 9vw;
         height: 3vw;
     }
 
     @include desktop {
         margin-left: 0;
-        width: 6vw;
+        width: 7vw;
     }
 }
 
@@ -41,10 +35,7 @@
     border-color: rgba(201, 69, 21, 0.07);
     border-radius: 20px;
     border: 0;
-    margin-bottom: 1.75vh;
-    margin-left: 1vw;
-    margin-top: 2vh;
-    width: 18vw;
+    width: 25vw;
     height: 4vh;
 
     @include tablet {
@@ -55,16 +46,13 @@
         border-color: rgba(201, 69, 21, 0.07);
         border-radius: 20px;
         border: 0;
-        margin-bottom: 1.75vh;
-        margin-left: 1vw;
-        margin-top: 0;
-        width: 9vw;
+        width: 12vw;
         height: 3vw;
     }
 
     @include desktop {
         margin-left: 0;
-        width: 6vw;
+        width: 8vw;
     }
 }
 

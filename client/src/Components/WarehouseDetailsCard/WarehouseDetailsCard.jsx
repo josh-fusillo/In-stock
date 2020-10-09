@@ -25,25 +25,27 @@ function WarehouseDetailsCard (props) {
             <div className="warehouseInventory__bottomContainer">
                 <div className="warehouseInventory__groupLeft">
                     <h4 className="warehouseInventory__label">STATUS<img className="warehouseInventory__sort" src={Sort} /></h4>
-                    <Status quantity={props.quantity} />
+                    <div className="warehouseInventory__statusMob"><Status quantity={props.quantity} /></div>
                 </div>
                 <div className="warehouseInventory__groupRight">
                     <h4 className="warehouseInventory__label">QTY<img className="warehouseInventory__sort" src={Sort} /></h4>
                     <p className="warehouseInventory__qty">{props.quantity}</p>
                 </div>
-            </div>   
+                
+            </div>    
+        </div>
             <div className="warehouseInventory__foot">
                 <img src={Delete} alt=""/>
                 <img src={Edit} alt=""/>
             </div>
-        </div>
+        
     
             <div className="warehouseInventoryCard">
                 <div className="warehouseInventoryCard__container">
                     <div className="warehouseInventoryCard__startGroup">
                         <p className="warehouseInventoryCard__item">{props.item}<img src={ChevronRight} /></p>
                         <p className="warehouseInventoryCard__cat">{props.category}</p>
-                        <Status quantity={props.quantity} />
+                        <div className="warehouseInventoryCard__statusOne"><Status quantity={props.quantity} /></div>
                     </div>
                     <div className="warehouseInventoryCard__endGroup">
                         <p className="warehouseInventoryCard__qty">{props.quantity}</p>
@@ -54,6 +56,9 @@ function WarehouseDetailsCard (props) {
                     </div>
                 </div>
             </div>
+
+            
+
             
             <hr className="warehouseBreak"/>
         </>
