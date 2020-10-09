@@ -10,9 +10,10 @@ class WarehouseDetails extends React.Component {
         WarehouseDetails: [
             
         ],
+
         WarehouseInventory: [
             
-        ]
+        ],
     }
 
     

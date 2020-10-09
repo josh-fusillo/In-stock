@@ -46,7 +46,9 @@ export default function InventoryCard (props) {
                     </div>
                     <div className="inventory__card-control">
                         <InventoryModal />
-                        <img src={Edit} alt="Edit icon" />
+                        <Link  to={`/inventory/editinventory/${props.id}`}>
+                            <img src={Edit} alt="Edit icon" />
+                        </Link>
                     </div>
                 </div>
             </div>
