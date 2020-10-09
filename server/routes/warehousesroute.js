@@ -71,28 +71,43 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  const {
-    id,
-    warehouseName
-  } = req.body
-
-  res.json([
-    ...warehouseList,
-    {
-      id,
-      warehouseName,
+  const selected = warehouseList.find (warehouse => warehouse.id === req.params.id);
+  warehouseList.update (
+    {selected},
+    {warehouseName: req.params.name},
+    {overwrite: true},
+    function(err) {
+      if(!err){
+        res.send("Successfully updated article.");
+      }
     }
-  ])
-
-  if (req.body) {
-  warehouseList.replace(req.body);
-  res.send(201).send(warehouseList)
-  console.log(req.body)
-  } else {
-    res.status(400).send ('Error: invalid request body');
-    console.log(req.body)
-  }
+    
+  )
 })
+
+
+  // const {
+  //   id,
+  //   warehouseName
+  // } = req.body
+
+  // res.json([
+  //   ...warehouseList,
+  //   {
+  //     id,
+  //     warehouseName,
+  //   }
+  // ])
+
+//   if (req.body) {
+//   warehouseList.replace(req.body);
+//   res.send(201).send(warehouseList)
+//   console.log(req.body)
+//   } else {
+//     res.status(400).send ('Error: invalid request body');
+//     console.log(req.body)
+//   }
+// })
 
 
 
