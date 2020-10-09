@@ -19,7 +19,6 @@ router.get('/:id', (req, res) => {
     const {
       id,
       warehouseID,
-      warehouseName,
       itemName,
       description,
       category,
@@ -31,7 +30,6 @@ router.get('/:id', (req, res) => {
       {
         id,
         warehouseID,
-        warehouseName,
         itemName,
         description,
         category,
