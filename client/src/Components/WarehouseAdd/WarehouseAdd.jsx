@@ -4,91 +4,97 @@ import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 
-class WarehouseAdd extends React.Component {
 
-state = {
-  list: [],
-  warehouseList: {}
-}
+// class WarehouseAdd extends React.Component {
 
-updateList() {
-  axios.get('http://localhost:8080/warehouses').then(data => {
-    this.setState({
-      list: data.data
-    });
-  });
-}
+function WarehouseAdd(props) {
 
-addWarehouse = event => {
+// state = {
+//   list: [],
+//   warehouseList: {}
+// }
+
+// updateList() {
+//   axios.get('http://localhost:8080/warehouses').then(data => {
+//     this.setState({
+//       list: data.data
+//     });
+//   });
+// }
+
+let addWarehouse = (event) => {
   event.preventDefault();
-    // let addForm = {
-    //   warehouseName: event.target.WarehouseName.value,
-    //   street: event.target.Street.value,
-    //   city: event.target.City.value,
-    //   country: event.target.Country.value,
-    //   contactName: event.target.ContactName.value,
-    //   position: event.target.Position.value,
-    //   phone: event.target.Phone.value,
-    //   email: event.target.Email.value
-    // }
 
-    let warehouseName = event.target.WarehouseName.value;
-    let street = event.target.Street.value;
-    let city = event.target.City.value;
-    let country = event.target.Country.value;
-    let contactName = event.target.ContactName.value;
-    let position = event.target.Position.value;
-    let phone = event.target.Phone.value;
-    let email = event.target.Email.value;
+  // const addWarehouse = () => {
+  //   if (
+  //     !warehouseName ||
+  //     !street
+  //   ) {
+  //     alert('All fields are required unless marked.')
+  //   }
+  // }
+    let addForm = {
+      id: event.target.id.value,
+      warehouseName: event.target.WarehouseName.value,
+      street: event.target.Street.value,
+      city: event.target.City.value,
+      country: event.target.Country.value,
+      contactName: event.target.ContactName.value,
+      position: event.target.Position.value,
+      phone: event.target.Phone.value,
+      email: event.target.Email.value
+    }
   
-  axios
-    .post('http://localhost:8080/warehouses', 
-    {
-      name: warehouseName,
-      street: street,
-      city: city,
-      country: country,
-      contact: {
-        contactName: contactName,
-        position: position,
-        phone: phone,
-        email: email
-      }
-    })
-    .then(console.log(warehouseName, city))
-    // .then (() => {
-    //   axios.get('http://localhost:8080/warehouse')
-    //         // .then(data => {
-    //         //   this.setState({
-    //         //     list: data.data
-    //                 .then(console.log('Success', warehouseName));
 
-    //           // }); 
-    //         }) 
-            .catch((err) => {
-              console.log(err);
-            // })
-    });
-    // .then(console.log('Success', addForm));
+    axios
+    .post('http://localhost:8080/warehouses', addForm)
+    .then (res => {
+      console.log(res.data)
+    })
+    event.target.reset();
 }
 
-componentDidMount() {
-  this.updateList();
-      .then (() => {
-      axios.get('http://localhost:8080/warehouse')
-            .then(data => {
-              this.setState({
-                list: data.data
-                    .then(console.log('Success', warehouseName))
+    // let warehouseName = event.target.WarehouseName.value;
+    // let street = event.target.Street.value;
+    // let city = event.target.City.value;
+    // let country = event.target.Country.value;
+    // let contactName = event.target.ContactName.value;
+    // let position = event.target.Position.value;
+    // let phone = event.target.Phone.value;
+    // let email = event.target.Email.value;
+  
+//   axios
+//     .post('http://localhost:8080/warehouses', 
+//     {
+//       name: warehouseName,
+//       street: street,
+//       city: city,
+//       country: country,
+//       contact: {
+//         contactName: contactName,
+//         position: position,
+//         phone: phone,
+//         email: email
+//       }
+//     })
+//     .then(console.log(warehouseName, city))
+//     // .then (() => {
+//     //   axios.get('http://localhost:8080/warehouse')
+//     //         // .then(data => {
+//     //         //   this.setState({
+//     //         //     list: data.data
+//     //                 .then(console.log('Success', warehouseName));
 
-              }); 
-            }) 
-    .catch((err) => {
-      console.log(err);
-    })
-})}
+//     //           // }); 
+//     //         }) 
+//             .catch((err) => {
+//               console.log(err);
+//             // })
+//     });
+//     // .then(console.log('Success', addForm));
+// }
 
-render() {
+
 return (
   <main>
     <div className = 'wrap'>
@@ -97,7 +103,7 @@ return (
       action='/warehouses'
       name='AddWarehouse'
       method='POST'
-      onSubmit={this.addWarehouse}>
+      onSubmit={addWarehouse}>
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
@@ -120,7 +126,6 @@ return (
                          type='text'
                          name='WarehouseName' 
                          placeholder='Warehouse Name'
-                         value={this.props.warehouseName}
                          required/>
               </div>
 
@@ -130,7 +135,6 @@ return (
                          type='text' 
                          name='Street' 
                          placeholder='Street Address'
-                         value={this.props.street}
                          required/>
               </div>
 
@@ -140,7 +144,6 @@ return (
                          type='text' 
                          name='City' 
                          placeholder='City'
-                         value={this.props.city}
                          required/>
               </div>
 
@@ -150,7 +153,6 @@ return (
                          type='text' 
                          name='Country' 
                          placeholder='Country'
-                         value={this.props.country}
                          required/>
               </div>
       
@@ -170,7 +172,7 @@ return (
                          type='text' 
                          name='ContactName' 
                          placeholder='Contact Name'
-                         value={this.props.contactName}
+                        //  value={this.props.contactName}
                          required/>
               </div>
 
@@ -180,7 +182,6 @@ return (
                          type='text' 
                          name='Position' 
                          placeholder='Position'
-                         value={this.props.position}
                          required/>
               </div>
 
@@ -190,7 +191,6 @@ return (
                          type='text' 
                          name='Phone' 
                          placeholder='Phone Number'
-                         value={this.props.number}
                          required/>
               </div>
               
@@ -200,7 +200,6 @@ return (
                          type='email' 
                          name='Email' 
                          placeholder='Email'
-                         value={this.props.email}
                          required/>
               </div>
           </div>
@@ -215,9 +214,16 @@ return (
         </div>
       {/* </div> */}
     </form>
+
+        <footer className="footer">
+          <div className="footer-cont">
+            <p className="footer-cont__text">© InStock Inc. All Rights Reserved.</p>
+          </div>
+        </footer>
+
     </div>
   </main>
 )
 }
-}
+// }
 export default WarehouseAdd;

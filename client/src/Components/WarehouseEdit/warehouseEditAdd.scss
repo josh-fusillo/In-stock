@@ -288,3 +288,37 @@ main {
      }  
    }
 }
+
+.footer {
+    @include titilliumReg;
+    font-size: 0.6875rem;
+    color: #5C667E;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-cont {
+        width: 370px;
+        height: 16px;
+
+        @include tablet {
+            padding-top: 18em;
+            width: 765px;
+        }
+
+        @include desktop {
+            width: 1285px;
+        }
+
+        &__text {
+            text-align: center;
+            justify-content: center;
+        }
+    }
+}
+
+.input:required {
+    box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);    
+    border: 1px solid red;
+    outline: red;
+  }

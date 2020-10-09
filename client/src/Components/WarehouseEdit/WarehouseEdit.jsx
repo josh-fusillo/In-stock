@@ -28,28 +28,36 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Warehouse Name</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Warehouse Name'/>
+                         placeholder='Warehouse Name'
+                         value={props.warehouseName}
+                         />
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Street Address'/>
+                         placeholder='Street Address'
+                         value={props.street}
+                         />
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>City</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='City'/>
+                         placeholder='City'
+                         value={props.city}
+                         />
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Country</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Country'/>
+                         placeholder='Country'
+                         value={props.country}
+                         />
               </div>
       
           </div>
@@ -64,28 +72,36 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Contact Name</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Contact Name'/>
+                         placeholder='Contact Name'
+                          value={props.contactName}
+                         />
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Position</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Position'/>
+                         placeholder='Position'
+                         value={props.position}
+                         />
               </div>
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
-                         placeholder='Phone Number'/>
+                         placeholder='Phone Number'
+                         value={props.number}
+                         />
               </div>
               
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Email</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='email' 
-                         placeholder='Email'/>
+                         placeholder='Email'
+                         value={props.email}
+                         />
               </div>
           </div>
 
@@ -97,6 +113,13 @@ return (
         </div>
       </div>
     </form>
+
+        <footer className="footer">
+          <div className="footer-cont">
+            <p className="footer-cont__text">© InStock Inc. All Rights Reserved.</p>
+          </div>
+        </footer>
+
     </div>
   </main>
 )
