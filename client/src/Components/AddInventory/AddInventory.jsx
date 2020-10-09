@@ -2,15 +2,39 @@ import React from 'react';
 import './addInventory.scss';
 import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
+import axios from 'axios';
+import uuid from 'uuid';
 
 
 
  function AddInventory(props) {
 
+    let addInventory = (e) => {
+        e.preventDefault();
+        let newItem = {
+          id: 1001,
+          warehouseID: '10001',
+          itemName: e.target.name.value,
+          description: e.target.description.value,
+          category: 'gear',
+          status: 'in-stock',
+          quantity: '0',
+          
+        }
+  
+        axios
+        .post('/inventory', newItem)
+        
+        .then (res=> {
+            console.log(res.data)
+        })
+        e.target.reset();
+    }
+
     return (
 
         <main>
-            <form className="add" onSubmit={props.AddInventory}>
+            <form className="add" onSubmit={addInventory}>
 
                 <div className="add-head" >
                     <h1 className="add-head__header"> <Link to='/warehouse/inventoryList' alt='inventory-list'> <img src= {arrowLogo} alt="return-logo"/> </Link>Add New Inventory Item</h1>

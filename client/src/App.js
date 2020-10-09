@@ -2,10 +2,6 @@ import React from 'react';
 import './App.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header';
-<<<<<<< HEAD
-import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
-=======
->>>>>>> developer
 import InventoryList from './Components/InventoryList/InventoryList';
 import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
