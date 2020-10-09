@@ -76,8 +76,9 @@ main {
                             font-size: $m-h3-font-size;
 
                             @include tablet {
-                            font-size: $h3-font-size;                        }
-                            }   
+                            font-size: $h3-font-size;
+                            }
+                        }   
             
                         &-input {
                             border-radius: 20px;

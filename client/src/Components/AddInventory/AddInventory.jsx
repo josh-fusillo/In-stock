@@ -7,7 +7,7 @@ import uuid from 'uuid';
 
 
 
- function AddInventory(props) {
+ function AddInventory() {
 
     let addInventory = (e) => {
         e.preventDefault();
@@ -18,8 +18,7 @@ import uuid from 'uuid';
           description: e.target.description.value,
           category: 'gear',
           status: 'in-stock',
-          quantity: '0',
-          
+          quantity: '0',   
         }
   
         axios
