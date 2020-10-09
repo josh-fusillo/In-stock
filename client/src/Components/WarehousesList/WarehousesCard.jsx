@@ -109,8 +109,8 @@ export default function WarehousesCard (props) {
                         <WarehouseModal 
                             whModel={props.whData}
                             visible={props.visible} 
-                            closeModal={props.closeModal}
                             openModal={props.openModal}
+                            closeModal={() => {props.closeModal()}}
                         />
                         {/* check warehouseId */}
                         {/* <img src={Delete} alt="Edit icon" onClick={deleteWarehouse.bind(this, props.warehouseId)} /> */}

@@ -35,11 +35,13 @@ class WarehousesList extends Component {
         });
     }
 
-    closeModal = (id, itemName) => {
+    closeModal = (event, id, itemName) => {
+        // event.preventDefault();
+        console.log(event, id, itemName);
         this.setState({
             currentId: id,
             currentItemName: itemName,
-            visible: false
+            visible: false,
         });
     }
     
@@ -94,7 +96,7 @@ class WarehousesList extends Component {
                         // phone={data.contact.phone}
                         // email={data.contact.email} 
                         whData={data} 
-                        closeModal={this.closeModal}
+                        closeModal={() => {this.closeModal()}}
                         openModal={this.openModal}   
                         visible={this.state.visible}  
                      />)}
