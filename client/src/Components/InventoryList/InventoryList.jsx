@@ -1,9 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import IconSearch from '../Icons/IconSearch';
 import InventoryTitle from './InventoryTitle';
 import InventoryCard from './InventoryCard';
 import './InventoryList.scss';
+
 
 export default class InventoryList extends Component {
     state ={
@@ -34,11 +36,11 @@ export default class InventoryList extends Component {
     componentDidMount() {
         this.getInventoryList();
          this.getWarehousesList();        
-    }    
-    
+    } 
 
     render() {
         return (
+     
             <div className="container">
                 <div className="inventory">
                     <div className="inventory__card-wrapper wrapper">
@@ -53,9 +55,13 @@ export default class InventoryList extends Component {
                                     className="inventory__search-input" />
                                     <IconSearch />
                                 </div>
-                                    <div className="inventory__add-btn btn-large">
-                                        + Add New Item
-                                    </div>
+                                    <Link to="/inventory/addInventory">
+                                        <div className="inventory__add-btn btn-large">
+                                
+                                            + Add New Item
+                                    
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -66,6 +72,7 @@ export default class InventoryList extends Component {
                     {this.state.inventoryInfo.map(data => 
                     <InventoryCard 
                        key={data.id}
+                       id={data.id}
                        warehouseID={data.warehouseID}
                        warehouseName={data.warehouseName}
                        itemname={data.itemName} 

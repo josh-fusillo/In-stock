@@ -1,18 +1,43 @@
 import React from 'react';
 import './addInventory.scss';
+import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
+import axios from 'axios';
+import uuid from 'uuid';
 
 
 
  function AddInventory(props) {
 
+    let addInventory = (e) => {
+        e.preventDefault();
+        let newItem = {
+          id: 1001,
+          warehouseID: '10001',
+          itemName: e.target.name.value,
+          description: e.target.description.value,
+          category: 'gear',
+          status: 'in-stock',
+          quantity: '0',
+          
+        }
+  
+        axios
+        .post('/inventory', newItem)
+        
+        .then (res=> {
+            console.log(res.data)
+        })
+        e.target.reset();
+    }
+
     return (
 
         <main>
-            <form className="add">
+            <form className="add" onSubmit={addInventory}>
 
                 <div className="add-head" >
-                    <h1 className="add-head__header"> <img src= {arrowLogo} alt="return-logo"/> Add New Inventory Item</h1>
+                    <h1 className="add-head__header"> <Link to='/warehouse/inventoryList' alt='inventory-list'> <img src= {arrowLogo} alt="return-logo"/> </Link>Add New Inventory Item</h1>
                 </div>
 
                 <div className="add-inventory">
@@ -22,12 +47,12 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
                         
                         <div className="add-inventory__details-item">
                             <label className="add-inventory__details-item-label">Item Name</label>
-                            <input className="add-inventory__details-item-input" type="text" placeholder="Item Name"/>
+                            <input className="add-inventory__details-item-input" type="text" name="name" placeholder="Item Name"/>
                         </div>
             
                         <div className="add-inventory__details-description">
                             <label className="add-inventory__details-description-label">Description</label>
-                            <textarea className="add-inventory__details-description-input" type="text" placeholder="Please enter a brief item description"/>
+                            <textarea className="add-inventory__details-description-input" type="text" name="description" placeholder="Please enter a brief item description"/>
                         </div>
 
                         <div className="add-inventory__details-select">
@@ -48,12 +73,12 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 
                             <div className="add-inventory__availability-status-options">
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" type="radio"/>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">In Stock</label>
                                 </div>
 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" type="radio"/>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
@@ -77,7 +102,7 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 
                 <div className="add-buttons">
                     <button className="add-buttons__cancel"> Cancel </button>
-                    <button className="add-buttons__add"> + Add Item </button>
+                    <button className="add-buttons__add" type="submit"> + Add Item </button>
                 </div>
                 
             </form>
