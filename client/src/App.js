@@ -37,6 +37,7 @@ class App extends React.Component {
         <Route exact path = '/warehouse/warehouseList' component = {WarehousesList}/>
         <Route exact path = '/inventory/warehouseinventoryList' component = {WarehouseInventoryList}/>
         {/* <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/> */}
+        <Route exact path = '/' component = {WarehousesList}/>
 
       </BrowserRouter>
      </div>
