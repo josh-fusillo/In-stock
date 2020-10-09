@@ -6,13 +6,20 @@ const warehouseList = require('../data/warehouses.json');
 
 router.get("/", (_req, res) => {res.json(warehouseList)});
 
-// router.get("/warehouses/:warehouseid", (req, res) => {
-//     const selectedWarehouse = warehouseList.find(warehouse => warehouse.id === req.params.id);
-//     res.json({
-//         city:selectedWarehouse.city
-//         // selectedWarehouse
-//     })
-//     console.log(req.params.id)
-// });
+router.get('/:id', (req, res) => {
+    const selected = warehouseList.find (warehouse => warehouse.id === req.params.id);
+    console.log(req)
+    res.json({
+      id: selected.id,
+      name: selected.contact.name,
+      warehouse: selected.name,
+      position: selected.contact.position,
+      address: selected.address,
+      city: selected.city,
+      country: selected.country,
+      email: selected.contact.email,
+      phone: selected.contact.phone
+    })
+  })
 
 module.exports = router;

@@ -1,5 +1,6 @@
 import React from 'react';
 import IconRight from '../Icons/IconRight';
+import {Link} from 'react-router-dom';
 import InventoryModal from '../Modals/InventoryModal';
 import Edit from '../../assets/Icons/edit-24px.svg';
 
@@ -13,9 +14,9 @@ export default function InventoryCard (props) {
                             <div className="inventory__card-detail-info--cl2">
                                 <div className="inventory__card-detail-item inventory__card-detail-item-nametype">
                                     <div className="inventory__card-detail-label">inventory item</div>
-                                    <div className="inventory__card-detail-text inventory__card-detail-name">
+                                    <Link to={`/inventory/${props.id}`}><div className="inventory__card-detail-text inventory__card-detail-name">
                                         {props.itemname} <IconRight />
-                                    </div>
+                                    </div></Link>
                                 </div>
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-type">
@@ -37,7 +38,7 @@ export default function InventoryCard (props) {
 
                                 <div className="inventory__card-detail-item inventory__card-detail-item-location">
                                     <div className="inventory__card-detail-label">warehouse</div>
-                                    <div className="inventory__card-detail-text">Manhattan</div>
+                                    <div className="inventory__card-detail-text">{props.warehouseName}</div>
                                 </div>
                             </div>
                             

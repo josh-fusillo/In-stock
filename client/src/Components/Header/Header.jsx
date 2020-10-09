@@ -1,6 +1,9 @@
-import React from 'react'
-import logo from '../../assets/Logo/InStock-Logo.svg'
-import './Header.scss'
+import React from 'react';
+import logo from '../../assets/Logo/InStock-Logo.svg';
+import './Header.scss';
+import { NavLink } from 'react-router-dom';
+
+
 
 export default function Header() {
     return (
@@ -10,8 +13,12 @@ export default function Header() {
             </div>
             <div className="nav__container">
                 <div className=" nav__menu">
-                    <div className="nav__menu-button nav__menu-button-warehouses">Warehouses</div>                
-                    <div className="nav__menu-button nav__menu-button-inventory">Inventory</div>                
+                  <NavLink to="/warehouse/warehouseList" activeClassName="nav__menu-button--active">
+                      <div className="nav__menu-button nav__menu-button-warehouses">Warehouses</div>
+                    </NavLink>   
+                    <NavLink to="/warehouse/inventoryList" activeClassName="nav__menu-button--active">             
+                        <div className="nav__menu-button nav__menu-button-inventory" activeClassName="nav__menu-button--active">Inventory</div> 
+                    </NavLink>               
                 </div>
             </div>
         </div>
