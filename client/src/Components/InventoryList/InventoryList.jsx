@@ -1,10 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import IconSearch from '../Icons/IconSearch';
 import InventoryTitle from './InventoryTitle';
 import InventoryCard from './InventoryCard';
 import './InventoryList.scss';
 import FilterResults from 'react-filter-search';
+
 
 export default class InventoryList extends Component {
     state = {
@@ -25,6 +27,7 @@ export default class InventoryList extends Component {
 
     componentDidMount() {
         this.getInventoryList();
+
         
     }
 
@@ -34,9 +37,11 @@ export default class InventoryList extends Component {
     };
 
 
+         
     render() {
         const { inventoryInfo, value } = this.state;
         return (
+     
             <div className="container">
                 <div className="inventory">
                     <div className="inventory__card-wrapper wrapper">
@@ -51,11 +56,15 @@ export default class InventoryList extends Component {
                                             onChange={this.handleChange}
                                             placeholder="Search ..."
                                             className="inventory__search-input" />
-                                        <IconSearch />
-                                    </div>
-                                    <div className="inventory__add-btn btn-large">
-                                        + Add New Item
-                                    </div>
+                                        <IconSearch />                                   
+                                        </div>           
+                                  
+                               
+                                    <Link to="/inventory/addInventory">
+                                        <div className="inventory__add-btn btn-large">                                
+                                            + Add New Item                                    
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
