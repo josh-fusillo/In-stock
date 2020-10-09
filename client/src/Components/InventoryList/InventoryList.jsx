@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import uuid from 'uuid';
 import IconSearch from '../Icons/IconSearch';
 import InventoryTitle from './InventoryTitle';
 import InventoryCard from './InventoryCard';
+import AddInventory from '../AddInventory/AddInventory';
+import {Route, Switch, Link} from 'react-router-dom'
 import './InventoryList.scss';
+
 
 export default class InventoryList extends Component {
     state ={
@@ -34,11 +38,46 @@ export default class InventoryList extends Component {
     componentDidMount() {
         this.getInventoryList();
          this.getWarehousesList();        
-    }    
+    } 
+
+    addInventory = (e) => {
+        e.preventDefault();
+        let newItem = {
+          id: 1001,
+          warehouseID: e.target.title.value,
+          itemName: e.target.name.value,
+          description: e.target.description,
+          category: 'gear',
+          status: e.target.description,
+          quantity: '0',
+          
+        }
+  
+        axios
+        .post('/inventory', newItem)
+        
+        .then (res=> {
+            console.log(res.data)
+          this.setState({
+            inventoryInfo: res.data
+       
+        
+          })
+        })
+        e.target.reset();
+      }
+      componentDidUpdate () {
+          this.addInventory();
+      }
+    
+    
     
 
     render() {
         return (
+     
+            <Switch>
+                <Route exact path="/inventory/addInventory" render = {()=> <AddInventory addInventory = {this.addInventory} />}/>
             <div className="container">
                 <div className="inventory">
                     <div className="inventory__card-wrapper wrapper">
@@ -53,9 +92,13 @@ export default class InventoryList extends Component {
                                     className="inventory__search-input" />
                                     <IconSearch />
                                 </div>
-                                    <div className="inventory__add-btn btn-large">
-                                        + Add New Item
-                                    </div>
+                                    <Link to="/inventory/addInventory">
+                                        <div className="inventory__add-btn btn-large">
+                                
+                                            + Add New Item
+                                    
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -74,6 +117,7 @@ export default class InventoryList extends Component {
                     />)}
                 </div>
             </div>
+            </Switch>
         )
     }
 }
