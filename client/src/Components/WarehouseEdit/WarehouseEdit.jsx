@@ -2,12 +2,41 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
+import axios from 'axios';
 
 function WarehouseEdit(props) {
+  let editWarehouse = (event) => {
+    event.preventDefault();
+
+    let editForm = {
+      id: event.target.id.value,
+      warehouseName: event.target.WarehouseName.value,
+      street: event.target.Street.value,
+      city: event.target.City.value,
+      country: event.target.Country.value,
+      contactName: event.target.ContactName.value,
+      position: event.target.Position.value,
+      phone: event.target.Phone.value,
+      email: event.target.Email.value
+    }
+
+  axios  
+  .put(`http://localhost:8000/warehouses/${props.id}`, editForm)
+  .then (res => {
+    console.log(res.data)
+  })
+  event.target.reset();
+}
+
+
 return (
   <main>
     <div className = 'wrap'>
-    <form className = 'add'>
+    <form className = 'add'
+          action='/warehouses/{{props.id}}?_method=PUT'
+          name='EditWarehouse'
+          method='POST'
+          onSubmit={editWarehouse}>
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
@@ -27,6 +56,7 @@ return (
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Warehouse Name</label>
                   <input className = 'add-warehouse__details-info-input' 
+                         name = 'WarehouseName'
                          type='text' 
                          placeholder='Warehouse Name'
                          value={props.warehouseName}
@@ -37,6 +67,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Street Address</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'Street'
                          placeholder='Street Address'
                          value={props.street}
                          />
@@ -46,6 +77,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>City</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'City'
                          placeholder='City'
                          value={props.city}
                          />
@@ -55,6 +87,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Country</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'Country'
                          placeholder='Country'
                          value={props.country}
                          />
@@ -72,6 +105,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Contact Name</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'ContactName'
                          placeholder='Contact Name'
                           value={props.contactName}
                          />
@@ -81,6 +115,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Position</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'Position'
                          placeholder='Position'
                          value={props.position}
                          />
@@ -90,6 +125,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Phone Number</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='text' 
+                         name = 'Phone'
                          placeholder='Phone Number'
                          value={props.number}
                          />
@@ -99,6 +135,7 @@ return (
                   <label className = 'add-warehouse__details-info-label'>Email</label>
                   <input className = 'add-warehouse__details-info-input' 
                          type='email' 
+                         name = 'Email'
                          placeholder='Email'
                          value={props.email}
                          />

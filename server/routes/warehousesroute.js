@@ -4,8 +4,10 @@ const warehouseList = require('../data/warehouses.json');
 const uuid = require ('uuid');
 const bodyParser = require ('body-parser');
 const { ESRCH } = require("constants");
+const methodOverride = require ('method-override');
 
 router.use(bodyParser.json());
+router.use(methodOverride('_method'))
 
 // Get request for all warehouse 
 router.get("/", (_req, res) => {res.json(warehouseList)});
@@ -67,6 +69,82 @@ router.post('/', (req, res) => {
     console.log(req.body)
   }
 })
+
+router.put('/:id', (req, res) => {
+  const {
+    id,
+    warehouseName
+  } = req.body
+
+  res.json([
+    ...warehouseList,
+    {
+      id,
+      warehouseName,
+    }
+  ])
+
+  if (req.body) {
+  warehouseList.replace(req.body);
+  res.send(201).send(warehouseList)
+  console.log(req.body)
+  } else {
+    res.status(400).send ('Error: invalid request body');
+    console.log(req.body)
+  }
+})
+
+
+
+
+
+  // warehouseList.update(req.params.name
+  //   // {warehouse: req.params.name},
+  //   // {overwrite: true}
+  //   ).then(warehouseList => {res.redirect(`/${req.params.id}`)
+  //   if(!err){
+  //     res.send("Successfully updated article.");
+  //   }
+  // })
+  //   }
+  // )
+
+
+
+
+//  models.warehouseList.find(req.params.id).then(warehouseList => {
+//    warehouseList.update(req.body).then(warehouseList => {
+//      res.redirect(`/${req.params.id}`);
+//    }).catch((err) => {
+//      console.log(err);
+//    });
+//  }).catch((err) => {
+//    console.log(err)
+//  })
+// })
+    // {warehouseName: req.body.warehouse.name},
+    // {warehouse: req.params.name},
+
+
+//     {
+//       id: req.params.id,
+//       warehouseName,
+//       street,
+//       city,
+//       country,
+//       contactName,
+//       position,
+//       phone,
+//       email
+//     },
+//     {overwrite: true},
+//     function(err) {
+//       if(!err){
+//         res.send("Successfully updated article.");
+//       }
+//     }
+    
+//   );
 
 
 
