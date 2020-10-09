@@ -6,6 +6,10 @@ import React from 'react'
 import {Link} from 'react-router-dom';
 
 
+const deleteWarehouse = (houseId) => {
+    console.log(houseId);
+};
+
 export default function WarehousesCard (props) {    
         return (
             <div className="warehouses__card-container wrapper">
@@ -38,7 +42,9 @@ export default function WarehousesCard (props) {
                         </div>
                     </div>
                     <div className="warehouses__card-control">
-                        <WarehouseModal />
+                        {/* <WarehouseModal /> */}
+                        {/* check warehouseId */}
+                        <img src={Delete} alt="Edit icon" onClick={deleteWarehouse.bind(this, props.warehouseId)} />
                         <img src={Edit} alt="Edit icon" />
                     </div>
                 </div>
