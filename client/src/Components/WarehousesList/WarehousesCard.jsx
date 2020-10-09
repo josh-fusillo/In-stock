@@ -7,10 +7,6 @@ import {Link} from 'react-router-dom';
 import WarehousesCardInfo from './WarehousesCardInfo';
 
 
-// const deleteWarehouse = (houseId) => {
-//     console.log(houseId);
-// };
-
 // import React, { Component } from 'react';
 
 // class WarehousesCard extends Component {
@@ -59,7 +55,7 @@ import WarehousesCardInfo from './WarehousesCardInfo';
 
 // export default WarehousesCard;
 
-export default function WarehousesCard (props) {
+export default function WarehousesCard (props, onRemoveWh) {
         return (
             <div className="warehouses__card-container wrapper">
                 <div className="warehouses__card-content-wrapper">
@@ -108,9 +104,10 @@ export default function WarehousesCard (props) {
                         {/* <WarehouseModal currentId={props.whDate.id} currentItemName={props.whDate.name} /> */}
                         <WarehouseModal 
                             whModel={props.whData}
-                            visible={props.visible} 
-                            openModal={props.openModal}
-                            closeModal={() => {props.closeModal()}}
+                            onRemoveWh={onRemoveWh}
+                            // visible={props.visible} 
+                            // openModal={props.openModal}
+                            // closeModal={() => {props.closeModal()}}
                         />
                         {/* check warehouseId */}
                         {/* <img src={Delete} alt="Edit icon" onClick={deleteWarehouse.bind(this, props.warehouseId)} /> */}

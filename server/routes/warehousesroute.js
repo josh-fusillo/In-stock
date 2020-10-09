@@ -22,4 +22,13 @@ router.get('/:id', (req, res) => {
     })
   })
 
+// delete a warehouse
+router.delete("/:id", (req, res) => {
+  const warehouseID = warehouseList.some(warehouse => warehouse.id === req.params.id);
+  
+  if(warehouseID){
+    res.json(warehouseList.splice((warehouse) => warehouse))
+  }
+})
+
 module.exports = router;

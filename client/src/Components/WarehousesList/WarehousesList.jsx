@@ -7,10 +7,8 @@ import './WarehousesList.scss';
 
 class WarehousesList extends Component {
     state ={
-        warehousesInfo: [],      
-        currentId: null,
-        currentItemName: "",
-        visible: false
+        warehousesInfo: [],
+        currentId: null
     }
        
     getWarehousesList = () => {
@@ -22,27 +20,40 @@ class WarehousesList extends Component {
                     })                
             })                  
     }   
-        
+    
+    onRemoveModel = () => {
+        this.setState({
+            currentId: null
+        })
+    }
+    
+    // handleRemove = () => {
+    //     const id = this.state.currentId;
+    //     axios
+    //         .delete(`http://localhost:8080/warehouses/${id}`)
+    //         .then(res => {
+    //             console.log(res);
+    //             this.onRemoveModel();
+    //     })
+    // }
+
+    handleRemove = async () => {
+        try{
+            const id = this.state.currentId;
+            await axios.delete(`http://localhost:8080/warehouses/${id}`);
+            this.getWarehousesList();
+            this.onRemoveModel();
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     componentDidMount() {
         this.getWarehousesList();               
     }
 
-    openModal = (id, itemName) => {
-        this.setState({
-            currentId: id,
-            currentItemName: itemName,
-            visible: true
-        });
-    }
-
-    closeModal = (event, id, itemName) => {
-        // event.preventDefault();
-        console.log(event, id, itemName);
-        this.setState({
-            currentId: id,
-            currentItemName: itemName,
-            visible: false,
-        });
+    componentDidUpdate() {
+        this.handleRemove();
     }
     
     render() {
@@ -95,10 +106,9 @@ class WarehousesList extends Component {
                         // contactname={data.contact.name}
                         // phone={data.contact.phone}
                         // email={data.contact.email} 
-                        whData={data} 
-                        closeModal={() => {this.closeModal()}}
-                        openModal={this.openModal}   
-                        visible={this.state.visible}  
+                        whData = {data}
+                        onRemoveWh = {this.handleRemove} 
+                        onRemoveModel = {this.onRemoveModel}  
                      />)}
                     
                 </div>
