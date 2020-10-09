@@ -6,24 +6,87 @@ import axios from 'axios';
 
 class WarehouseAdd extends React.Component {
 
+state = {
+  list: [],
+  warehouseList: {}
+}
+
+updateList() {
+  axios.get('http://localhost:8080/warehouses').then(data => {
+    this.setState({
+      list: data.data
+    });
+  });
+}
+
 addWarehouse = event => {
   event.preventDefault();
-  let addForm = {
-    warehouseName: event.target.WarehouseName.value,
-    street: event.target.Street.value,
-    city: event.target.City.value,
-    country: event.target.Country.value,
-    contactName: event.target.ContactName.value,
-    position: event.target.Position.value,
-    phone: event.target.Phone.value,
-    email: event.target.Email.value
-  };
-  console.log(event.target.WarehouseName.value);
+    // let addForm = {
+    //   warehouseName: event.target.WarehouseName.value,
+    //   street: event.target.Street.value,
+    //   city: event.target.City.value,
+    //   country: event.target.Country.value,
+    //   contactName: event.target.ContactName.value,
+    //   position: event.target.Position.value,
+    //   phone: event.target.Phone.value,
+    //   email: event.target.Email.value
+    // }
 
+    let warehouseName = event.target.WarehouseName.value;
+    let street = event.target.Street.value;
+    let city = event.target.City.value;
+    let country = event.target.Country.value;
+    let contactName = event.target.ContactName.value;
+    let position = event.target.Position.value;
+    let phone = event.target.Phone.value;
+    let email = event.target.Email.value;
+  
   axios
-    .post('/warehouses', addForm)
-    .then(console.log('Success', addForm));
+    .post('http://localhost:8080/warehouses', 
+    {
+      name: warehouseName,
+      street: street,
+      city: city,
+      country: country,
+      contact: {
+        contactName: contactName,
+        position: position,
+        phone: phone,
+        email: email
+      }
+    })
+    .then(console.log(warehouseName, city))
+    // .then (() => {
+    //   axios.get('http://localhost:8080/warehouse')
+    //         // .then(data => {
+    //         //   this.setState({
+    //         //     list: data.data
+    //                 .then(console.log('Success', warehouseName));
+
+    //           // }); 
+    //         }) 
+            .catch((err) => {
+              console.log(err);
+            // })
+    });
+    // .then(console.log('Success', addForm));
 }
+
+componentDidMount() {
+  this.updateList();
+      .then (() => {
+      axios.get('http://localhost:8080/warehouse')
+            .then(data => {
+              this.setState({
+                list: data.data
+                    .then(console.log('Success', warehouseName))
+
+              }); 
+            }) 
+    .catch((err) => {
+      console.log(err);
+    })
+})}
 
 render() {
 return (
