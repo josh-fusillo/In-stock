@@ -2,6 +2,7 @@ import React from 'react';
 import './InventoryDetailsCard.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import EditWhite from '../../assets/Icons/edit-24px-white.svg';
+import Status from '../Status/Status';
 
 function InventoryDetailsCard (props) {
     return (
@@ -30,7 +31,7 @@ function InventoryDetailsCard (props) {
                 <div className="inventoryDetails__middleContainer">
                     <div className="inventoryDetails__groupLeft">
                         <h4 className="inventoryDetails__label">STATUS</h4>
-                        <button className="inventoryDetails__status">{props.status}</button>
+                        <Status quantity={props.quantity} />
                     </div>
                     <div className="inventoryDetails__middleGroupRight">
                         <h4 className="inventoryDetails__label">QUANTITY</h4>

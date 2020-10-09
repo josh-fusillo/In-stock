@@ -4,6 +4,7 @@
     width: 91%;
     color: $primary-border-color;
     margin-left: 4%;
+    display: none;
 
     @include tablet {
         margin-bottom: 0vh;
@@ -144,6 +145,10 @@
 .warehouseInventory {
 
     display: flex;
+    border-bottom: 1px solid $primary-border-color;
+    width: 91%;
+    margin-left: 4vw;
+    padding-bottom: 2vh;
 
     @include tablet {
         display: none;
@@ -159,6 +164,7 @@
         text-align: left;
         margin-left: 22vw;
         margin-top: 1vh;
+        
     }
 
     &__label {
@@ -325,6 +331,7 @@
     @include tablet {
         display: block;
         margin-left: 9vw;
+        border-bottom: 1px solid $primary-border-color;
     }
 
     &__container {

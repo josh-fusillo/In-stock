@@ -1,5 +1,15 @@
 @import '../../styles/partials/common-styles';
 
+.warehouseInfoBreakStyle {
+    width: 91%;
+    color: $primary-border-color;
+    margin-left: 4%;
+
+    @include tablet {
+        margin-bottom: 0vh;
+    }
+}
+
 .warehouseHeader {
     display: flex;
     align-items: center;
