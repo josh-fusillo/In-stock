@@ -10,7 +10,13 @@ router.get('/:id', (req, res) => {
     const selected = inventoryList.find (item => item.id === req.params.id);
     console.log(req)
     res.json({
-    selected
+    itemName: selected.itemName,
+    id: selected.id,
+    description: selected.description,
+    category: selected.category,
+    status: selected.status,
+    quantity: selected.quantity,
+    warehouse: selected.warehouseName
     })
   })
 
