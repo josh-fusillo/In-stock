@@ -15,7 +15,7 @@ class InventoryDetails extends React.Component {
                 this.setState({
                     item : res.data
                 })
-            })
+            })  
     }
 
     componentDidMount() {
