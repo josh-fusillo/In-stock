@@ -4,6 +4,7 @@
     width: 91%;
     color: $primary-border-color;
     margin-left: 4%;
+    display: none;
 
     @include tablet {
         margin-bottom: 0vh;
@@ -107,7 +108,7 @@
 
     &__containerRight {
         text-align: left;
-        margin-left: 13%;
+        margin-left: 13vw;
 
         @include tablet {
             margin-left: 6vw;
@@ -144,6 +145,9 @@
 .warehouseInventory {
 
     display: flex;
+    // border-bottom: 1px solid $primary-border-color;
+    width: 91%;
+    margin-left: 5vw;
 
     @include tablet {
         display: none;
@@ -151,7 +155,7 @@
 
     &__topContainer {
         text-align: left;
-        margin-left: 9%;
+        padding-left: 4vw;
         margin-top: 1vh;
     }
 
@@ -159,6 +163,7 @@
         text-align: left;
         margin-left: 22vw;
         margin-top: 1vh;
+        
     }
 
     &__label {
@@ -185,19 +190,13 @@
         font-size: $m-p-font-size;
         color: $instock-indigo;
         margin: 0;
-        margin-bottom: 2vh;
+        margin-bottom: 3vh;
         display: flex;
     }
 
-    &__status {
+    &__statusMob {
         @include titilliumReg;
-        font-size: $m-h4-font-size;
-        color: $stock-color;
-        background-color: $stock-background-color;
-        border-color: $stock-background-color;
-        border-radius: 20px;
-        border: 0;
-        margin-bottom: 1.75vh;
+        margin-bottom: 3vh;
     }
 
     &__cat {
@@ -205,6 +204,8 @@
         font-size: $m-p-font-size;
         color: $instock-black;
         margin: 0;
+        margin-right: 4vw;
+        margin-left: 0;
     }
 
     &__qty {
@@ -218,9 +219,14 @@
         display: flex;
         justify-content: space-between;
         margin-left: 8vw;
-        margin-right: 8vw;
-        margin-top: 2vh;
+        padding-right: 8vw;
+        margin-top: 3vh;
         margin-bottom: 3vh;
+        border-bottom: 1px solid $primary-border-color;
+        width: 91%;
+        margin-left: 5vw;
+        padding-bottom: 4vh;
+        padding-left: 4vw;
 
         @include tablet {
             display: none;
@@ -324,7 +330,10 @@
 
     @include tablet {
         display: block;
-        margin-left: 9vw;
+        margin-left: 4vw;
+        border-bottom: 1px solid $primary-border-color;
+        width: 91%;
+        padding-left: 5vw;
     }
 
     &__container {
@@ -338,6 +347,11 @@
         @include tablet{ 
             display: flex;
             align-items: center;
+            width: 57vw;
+        }
+
+        @include desktop {
+            width: 53.5vw;
         }
     }
 
@@ -346,10 +360,10 @@
         @include tablet {
             display: flex;
             align-items: center;
-            margin-left: 17vw;
         }
 
         @include desktop {
+            width: 27vw;
         }
     }
 
@@ -363,6 +377,12 @@
             display: flex;
             margin-right: 6vw;
             margin-top: 2vh;
+            width: 16vw;
+        }
+
+        @include desktop {
+            width: 13vw;
+            margin-right: 4vw;
         }
     }
 
@@ -372,26 +392,19 @@
             font-size: $p-font-size;
             color: $instock-black;
             margin: 0;
-            margin-left: 2.5vw;
+            margin-left: -2.75vw;
+            width: 14vw;
         }
 
         @include desktop {
-            margin-left: 3.5vw;
+            margin-left: -1vw;
+            width: 5vw;
         }
     }
 
-    &__status {
+    &__statusOne {
         @include tablet {
             @include titilliumReg;
-            font-size: $m-h4-font-size;
-            color: $stock-color;
-            background-color: $stock-background-color;
-            border-color: $stock-background-color;
-            border-radius: 20px;
-            border: 0;
-            margin-bottom: 1.75vh;
-            margin-left: 8vw;
-            margin-top: 2vh;
         }
 
         @include desktop {
@@ -405,21 +418,23 @@
             font-size: $p-font-size;
             color: $instock-black;
             margin: 0;
+            text-align: left;
+            padding-left: 0;
+            width: 14vw;
         }
 
         @include desktop {
+            margin-right: 10vw;
         }
     }
 
     &__actions {
         @include tablet {
-            margin-left: 10vw;
             display: flex;
             justify-content: space-between;
         }
 
         @include desktop {
-            margin-left: 18vw;
         }
     }
 
