@@ -26,7 +26,7 @@ import uuid from 'uuid';
         .post('/inventory', newItem)
         
         .then (res=> {
-            console.log(res.data)
+            // console.log(res.data)
         })
         e.target.reset();
     }
