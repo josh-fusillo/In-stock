@@ -8,7 +8,9 @@ import './WarehousesList.scss';
 class WarehousesList extends Component {
     state ={
         warehousesInfo: [],      
-
+        currentId: null,
+        currentItemName: "",
+        visible: false
     }
        
     getWarehousesList = () => {
@@ -24,7 +26,22 @@ class WarehousesList extends Component {
     componentDidMount() {
         this.getWarehousesList();               
     }
-    
+
+    openModal = (id, itemName) => {
+        this.setState({
+            currentId: id,
+            currentItemName: itemName,
+            visible: true
+        });
+    }
+
+    closeModal = (id, itemName) => {
+        this.setState({
+            currentId: id,
+            currentItemName: itemName,
+            visible: false
+        });
+    }
     
     render() {
         return (
@@ -52,7 +69,7 @@ class WarehousesList extends Component {
 
                     <WarehousesTitle />
 
-                    {this.state.warehousesInfo.map(data => 
+                    {/* {this.state.warehousesInfo.map(data => 
                     <WarehousesCard 
                         key={data.id} 
                         warehouseId={data.id}
@@ -63,6 +80,23 @@ class WarehousesList extends Component {
                         contactname={data.contact.name}
                         phone={data.contact.phone}
                         email={data.contact.email}        
+                     />)} */}
+
+                    {this.state.warehousesInfo.map(data => 
+                    <WarehousesCard 
+                        // key={data.id} 
+                        // warehouseId={data.id}
+                        // name={data.name} 
+                        // address={data.address} 
+                        // city={data.city} 
+                        // country={data.country} 
+                        // contactname={data.contact.name}
+                        // phone={data.contact.phone}
+                        // email={data.contact.email} 
+                        whData={data} 
+                        closeModal={this.closeModal}
+                        openModal={this.openModal}   
+                        visible={this.state.visible}  
                      />)}
                     
                 </div>

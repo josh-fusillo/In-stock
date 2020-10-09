@@ -38,3 +38,28 @@ export default class WarehouseModal extends Component {
         )
     }
 }
+
+
+//  const WarehouseModal =(
+//     visible,
+//     closeModal,
+//     openModal,
+//     props
+//  ) => {
+//     return (
+//             <section>
+//                 <input type="button" className="delete__button" onClick={ openModal } />
+//                 <Modal visible={ visible } effect="fadeInDown" onClickAway={ closeModal }>
+//                     <div className="delete__modal">
+//                         <h1 className="modal__header">Delete {props.whModel.name} warehouse?</h1>
+//                         <p className="modal__text">Please confirm that you'd like to delete the {props.whModel.name} from the list of warehouses.  You won't be able to undo this action.</p>
+//                         <button onClick={ closeModal } className="modal-cancel button">Cancel</button>
+//                         <button className="modal-delete button">Delete</button>
+//                         <a href="" onClick={ closeModal }><img className="close__X" src={closeButton} alt="Close Button" /></a>
+//                     </div>
+//                 </Modal>
+//             </section>
+//     )
+// }
+
+// export default WarehouseModal;
