@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const inventoryList = require('../data/inventories.json');
+const bodyParser = require('body-parser')
+router.use(bodyParser.json())
 
 // Get request for all inventory
 
@@ -9,17 +11,13 @@ router.get("/", (_req, res) => {	res.json(inventoryList);});
 router.get('/:id', (req, res) => {
     const selected = inventoryList.find (item => item.id === req.params.id);
     console.log(req)
-<<<<<<< HEAD
     
-=======
->>>>>>> developer
     res.json({
     selected
     })
   })
 
-<<<<<<< HEAD
-  app.post('/intentory', (req, res) => {
+  router.post('/', (req, res) => {
     const {
       id,
       warehouseID,
@@ -30,7 +28,7 @@ router.get('/:id', (req, res) => {
       quantity,
       } = req.body
     res.json([
-      ...videos,
+      ...inventoryList,
       {
         id,
         warehouseID,
@@ -42,8 +40,8 @@ router.get('/:id', (req, res) => {
       }
     ])
     inventoryList.push(req.body);
+    console.log(req)
   })
 
-=======
->>>>>>> developer
+
 module.exports = router;
