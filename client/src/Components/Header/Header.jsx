@@ -1,16 +1,17 @@
 import React from 'react';
 import logo from '../../assets/Logo/InStock-Logo.svg';
 import './Header.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink , Link } from 'react-router-dom';
 
 
 
 export default function Header() {
     return (
         <div className="nav">
+            <Link to ="/">
             <div className="nav__logo">
                 <img src={logo} alt="In-stock logo" />
-            </div>
+            </div></Link>
             <div className="nav__container">
                 <div className=" nav__menu">
                   <NavLink to="/warehouse/warehouseList" activeClassName="nav__menu-button--active">
