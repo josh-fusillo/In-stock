@@ -30,8 +30,9 @@ class App extends React.Component {
           {/* <Redirect exact from = '/' to = '/warehouse'/>
           <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouses/:id' component = {WarehouseDetails}/>
+          <Route exact path = '/inventory/:id' component = {InventoryDetails}/>
           {/* <Route exact = '/inventory' component = {Inventory}/>
-          <Route exact path = '/inventory/:id' component = {InventoryDetails}/> */}
+          
          {/* </Switch> */}
         <Route exact path = '/warehouse/warehouseList' component = {WarehousesList}/>
         <Route exact path = '/inventory/warehouseinventoryList' component = {WarehouseInventoryList}/>

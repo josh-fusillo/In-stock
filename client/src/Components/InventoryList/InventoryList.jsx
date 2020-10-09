@@ -66,6 +66,7 @@ export default class InventoryList extends Component {
                     {this.state.inventoryInfo.map(data => 
                     <InventoryCard 
                        key={data.id}
+                       id={data.id}
                        warehouseID={data.warehouseID}
                        warehouseName={data.warehouseName}
                        itemname={data.itemName} 
