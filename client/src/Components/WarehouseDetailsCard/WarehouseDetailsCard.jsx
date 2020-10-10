@@ -7,6 +7,7 @@ import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Sort from '../../assets/Icons/sort-24px.svg';
 import Status from '../Status/Status';
+import {Link} from 'react-router-dom';
 
 function WarehouseDetailsCard (props) {
     return (
@@ -35,8 +36,10 @@ function WarehouseDetailsCard (props) {
             </div>    
         </div>
             <div className="warehouseInventory__foot">
+
                 <img src={Delete} alt="delete"/>
                 <img src={Edit} alt="edit"/>
+
             </div>
         
     
