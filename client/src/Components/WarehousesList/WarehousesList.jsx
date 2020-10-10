@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 import WarehousesCard from './WarehousesCard';
 import WarehousesTitle from './WarehousesTitle';
@@ -19,12 +20,16 @@ class WarehousesList extends Component {
             .then(res => {
                 this.setState({
                     warehousesInfo: res.data
+                    
                 })
+                console.log(this.state.warehousesInfo)
+
             })
     };
 
     componentDidMount() {
         this.getWarehousesList();
+        console.log(this.state.warehousesInfo)
     };
 
     handleChange = event => {
@@ -52,9 +57,13 @@ class WarehousesList extends Component {
                                             className="warehouses__search-input" />
                                         <IconSearch />
                                     </div>
-                                    <div className="warehouses__add-btn btn-large">
-                                        + Add New Warehouse
-                                    </div>
+
+                                    <Link to="/warehouse/warehouseAdd">
+                                        <div className="warehouses__add-btn btn-large">
+                                            + Add New Warehouse
+                                        </div>
+                                    </Link>
+
                                 </div>
                             </div>
 
@@ -68,8 +77,9 @@ class WarehousesList extends Component {
                                         {results.map(data => (
                                             <WarehousesCard
                                                 key={data.id}
+                                                id={data.id}
+                                                warehouseId={data.id}
                                                 name={data.name}
-                                                address={data.address}
                                                 address={data.address}
                                                 city={data.city}
                                                 country={data.country}
