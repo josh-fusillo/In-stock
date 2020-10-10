@@ -45,9 +45,13 @@ import { v4 as uuidv4 } from 'uuid';
         .post('/inventory', newItem)
         
         .then (res=> {
-            console.log(res.data)
+            if (res.status===200) {
+                alert('Item successfully added')
+              } else {
+                alert('Error adding item. Please try adding again.')
+              }
         })
-        e.target.reset();
+            e.target.reset();
     }
 
 

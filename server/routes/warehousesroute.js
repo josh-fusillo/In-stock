@@ -44,10 +44,6 @@ router.post('/', (req, res) => {
       phone,
       email,
     },
-    // contactName,
-    // position,
-    // phone,
-    // email
   } = req.body
 
   res.json([
@@ -64,10 +60,6 @@ router.post('/', (req, res) => {
         phone,
         email,
       },
-      // contactName,
-      // position,
-      // phone,
-      // email
     }
   ])
 
@@ -80,6 +72,8 @@ router.post('/', (req, res) => {
     console.log(req.body)
   }
 })
+
+// Put request to edit and update a warehouse 
 
 router.put('/:id', (req, res) => {
 const reqID = req.params.id

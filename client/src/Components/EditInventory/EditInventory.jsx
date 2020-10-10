@@ -24,12 +24,15 @@ import {Link} from 'react-router-dom'
         .put(`/inventory/${invID}`, editedItem)
         
         .then (res=> {
-            console.log(res.data)
-            console.log(params)
+            if (res.status===200) {
+            alert('Item successfully updated')
+            } else {
+            alert('Error making changes. Please try updating again.')
+            }
         })
         e.target.reset();
     }
-    
+
     render() {
     return (
 
