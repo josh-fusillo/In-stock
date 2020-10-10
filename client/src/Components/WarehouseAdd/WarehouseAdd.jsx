@@ -10,14 +10,6 @@ function WarehouseAdd() {
 let addWarehouse = (event) => {
   event.preventDefault();
 
-  // const addWarehouse = () => {
-  //   if (
-  //     !warehouseName ||
-  //     !street
-  //   ) {
-  //     alert('All fields are required unless marked.')
-  //   }
-  // }
     let addForm = {
       id: event.target.id.value,
       name: event.target.WarehouseName.value,
@@ -30,10 +22,6 @@ let addWarehouse = (event) => {
         phone: event.target.Phone.value,
         email: event.target.Email.value
       }
-      // contactName: event.target.ContactName.value,
-      // position: event.target.Position.value,
-      // phone: event.target.Phone.value,
-      // email: event.target.Email.value
     }
   
 
@@ -49,39 +37,6 @@ let addWarehouse = (event) => {
     event.target.reset();
 }
 
-//   axios
-//     .post('http://localhost:8080/warehouses', 
-//     {
-//       name: warehouseName,
-//       street: street,
-//       city: city,
-//       country: country,
-//       contact: {
-//         contactName: contactName,
-//         position: position,
-//         phone: phone,
-//         email: email
-//       }
-//     }
-// )
-//     .then(console.log(warehouseName, city))
-//     // .then (() => {
-//     //   axios.get('http://localhost:8080/warehouse')
-//     //         // .then(data => {
-//     //         //   this.setState({
-//     //         //     list: data.data
-//     //                 .then(console.log('Success', warehouseName));
-
-//     //           // }); 
-//     //         }) 
-//             .catch((err) => {
-//               console.log(err);
-//             // })
-//     });
-//     // .then(console.log('Success', addForm));
-// }
-
-
 return (
   <main>
     <div className = 'wrap'>
@@ -91,7 +46,7 @@ return (
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
-        <Link to={{ pathname: '/warehouses '}}>
+        <Link to={{ pathname: '/warehouse/warehouseList'}}>
           <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
         </Link>
         <h1 className = 'add-top__header'>Add New Warehouse</h1>

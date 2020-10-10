@@ -33,7 +33,11 @@ class WarehouseEdit extends React.Component {
       }
     })
   .then (res => {
-    console.log(res.data)
+    if (res.status===200) {
+      alert('Warehouse successfully updated')
+    } else {
+      alert('Error making changes. Please try updating again.')
+    }
   })
   event.target.reset();
 }
@@ -47,7 +51,7 @@ return (
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
-        <Link to={{ pathname: '/warehouses '}}>
+        <Link to={{ pathname: '/warehouse/warehouseList'}}>
           <img className= 'add-top__arrow' src={ArrowBack} alt='Return Button'/>
         </Link>
         <h1 className = 'add-top__header'>Edit Warehouse</h1>
