@@ -10,8 +10,9 @@ import FilterResults from 'react-filter-search';
 class WarehousesList extends Component {
     state = {
         warehousesInfo: [],
-        value: ''
-
+        value: '',
+        currentId: null,
+        visible: false
     }
 
     getWarehousesList = () => {
@@ -26,6 +27,33 @@ class WarehousesList extends Component {
 
             })
     };
+
+    handleDelete = async () => {
+        console.log("Click handleDetele");
+        try{
+            const id = this.state.currentId;
+            await axios.delete(`http://localhost:8080/warehouses/${id}`);
+            this.getWarehousesList();
+            this.closeDeleteModel();
+        } 
+        catch(error) {
+            console.log(error);
+        }
+    };
+
+    // openDeleteModel = (id) => {
+    //     this.setState({
+    //         currentId: id,
+    //         visible: true
+    //     })
+    // };
+
+    // closeDeleteModel = () => {
+    //     this.setState({
+    //         currentId: null,
+    //         visible: false
+    //     })
+    // };
 
     componentDidMount() {
         this.getWarehousesList();
@@ -86,6 +114,10 @@ class WarehousesList extends Component {
                                                 contactname={data.contact.name}
                                                 phone={data.contact.phone}
                                                 email={data.contact.email}
+                                                whData={data}
+                                                // openDeleteModel={this.openDeleteModel}
+                                                // closeDeleteModel={this.closeDeleteModel}
+                                                handleDelete={this.handleDelete}
                                             />
                                         ))}
                                     </div>

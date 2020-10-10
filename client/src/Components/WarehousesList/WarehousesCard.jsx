@@ -38,7 +38,11 @@ export default function WarehousesCard (props) {
                         </div>
                     </div>
                     <div className="warehouses__card-control">
-                        <WarehouseModal />
+                        <WarehouseModal whDataModal={props.whData} onDelete={props.handleDelete}/>
+                            {/* openDeleteModel={props.openDeleteModel(props.warehouseId)}
+                            closeDeleteModel={props.clsoeDeleteModel} 
+                            onDelete={props.handleDelete} */}
+
                         <Link  to={`/warehouse/warehouseEdit/${props.id}`}>
                             <img src={Edit} alt="Edit icon" />
                         </Link>
