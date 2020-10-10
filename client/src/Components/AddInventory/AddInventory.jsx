@@ -3,8 +3,6 @@ import './addInventory.scss';
 import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
-import uuid from 'uuid';
-
 
 
  function AddInventory() {
@@ -25,7 +23,7 @@ import uuid from 'uuid';
         .post('/inventory', newItem)
         
         .then (res=> {
-            // console.log(res.data)
+            console.log(res.data)
         })
         e.target.reset();
     }
