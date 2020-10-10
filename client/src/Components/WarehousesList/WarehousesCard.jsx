@@ -5,7 +5,6 @@ import WarehouseModal from '../Modals/WarehouseModal'
 import React from 'react'
 import {Link} from 'react-router-dom';
 
-
 export default function WarehousesCard (props) {    
         return (
             <div className="warehouses__card-container wrapper">
@@ -15,7 +14,8 @@ export default function WarehousesCard (props) {
                             <div className="warehouses__card-detail-item">
                                 <div className="warehouses__card-detail-label">Warehouse</div>
                                 <Link to={`/warehouses/${props.warehouseId}`}><div className="warehouses__card-detail-text warehouses__card-detail-name">
-                                    {props.name} <IconRight />
+                                    {props.name} 
+                                        <IconRight/>        
                                 </div></Link>
                             </div>
                             <div className="warehouses__card-detail-item warehouses__card-detail-item-address">
@@ -39,7 +39,9 @@ export default function WarehousesCard (props) {
                     </div>
                     <div className="warehouses__card-control">
                         <WarehouseModal />
-                        <img src={Edit} alt="Edit icon" />
+                        <Link  to={`/warehouse/warehouseEdit/${props.id}`}>
+                            <img src={Edit} alt="Edit icon" />
+                        </Link>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ class App extends React.Component {
         {/* <Switch> */}          
           <Route exact path = '/warehouse/warehouseDetails' component = {WarehouseDetails}/>
           <Route exact path = '/warehouse/inventoryList' component = {InventoryList}/>
-          <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
+          <Route exact path = '/warehouse/warehouseEdit/:id' component = {WarehouseEdit}/>
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/> 
           <Route exact path = '/inventory/inventoryDetails' component = {InventoryDetails}/>
           <Route exact path = '/inventory/addInventory' component = {AddInventory}/> 
