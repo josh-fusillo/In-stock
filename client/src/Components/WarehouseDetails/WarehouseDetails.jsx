@@ -72,6 +72,7 @@ class WarehouseDetails extends React.Component {
             <> 
             <WarehouseDetailsInfo 
                 name={this.state.WarehouseDetails.name}
+                id={this.state.WarehouseDetails.id}
                 warehouse={this.state.WarehouseDetails.warehouse}
                 position={this.state.WarehouseDetails.position}
                 address={this.state.WarehouseDetails.address}
@@ -84,6 +85,7 @@ class WarehouseDetails extends React.Component {
             onClick={this.sortItem} />
             {this.state.WarehouseInventory && list.map(item => {
                 return <WarehouseDetailsCard
+                id={item.id}
                 item={item.itemName}
                 description={item.description}
                 category={item.category}

@@ -97,7 +97,7 @@ return (
       
           </div>
 
-          {/* <div className = 'add-border-container'> */}
+          <div className = 'add-border-container'>
 
       <div className = 'add__divider2'></div>
 
@@ -150,7 +150,7 @@ return (
           <button type='submit' className='add-buttons__cancel'>Cancel</button>
           <button type='submit' className='add-buttons__add'>+ Add Warehouse</button>
         </div>
-      {/* </div> */}
+      </div>
     </form>
 
         <footer className="footer">
