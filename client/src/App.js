@@ -18,15 +18,17 @@ class App extends React.Component {
   return (
      <div className="App">
        <BrowserRouter>
-        <Header />        
+        <Header />       
+        <Switch> 
         {/* <Switch> */}          
           <Route exact path = '/warehouse/warehouseDetails' component = {WarehouseDetails}/>
           <Route exact path = '/warehouse/inventoryList' component = {InventoryList}/>
-          <Route exact path = '/warehouse/warehouseEdit' component = {WarehouseEdit}/>
+          <Route exact path = '/warehouse/warehouseEdit/:id' component = {WarehouseEdit}/>
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/> 
           <Route exact path = '/inventory/inventoryDetails' component = {InventoryDetails}/>
           <Route exact path = '/inventory/addInventory' component = {AddInventory}/> 
-          <Route exact path = '/inventory/editInventory' component = {EditInventory}/> 
+          <Route exact path = '/inventory/editInventory/:id' component = {EditInventory}/> 
+          
           {/* <Redirect exact from = '/' to = '/warehouse'/>
           <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouses/:id' component = {WarehouseDetails}/>
@@ -38,6 +40,7 @@ class App extends React.Component {
         <Route exact path = '/inventory/warehouseinventoryList' component = {WarehouseInventoryList}/>
         {/* <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/> */}
         <Route exact path = '/' component = {WarehousesList}/>
+        </Switch>
 
       </BrowserRouter>
      </div>

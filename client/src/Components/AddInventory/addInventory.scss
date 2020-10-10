@@ -10,7 +10,8 @@ main {
         background-color: #ffffff;
         width: 92%;
         margin-left: 4%;
-        border: 1px solid $box-border-color;
+        border: 1px solid $gallery-background-color;
+        box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
         border-radius: 3px;
         margin-top: -5em;
         z-index: 1;
@@ -76,8 +77,9 @@ main {
                             font-size: $m-h3-font-size;
 
                             @include tablet {
-                            font-size: $h3-font-size;                        }
-                            }   
+                            font-size: $h3-font-size;
+                            }
+                        }   
             
                         &-input {
                             border-radius: 20px;
