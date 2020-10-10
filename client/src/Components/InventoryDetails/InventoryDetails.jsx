@@ -26,6 +26,7 @@ class InventoryDetails extends React.Component {
         return (
             <InventoryDetailsCard 
             itemName={this.state.item.itemName}
+            warehouseId={this.state.item.warehouseID}
             id={this.state.item.id}
             description={this.state.item.description}
             category={this.state.item.category}

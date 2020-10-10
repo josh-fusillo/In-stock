@@ -6,27 +6,27 @@ class WarehousesTitle extends Component {
         return (
             <div className="warehouses__title-container wrapper">
                 <div className="warehouses__title">
-                    warehouse
+                    <h4 className="warehouses__title">warehouse</h4>
                     <IconSort />
                 </div>
 
                 <div className="warehouses__title warehouses__title-address">
-                    address
+                    <h4 className="warehouses__title">address</h4>
                     <IconSort />
                 </div>
 
                 <div className="warehouses__title">
-                    contact name
+                    <h4 className="warehouses__title">contact name</h4>
                     <IconSort />
                 </div>
 
                 <div className="warehouses__title warehouses__title-contact">
-                    contact information
+                    <h4 className="warehouses__title">contact information</h4>
                     <IconSort />
                 </div>
 
                 <div className="warehouses__title">
-                    actions
+                    <h4 className="warehouses__title">actions</h4>
                 </div>
             </div>
         )
