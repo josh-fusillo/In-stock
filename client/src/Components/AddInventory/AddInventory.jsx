@@ -11,22 +11,19 @@ import { v4 as uuidv4 } from 'uuid';
 
     state = {
         qty: false,
+
+        warehouseList: []
     }
 
-
-
-
-    displayQTY() {
-        this.setState({
-            qty: true
-        });
-    }
-
-    hideQTY() {
-        this.setState({
-            qty: false
-        });
-    }
+    componentDidMount() {
+        axios
+            .get(`http://localhost:8080/warehouses/`)
+            .then(res => {
+                this.setState({
+                    warehouseList: res.data 
+                })
+            })
+    };
 
     addInventory = (e) => {
         e.preventDefault();
@@ -36,6 +33,7 @@ import { v4 as uuidv4 } from 'uuid';
           id: uuidv4(),
         //   warehouseID: '10001',
           itemName: e.target.name.value,
+          warehouseName: e.target.warehouseName.value,
           description: e.target.description.value,
           category: e.target.category.value,
           status: status.value,
@@ -50,9 +48,26 @@ import { v4 as uuidv4 } from 'uuid';
         })
         e.target.reset();
     }
+    
 
 
     render() {
+        window.onload = function() {
+            document.querySelector('.add-inventory__availability-qty').style.display = 'none';
+        }
+
+        function check(e) {
+            // let status = document.querySelector('input[type="radio"]:checked');
+            if (document.querySelector('input[type="radio"]:checked')) {
+                document.querySelector('.add-inventory__availability-qty').style.display = 'none';
+            }
+
+            else {
+                // document.querySelector('.add-inventory__availability-qty').style.display = 'none';
+            }
+        }
+
+        // check();
 
 
     return (
@@ -105,7 +120,7 @@ import { v4 as uuidv4 } from 'uuid';
                             <div className="add-inventory__availability-status-options">
                                 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="in-stock"/>
+                                    <input onClick={check()} className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="in-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label" >In Stock</label>
                                 </div>
 
@@ -126,7 +141,10 @@ import { v4 as uuidv4 } from 'uuid';
                 
                         <div className="add-inventory__availability-warehouse"> 
                             <label className="add-inventory__availability-warehouse-label">Warehouse</label>
-                            <select className="add-inventory__availability-warehouse-select" name="select"/>
+                            <select className="add-inventory__availability-warehouse-select" name="warehouseName">
+                                <option value="">Please Select</option>
+                                {this.state.warehouseList.map(warehouse => <option value={warehouse.name}>{warehouse.name}</option>)}
+                            </select>
                         </div>
                     </div>
     

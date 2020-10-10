@@ -5,6 +5,10 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import {Link} from 'react-router-dom'
 
  class EditInventory extends React.Component  {
+
+    state = {
+        warehouseList: []
+    }
   
 
     editInventory = (e) => {
@@ -14,6 +18,7 @@ import {Link} from 'react-router-dom'
         const invID = params.id;
         let editedItem = {
           itemName: e.target.name.value,
+          warehouseName: e.target.warehouseName.value,
           description:  e.target.description.value,
           category: e.target.category.value,
           status: status.value,
@@ -29,6 +34,16 @@ import {Link} from 'react-router-dom'
         })
         e.target.reset();
     }
+
+    componentDidMount() {
+        axios
+            .get(`http://localhost:8080/warehouses/`)
+            .then(res => {
+                this.setState({
+                    warehouseList: res.data 
+                })
+            })
+    };
     
     render() {
     return (
@@ -100,7 +115,10 @@ import {Link} from 'react-router-dom'
                 
                         <div className="edit-inventory__availability-warehouse"> 
                             <label className="edit-inventory__availability-warehouse-label">Warehouse</label>
-                            <select className="edit-inventory__availability-warehouse-select" name="select"/>
+                            <select className="edit-inventory__availability-warehouse-select" name="warehouseName">
+                                <option value="">Please Select</option>
+                                {this.state.warehouseList.map(warehouse => <option value={warehouse.name}>{warehouse.name}</option>)}
+                            </select>
                         </div>
                     </div>
     
