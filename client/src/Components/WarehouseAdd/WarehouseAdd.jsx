@@ -7,7 +7,7 @@ import axios from 'axios';
 
 // class WarehouseAdd extends React.Component {
 
-function WarehouseAdd(props) {
+function WarehouseAdd() {
 
 // state = {
 //   list: [],
@@ -47,22 +47,13 @@ let addWarehouse = (event) => {
   
 
     axios
-    .post('http://localhost:8080/warehouses', addForm)
+    .post('/warehouses', addForm)
     .then (res => {
       console.log(res.data)
     })
     event.target.reset();
 }
 
-    // let warehouseName = event.target.WarehouseName.value;
-    // let street = event.target.Street.value;
-    // let city = event.target.City.value;
-    // let country = event.target.Country.value;
-    // let contactName = event.target.ContactName.value;
-    // let position = event.target.Position.value;
-    // let phone = event.target.Phone.value;
-    // let email = event.target.Email.value;
-  
 //   axios
 //     .post('http://localhost:8080/warehouses', 
 //     {
@@ -76,7 +67,8 @@ let addWarehouse = (event) => {
 //         phone: phone,
 //         email: email
 //       }
-//     })
+//     }
+// )
 //     .then(console.log(warehouseName, city))
 //     // .then (() => {
 //     //   axios.get('http://localhost:8080/warehouse')
@@ -100,9 +92,9 @@ return (
     <div className = 'wrap'>
     <form 
       className='add'
-      action='/warehouses'
-      name='AddWarehouse'
-      method='POST'
+      // action='/warehouses'
+      // name='AddWarehouse'
+      // method='POST'
       onSubmit={addWarehouse}>
 
     <div className = 'add-wrap'>
@@ -172,7 +164,6 @@ return (
                          type='text' 
                          name='ContactName' 
                          placeholder='Contact Name'
-                        //  value={this.props.contactName}
                          required/>
               </div>
 

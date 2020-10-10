@@ -4,39 +4,46 @@ import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 
-function WarehouseEdit(props) {
-  let editWarehouse = (event) => {
+class WarehouseEdit extends React.Component {
+    editWarehouse = (event) => {
     event.preventDefault();
-
-    let editForm = {
-      id: event.target.id.value,
-      warehouseName: event.target.WarehouseName.value,
-      street: event.target.Street.value,
-      city: event.target.City.value,
-      country: event.target.Country.value,
-      contactName: event.target.ContactName.value,
-      position: event.target.Position.value,
-      phone: event.target.Phone.value,
-      email: event.target.Email.value
-    }
+    const {match: {params}} = this.props;
+    const whID = params.id;
+    let warehouseName = event.target.WarehouseName.value;
+    let street = event.target.Street.value;
+    let city = event.target.City.value;
+    let country = event.target.Country.value;
+    let contactName = event.target.ContactName.value;
+    let position = event.target.Position.value;
+    let phone = event.target.Phone.value;
+    let email = event.target.Email.value;
 
   axios  
-  .put(`http://localhost:8000/warehouses/${props.id}`, editForm)
+  .put(`/warehouses/${whID}`, 
+      {
+      name: warehouseName,
+      address: street,
+      city: city,
+      country: country,
+      contact: {
+        name: contactName,
+        position: position,
+        phone: phone,
+        email: email
+      }
+    })
   .then (res => {
     console.log(res.data)
   })
   event.target.reset();
 }
 
-
+render() {
 return (
   <main>
     <div className = 'wrap'>
     <form className = 'add'
-          action='/warehouses/{{props.id}}?_method=PUT'
-          name='EditWarehouse'
-          method='POST'
-          onSubmit={editWarehouse}>
+          onSubmit={this.editWarehouse}>
 
     <div className = 'add-wrap'>
       <div className = 'add-top'>
@@ -59,7 +66,7 @@ return (
                          name = 'WarehouseName'
                          type='text' 
                          placeholder='Warehouse Name'
-                         value={props.warehouseName}
+                         value={this.props.warehouseName}
                          />
               </div>
 
@@ -69,7 +76,7 @@ return (
                          type='text' 
                          name = 'Street'
                          placeholder='Street Address'
-                         value={props.street}
+                         value={this.props.street}
                          />
               </div>
 
@@ -79,7 +86,7 @@ return (
                          type='text' 
                          name = 'City'
                          placeholder='City'
-                         value={props.city}
+                         value={this.props.city}
                          />
               </div>
 
@@ -89,7 +96,7 @@ return (
                          type='text' 
                          name = 'Country'
                          placeholder='Country'
-                         value={props.country}
+                         value={this.props.country}
                          />
               </div>
       
@@ -107,7 +114,7 @@ return (
                          type='text' 
                          name = 'ContactName'
                          placeholder='Contact Name'
-                          value={props.contactName}
+                         value={this.props.contactName}
                          />
               </div>
 
@@ -117,7 +124,7 @@ return (
                          type='text' 
                          name = 'Position'
                          placeholder='Position'
-                         value={props.position}
+                         value={this.props.position}
                          />
               </div>
 
@@ -127,7 +134,7 @@ return (
                          type='text' 
                          name = 'Phone'
                          placeholder='Phone Number'
-                         value={props.number}
+                         value={this.props.number}
                          />
               </div>
               
@@ -137,7 +144,7 @@ return (
                          type='email' 
                          name = 'Email'
                          placeholder='Email'
-                         value={props.email}
+                         value={this.props.email}
                          />
               </div>
           </div>
@@ -160,5 +167,5 @@ return (
     </div>
   </main>
 )
-}
+}}
 export default WarehouseEdit;

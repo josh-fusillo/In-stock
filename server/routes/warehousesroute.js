@@ -71,20 +71,32 @@ router.post('/', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  const selected = warehouseList.find (warehouse => warehouse.id === req.params.id);
-  warehouseList.update (
-    {selected},
-    {warehouseName: req.params.name},
-    {overwrite: true},
-    function(err) {
-      if(!err){
-        res.send("Successfully updated article.");
-      }
-    }
+//   const selected = warehouseList.filter(warehouse => warehouse.id === req.params.id)[0];
+//   warehouseList.update (
+//     {selected},
+//     {warehouseName: req.params.name},
+//     {overwrite: true},
+//     function(err) {
+//       if(!err){
+//         res.send("Successfully updated article.");
+//       }
+//     }
     
-  )
-})
+//   )
+// })
+const reqID = req.params.id
+const selected = warehouseList.filter(warehouse => warehouse.id === reqID)[0];
+const index = warehouseList.indexOf(selected);
+const keys = Object.keys(req.body);
+keys.forEach(key =>{selected[key] = req.body[key]});
+warehouseList[index] = selected;
+res.json(warehouseList[index]);
 
+// if(!err){
+//   res.send("Successfully updated article.");
+// }
+
+})
 
   // const {
   //   id,

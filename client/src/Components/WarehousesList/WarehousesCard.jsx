@@ -14,7 +14,7 @@ export default function WarehousesCard (props) {
                         <div className="warehouses__card-detail-info">
                             <div className="warehouses__card-detail-item">
                                 <div className="warehouses__card-detail-label">Warehouse</div>
-                                <Link to={`/warehouses/${props.warehouseId}`}><div className="warehouses__card-detail-text warehouses__card-detail-name">
+                                <Link to={`/warehouse/${props.warehouseId}`}><div className="warehouses__card-detail-text warehouses__card-detail-name">
                                     {props.name} <IconRight />
                                 </div></Link>
                             </div>
@@ -39,7 +39,9 @@ export default function WarehousesCard (props) {
                     </div>
                     <div className="warehouses__card-control">
                         <WarehouseModal />
-                        <img src={Edit} alt="Edit icon" />
+                        <Link  to={`/warehouse/warehouseEdit/${props.id}`}>
+                            <img src={Edit} alt="Edit icon" />
+                        </Link>
                     </div>
                 </div>
             </div>
