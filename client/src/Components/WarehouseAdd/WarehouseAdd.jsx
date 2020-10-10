@@ -20,14 +20,20 @@ let addWarehouse = (event) => {
   // }
     let addForm = {
       id: event.target.id.value,
-      warehouseName: event.target.WarehouseName.value,
+      name: event.target.WarehouseName.value,
       street: event.target.Street.value,
       city: event.target.City.value,
       country: event.target.Country.value,
-      contactName: event.target.ContactName.value,
-      position: event.target.Position.value,
-      phone: event.target.Phone.value,
-      email: event.target.Email.value
+      contact: {
+        name: event.target.ContactName.value,
+        position: event.target.Position.value,
+        phone: event.target.Phone.value,
+        email: event.target.Email.value
+      }
+      // contactName: event.target.ContactName.value,
+      // position: event.target.Position.value,
+      // phone: event.target.Phone.value,
+      // email: event.target.Email.value
     }
   
 
