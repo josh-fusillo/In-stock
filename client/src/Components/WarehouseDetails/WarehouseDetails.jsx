@@ -6,7 +6,8 @@ import WarehouseDetailsCard from '../WarehouseDetailsCard/WarehouseDetailsCard';
 import WarehouseDetailsCardHeader from '../WarehouseDetailsCardHeader/WarehouseDetailsCardHeader';
 
 class WarehouseDetails extends React.Component {
-    state = {          
+    state = {   
+        sort: 'asc',      
         WarehouseDetails: [
             
         ],
@@ -43,6 +44,16 @@ class WarehouseDetails extends React.Component {
             })
     }
 
+    
+
+    sortItems = (event) => {
+        const {itemList} = this.state.WarehouseInventory;
+        let newItemList = itemList.sort();
+        this.setState({
+            WarehouseInventory: newItemList.sort((a,b) => a.itemName > b.itemName)
+        })
+    }
+
     componentDidMount() {
         this.getWarehouses();
         this.getInventory();
@@ -50,12 +61,18 @@ class WarehouseDetails extends React.Component {
 
 
     render() {
+        const {itemList, sort} = this.state.WarehouseInventory;
+
+        // const sortedItems = itemList.sort( () => {
+        //     const reversedList = (sort === 'asc') ? 1 : -1;
+        //     return reversedList * a.itemName.localeCompare(b.itemName)
+        // })
         const list = this.state.WarehouseInventory.filter(item => item.warehouseID === this.props.match.params.id)
-        console.log(list)
         return(
             <> 
             <WarehouseDetailsInfo 
                 name={this.state.WarehouseDetails.name}
+                id={this.state.WarehouseDetails.id}
                 warehouse={this.state.WarehouseDetails.warehouse}
                 position={this.state.WarehouseDetails.position}
                 address={this.state.WarehouseDetails.address}
@@ -64,9 +81,11 @@ class WarehouseDetails extends React.Component {
                 email={this.state.WarehouseDetails.email}
                 phone={this.state.WarehouseDetails.phone}
                 />  
-            <WarehouseDetailsCardHeader />
+            <WarehouseDetailsCardHeader
+            onClick={this.sortItem} />
             {this.state.WarehouseInventory && list.map(item => {
                 return <WarehouseDetailsCard
+                id={item.id}
                 item={item.itemName}
                 description={item.description}
                 category={item.category}
