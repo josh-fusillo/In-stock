@@ -3,7 +3,7 @@ import './addInventory.scss';
 import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
-import uuid from 'uuid';
+import { v4 as uuidv4 } from 'uuid';
 
 
 
@@ -12,6 +12,8 @@ import uuid from 'uuid';
     state = {
         qty: false,
     }
+
+
 
 
     displayQTY() {
@@ -28,14 +30,15 @@ import uuid from 'uuid';
 
     addInventory = (e) => {
         e.preventDefault();
+        let status = document.querySelector('input[type="radio"]:checked');
+
         let newItem = {
-          id: 1001,
-          warehouseID: '10001',
+          id: uuidv4(),
+        //   warehouseID: '10001',
           itemName: e.target.name.value,
           description: e.target.description.value,
           category: e.target.category.value,
-          status: e.target.availability_in.value,
-          status: e.target.availability_out.value,
+          status: status.value,
           quantity: e.target.quantity.value,   
         }
   
@@ -68,17 +71,17 @@ import uuid from 'uuid';
                         
                         <div className="add-inventory__details-item">
                             <label className="add-inventory__details-item-label">Item Name</label>
-                            <input className="add-inventory__details-item-input" type="text" name="name" placeholder="Item Name"/>
+                            <input className="add-inventory__details-item-input" type="text" name="name" placeholder="Item Name" required/>
                         </div>
             
                         <div className="add-inventory__details-description">
                             <label className="add-inventory__details-description-label">Description</label>
-                            <textarea className="add-inventory__details-description-input" type="text" name="description" placeholder="Please enter a brief item description"/>
+                            <textarea className="add-inventory__details-description-input" type="text" name="description" placeholder="Please enter a brief item description" required/>
                         </div>
 
                         <div className="add-inventory__details-select">
                             <label className="add-inventory__details-select-label">Category</label>
-                            <select className="add-inventory__details-select-field" placeholder="Please select" name="category">
+                            <select className="add-inventory__details-select-field" placeholder="Please select" name="category" required>
                                 <option>Please Select</option>
                                 <option value="Apparel">Apparel</option>
                                 <option value="Electronics">Electronics</option>
@@ -102,13 +105,13 @@ import uuid from 'uuid';
                             <div className="add-inventory__availability-status-options">
                                 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability_in" type="radio" value="Out of stock"/>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="in-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label" >In Stock</label>
                                 </div>
 
                                 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability_out" type="radio" value="in-stock"/>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="out-of-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
