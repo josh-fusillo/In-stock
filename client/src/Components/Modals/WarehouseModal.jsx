@@ -42,7 +42,7 @@ export default class WarehouseModal extends Component {
                     <div className="delete__modal">
                         <h1 className="modal__header">Delete {this.props.whModel.name} warehouse?</h1>
                         <p className="modal__text">Please confirm that you'd like to delete the {this.props.whModel.name} from the list of warehouses.  You won't be able to undo this action.</p>
-                        <button className="modal-cancel button">Cancel</button>
+                        <button className="modal-cancel button" onClick={() => this.closeModal()}>Cancel</button>
                         {/* <button onClick={(event) => this.closeModal(event, this.props.whModel.id)} className="modal-delete button">Delete</button> */}
                         <button onClick={(event) => this.closeModal(event, this.props.whModel.id)} className="modal-delete button">Delete</button>
                         <a href="" onClick={() => this.closeModal()}><img className="close__X" src={closeButton} alt="Close Button" /></a>
