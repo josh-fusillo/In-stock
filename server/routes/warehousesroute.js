@@ -65,25 +65,12 @@ router.post('/', (req, res) => {
   res.send(201).send(warehouseList)
   console.log(req.body)
   } else {
-    res.status(400).send ('Error: invalid request body');
+    res.status(400).send ('Error: invalid request');
     console.log(req.body)
   }
 })
 
 router.put('/:id', (req, res) => {
-//   const selected = warehouseList.filter(warehouse => warehouse.id === req.params.id)[0];
-//   warehouseList.update (
-//     {selected},
-//     {warehouseName: req.params.name},
-//     {overwrite: true},
-//     function(err) {
-//       if(!err){
-//         res.send("Successfully updated article.");
-//       }
-//     }
-    
-//   )
-// })
 const reqID = req.params.id
 const selected = warehouseList.filter(warehouse => warehouse.id === reqID)[0];
 const index = warehouseList.indexOf(selected);
@@ -91,137 +78,12 @@ const keys = Object.keys(req.body);
 keys.forEach(key =>{selected[key] = req.body[key]});
 warehouseList[index] = selected;
 res.json(warehouseList[index]);
-
-// if(!err){
-//   res.send("Successfully updated article.");
-// }
-
+  if(!err){
+    res.send("Successfully updated article.");
+  } else {
+  res.status(400).send ('Error: invalid request');
+  }
 })
-
-  // const {
-  //   id,
-  //   warehouseName
-  // } = req.body
-
-  // res.json([
-  //   ...warehouseList,
-  //   {
-  //     id,
-  //     warehouseName,
-  //   }
-  // ])
-
-//   if (req.body) {
-//   warehouseList.replace(req.body);
-//   res.send(201).send(warehouseList)
-//   console.log(req.body)
-//   } else {
-//     res.status(400).send ('Error: invalid request body');
-//     console.log(req.body)
-//   }
-// })
-
-
-
-
-
-  // warehouseList.update(req.params.name
-  //   // {warehouse: req.params.name},
-  //   // {overwrite: true}
-  //   ).then(warehouseList => {res.redirect(`/${req.params.id}`)
-  //   if(!err){
-  //     res.send("Successfully updated article.");
-  //   }
-  // })
-  //   }
-  // )
-
-
-
-
-//  models.warehouseList.find(req.params.id).then(warehouseList => {
-//    warehouseList.update(req.body).then(warehouseList => {
-//      res.redirect(`/${req.params.id}`);
-//    }).catch((err) => {
-//      console.log(err);
-//    });
-//  }).catch((err) => {
-//    console.log(err)
-//  })
-// })
-    // {warehouseName: req.body.warehouse.name},
-    // {warehouse: req.params.name},
-
-
-//     {
-//       id: req.params.id,
-//       warehouseName,
-//       street,
-//       city,
-//       country,
-//       contactName,
-//       position,
-//       phone,
-//       email
-//     },
-//     {overwrite: true},
-//     function(err) {
-//       if(!err){
-//         res.send("Successfully updated article.");
-//       }
-//     }
-    
-//   );
-
-
-
-
-
-//   router.post('/', (req, res) => {
-//     console.log(req, res);
-//     // try {
-
-//     const newWarehouse = {
-//         id: uuid.v4(),
-//         warehouseName: req
-//         // warehouseName: req.body.warehouse.name,
-//         // street: req.body.warehouse.address,
-//         // city: req.body.warehouse.city,
-//         // country: req.body.warehouse.country,
-//         // contactName: req.body.warehouse.contact.name,
-//         // position: req.body.warehouse.contact.position,
-//         // phone: req.body.warehouse.contact.phone,
-//         // email: req.body.warehouse.contact.email
-//     }
-
-//     // const newWarehouseList = {
-//     //     id: newWarehouse.id,
-//         // warehouseName: newWarehouse.warehouseName,
-//         // address: {
-//         //     street: newWarehouse.street,
-//         //     city: newWarehouse.city,
-//         //     country: newWarehouse.country
-//         // },
-//         // contactName: newWarehouse.contactName,
-//         // contactInfo: {
-//         //     phone: newWarehouse.phone,
-//         //     email: newWarehouse.email
-//         // }
-//     // }
-
-//     if (req.body) {
-//     warehouseList.push(newWarehouse)
-//     res.send(201).send(warehouseList)
-//     // console.log(req.body);
-//     // })
-//     res.send ('success')
-//   }
-//     else {
-//         res.status(400).send ("Error: invalid request body");
-//         console.log(req.body);
-//     // })
-//   }
-// });
 
 
 module.exports = router; 
