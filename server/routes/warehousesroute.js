@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const warehouseList = require('../data/warehouses.json');
-const uuid = require ('uuid');
 const bodyParser = require ('body-parser');
 const { ESRCH } = require("constants");
 const methodOverride = require ('method-override');
@@ -39,10 +38,16 @@ router.post('/', (req, res) => {
     street,
     city,
     country,
-    contactName,
-    position,
-    phone,
-    email
+    contact: {
+      name,
+      position,
+      phone,
+      email,
+    },
+    // contactName,
+    // position,
+    // phone,
+    // email
   } = req.body
 
   res.json([
@@ -53,10 +58,16 @@ router.post('/', (req, res) => {
       street,
       city,
       country,
-      contactName,
-      position,
-      phone,
-      email
+      contact: {
+        name,
+        position,
+        phone,
+        email,
+      },
+      // contactName,
+      // position,
+      // phone,
+      // email
     }
   ])
 
