@@ -34,7 +34,11 @@ let addWarehouse = (event) => {
     axios
     .post('/warehouses', addForm)
     .then (res => {
-      console.log(res.data)
+      if (res.status===200) {
+        alert('Warehouse successfully added')
+      } else {
+        alert('Error adding warehouse. Please try adding again.')
+      }
     })
     event.target.reset();
 }
