@@ -18,7 +18,8 @@ router.get('/:id', (req, res) => {
     category: selected.category,
     status: selected.status,
     quantity: selected.quantity,
-    warehouse: selected.warehouseName
+    warehouse: selected.warehouseName,
+    warehouseId: selected.warehouseID
     })
   })
 

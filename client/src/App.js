@@ -12,6 +12,7 @@ import AddInventory from './Components/AddInventory/AddInventory';
 import EditInventory from './Components/EditInventory/EditInventory';
 import WarehouseInventoryList from './Components/WarehouseInventoryList/WarehouseInventoryList';
 import WarehouseDetails from './Components/WarehouseDetails/WarehouseDetails';
+import InventoryModal from './Components/Modals/InventoryModal';
 
 class App extends React.Component {
   render() {
@@ -21,17 +22,18 @@ class App extends React.Component {
         <Header />       
         <Switch> 
         {/* <Switch> */}          
-          <Route exact path = '/warehouse/warehouseDetails' component = {WarehouseDetails}/>
+          <Route exact path = '/warehouse/warehouseDetails/' component = {WarehouseDetails}/>
           <Route exact path = '/warehouse/inventoryList' component = {InventoryList}/>
           <Route exact path = '/warehouse/warehouseEdit/:id' component = {WarehouseEdit}/>
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/> 
-          <Route exact path = '/inventory/inventoryDetails' component = {InventoryDetails}/>
+          <Route exact path = '/inventory/inventoryDetails/:id' component = {InventoryDetails}/>
           <Route exact path = '/inventory/addInventory' component = {AddInventory}/> 
           <Route exact path = '/inventory/editInventory/:id' component = {EditInventory}/> 
           
           {/* <Redirect exact from = '/' to = '/warehouse'/>
           <Route exact = '/warehouse' component {Warehouse}/> */}
           <Route exact path = '/warehouses/:id' component = {WarehouseDetails}/>
+          <Route exact path = '/warehouses/modal/:id' component={InventoryModal}/>
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/>
           {/* <Route exact = '/inventory' component = {Inventory}/>
           

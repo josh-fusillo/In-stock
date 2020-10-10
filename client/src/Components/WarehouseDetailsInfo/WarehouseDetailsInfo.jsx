@@ -6,14 +6,15 @@ import EditWhite from '../../assets/Icons/edit-24px-white.svg'
 import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
 import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Sort from '../../assets/Icons/sort-24px.svg';
+import {Link} from 'react-router-dom';
 
 function WarehouseDetailsInfo (props) {
     return (
         <>
         <div className="warehouseHeader">
-            <img className="warehouseHeader__arrow" src={ArrowBack} alt=""/>
+            <Link to='/warehouse/warehouseList'><img className="warehouseHeader__arrow" src={ArrowBack} alt=""/></Link>
             <h1 className="warehouseHeader__title">{props.warehouse}</h1>
-            <button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/><p className="warehouseHeader__btnText">Edit</p></button>
+            <Link to={`/warehouse/warehouseEdit/${props.id}`}><button className="warehouseHeader__btn"><img className="warehouseHeader__icon" src={EditWhite} alt="" fill="#2E66E6"/><p className="warehouseHeader__btnText">Edit</p></button></Link>
         </div>
         <hr className="warehouseInfoBreakStyle"/>
 
