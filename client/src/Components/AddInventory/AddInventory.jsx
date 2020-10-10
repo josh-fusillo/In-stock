@@ -7,33 +7,55 @@ import uuid from 'uuid';
 
 
 
- function AddInventory() {
+ class AddInventory extends React.Component {
 
-    let addInventory = (e) => {
+    state = {
+        qty: false,
+    }
+
+
+    displayQTY() {
+        this.setState({
+            qty: true
+        });
+    }
+
+    hideQTY() {
+        this.setState({
+            qty: false
+        });
+    }
+
+    addInventory = (e) => {
         e.preventDefault();
         let newItem = {
           id: 1001,
           warehouseID: '10001',
           itemName: e.target.name.value,
           description: e.target.description.value,
-          category: 'gear',
-          status: 'in-stock',
-          quantity: '0',   
+          category: e.target.category.value,
+          status: e.target.availability_in.value,
+          status: e.target.availability_out.value,
+          quantity: e.target.quantity.value,   
         }
   
         axios
         .post('/inventory', newItem)
         
         .then (res=> {
-            // console.log(res.data)
+            console.log(res.data)
         })
         e.target.reset();
     }
 
+
+    render() {
+
+
     return (
 
         <main>
-            <form className="add" onSubmit={addInventory}>
+            <form className="add" onSubmit={this.addInventory} >
 
                 <div className="add-head" >
                     <h1 className="add-head__header"> <Link to='/warehouse/inventoryList' alt='inventory-list'> <img src= {arrowLogo} alt="return-logo"/> </Link>Add New Inventory Item</h1>
@@ -56,7 +78,14 @@ import uuid from 'uuid';
 
                         <div className="add-inventory__details-select">
                             <label className="add-inventory__details-select-label">Category</label>
-                            <select className="add-inventory__details-select-field" placeholder="Please select"/>
+                            <select className="add-inventory__details-select-field" placeholder="Please select" name="category">
+                                <option>Please Select</option>
+                                <option value="Apparel">Apparel</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Gear">Gear</option>
+                                <option value="Accessories">Accessories</option>
+                                <option value="Accessories">Health</option>
+                            </select>
                         </div>
                     </div>
 
@@ -71,22 +100,24 @@ import uuid from 'uuid';
                             <p className="add-inventory__availability-status-header">Status</p>
 
                             <div className="add-inventory__availability-status-options">
+                                
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio"/>
-                                    <label className="add-inventory__availability-status-options-selectors-label">In Stock</label>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability_in" type="radio" value="Out of stock"/>
+                                    <label className="add-inventory__availability-status-options-selectors-label" >In Stock</label>
                                 </div>
 
+                                
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio"/>
+                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability_out" type="radio" value="in-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
 
                         </div>
-
+                        
                         <div className="add-inventory__availability-qty">
                             <label className="add-inventory__availability-qty-label">Quantity</label>
-                            <input className="add-inventory__availability-qty-input" type="text" placeholder="0"/>
+                            <input className="add-inventory__availability-qty-input" name="quantity" type="text" placeholder="0"/>
                         </div>
 
                 
@@ -114,6 +145,7 @@ import uuid from 'uuid';
 
         </main>
     )
+    }
 }
 
 export default AddInventory;

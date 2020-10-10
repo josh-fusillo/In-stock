@@ -35,8 +35,8 @@ function WarehouseDetailsCard (props) {
             </div>    
         </div>
             <div className="warehouseInventory__foot">
-                <img src={Delete} alt=""/>
-                <img src={Edit} alt=""/>
+                <img src={Delete} alt="delete"/>
+                <img src={Edit} alt="edit"/>
             </div>
         
     
