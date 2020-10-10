@@ -5,22 +5,7 @@ import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 
 
-// class WarehouseAdd extends React.Component {
-
 function WarehouseAdd() {
-
-// state = {
-//   list: [],
-//   warehouseList: {}
-// }
-
-// updateList() {
-//   axios.get('http://localhost:8080/warehouses').then(data => {
-//     this.setState({
-//       list: data.data
-//     });
-//   });
-// }
 
 let addWarehouse = (event) => {
   event.preventDefault();
@@ -92,9 +77,6 @@ return (
     <div className = 'wrap'>
     <form 
       className='add'
-      // action='/warehouses'
-      // name='AddWarehouse'
-      // method='POST'
       onSubmit={addWarehouse}>
 
     <div className = 'add-wrap'>
