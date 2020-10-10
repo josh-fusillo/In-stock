@@ -36,10 +36,10 @@ function WarehouseDetailsCard (props) {
             </div>    
         </div>
             <div className="warehouseInventory__foot">
-                <img src={Delete} alt=""/>
-                {/* <Link  to={`/warehouse/warehouseEdit/${props.id}`}> */}
-                    <img src={Edit} alt="Edit Button"/>
-                {/* </Link> */}
+
+                <img src={Delete} alt="delete"/>
+                <img src={Edit} alt="edit"/>
+
             </div>
         
     
