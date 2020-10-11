@@ -6,32 +6,32 @@ class InventoryTitle extends Component {
         return (
             <div className="inventory__title-container wrapper">
                 <div className="inventory__title inventory__title-nametype">
-                    inventory item
+                    <h4 className="inventory__title">inventory item</h4>
                     <IconSort />
                 </div>
 
                 <div className="inventory__title inventory__title-type">
-                    category
+                    <h4 className="inventory__title">category</h4>
                     <IconSort />
                 </div>
 
                 <div className="inventory__title inventory__title-status">
-                    status
+                    <h4 className="inventory__title">status</h4>
                     <IconSort />
                 </div>
 
                 <div className="inventory__title inventory__title-qty">
-                    qty
+                    <h4 className="inventory__title">qty</h4>
                     <IconSort />
                 </div>
                 
                 <div className="inventory__title inventory__title-location">
-                    warehouse
+                    <h4 className="inventory__title">warehouse</h4>
                     <IconSort />
                 </div>
 
                 <div className="inventory__title">
-                    actions
+                    <h4 className="inventory__title">actions</h4>
                 </div>
             </div>
         )
