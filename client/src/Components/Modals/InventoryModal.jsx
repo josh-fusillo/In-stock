@@ -22,30 +22,6 @@ export default class InventoryModal extends Component {
             visible: false
         });
     }
-
-    // editInventory = (e) => {
-    //     e.preventDefault();
-    //     const {match: {params}} = this.props;
-    //     const invID = params.id;
-        // let editedItem = {
-        //   itemName: e.target.name.value,
-        //   description:  e.target.description.value,
-        //   category: 'gear',
-        //   status: 'in-stock',
-        //   quantity: e.target.quantity.value,
-        // }
-  
-    //     axios
-    //     .delete(`/inventory/${invID}`)
-        
-    //     .then (res=> {
-    //         console.log(res.data)
-    //         console.log(params)
-    //     })
-    //     e.target.reset();
-    // }
-
-
     render() {
         return (
             <section>

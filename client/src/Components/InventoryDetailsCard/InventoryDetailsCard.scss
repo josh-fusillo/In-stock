@@ -1,18 +1,35 @@
 @import '../../styles/partials/common-styles';
 
 .inventoryDetailsHeader {
+    background-color: #ffffff;
+    z-index: 999;
+    position: absolute;
     display: flex;
     align-items: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
+    top: -20%;
+    height: 10%;
+    width: 91%;
+    padding: 8vh 0 8vh;
+    border-radius: 3px 3px 0px 0px;
+    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+    margin-left: 5vw;
 
     @include tablet {
         margin-top: 2vh;
         margin-bottom: 2vh;
+        top: -17.75%;
+    }
+
+    @include desktop {
+        padding: 5vh 0 5vh;
+        top: -13.75%;
     }
 
     &__arrow {
-        margin-left: 9vw;
+        padding-left: 4vw;
+
     }
 
     &__title {
@@ -29,16 +46,16 @@
     &__btn {
         background-color: $instock-indigo;
         height: 5vh;
-        width: 10vw;
+        width: 35px;
         border-radius: 50%;
         border-color: $instock-indigo;
         border-style: solid;
-        margin-left: 28vw;
+        margin-left: 35vw;
 
         @include tablet {
             display: flex;
             align-items: center;
-            height: 4vh;
+            height: 6vh;
             width:10vw;
             border-radius: 20px;
             margin-left: 50vw;
@@ -46,8 +63,8 @@
 
         @include desktop {
             margin-left: 60vw;
-            width: 8vw;
-            height: 3vh;
+            width: 7vw;
+            height: 4vh;
             border-radius: 30px;
         }
     }
@@ -73,24 +90,37 @@
         }
 
         @include desktop {
-            padding-left: 1vw;
+            padding-left: 0vw;
         }
     }
     
 }
 
-.inventoryDetailsBreak {
+.inventoryDetailsBreakOne {
+    background-color: #ffffff;
+    z-index: 999;
+    position: absolute;
     width: 91%;
     color: $primary-border-color;
-    margin-left: 4%;
+    margin-left: 5%;
     margin-bottom: 2vh;
+    top: 4%;
 
     @include tablet {
         margin-bottom: 2vh;
+        top: 0%;
+    }
+
+    @include desktop {
+        top: 0;
     }
 }
 
 .warehouseInfo {
+    z-index: 999;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
 
     &__vl {
         display: none;
@@ -112,9 +142,25 @@
 } 
 
 .inventoryDetails {
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 800;
+    top: 4%;
+    height: 42vh;
+    width: 91%;
+    margin-left: 5vw;
+    padding-top: 1vh;
+    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
 
     @include tablet {
         display: flex;
+        height: 28vh;
+        top: 0%;
+    }
+
+    @include desktop {
+        top: 0;
+        height: 24vh;
     }
 
     &__topContainer {
@@ -135,6 +181,10 @@
 
         @include tablet {
             margin-left: 0;
+        }
+
+        @include desktop {
+            margin-bottom: 4vh;
         }
     }
 
@@ -165,9 +215,13 @@
         @include tablet {
             display: block;
             border-right: 1px solid $primary-border-color;
-            height: 17vh;
-            margin-top: 0vh;
+            height: 22vh;
+            margin-top: 2vh;
             margin-right: 6vw;
+        }
+
+        @include desktop {
+            height: 17vh;
         }
     }
 
@@ -197,6 +251,10 @@
             width: 85%;
             margin-right: 0;
             font-size: $p-font-size;
+        }
+
+        @include desktop {
+            margin-bottom: 5vh;
         }
     }
 
@@ -243,6 +301,37 @@
 
         @include tablet {
             font-size: $p-font-size;
+        }
+    }
+}
+
+.mainOne {
+    background-color: $gallery-background-color;
+    position: relative;
+    height: 60vh;
+}
+
+.footerOne {
+    padding-top: 55vh;
+    background-color: $gallery-background-color;
+    padding-bottom: 6vh;
+    @include titilliumReg;
+    font-size: 11px;
+    color: #5C667E;
+
+    &-label {
+        padding-top: 2.5em;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include tablet {
+        padding-top: 18em;
+        }
+
+        &__text {
+            text-align: center;
+
         }
     }
 }

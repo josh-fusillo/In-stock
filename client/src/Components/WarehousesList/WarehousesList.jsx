@@ -127,6 +127,7 @@ class WarehousesList extends Component {
 
 
                 </div>
+
             </div>
         )
     }
