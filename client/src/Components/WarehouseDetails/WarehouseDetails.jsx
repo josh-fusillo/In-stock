@@ -94,6 +94,7 @@ class WarehouseDetails extends React.Component {
                 }
                 )
                 }
+            
             </>
         )
     }
