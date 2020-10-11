@@ -5,6 +5,28 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 
+const initialState ={
+  Name: "",
+  Street: "",
+  City: "",
+  Country: "",
+  ContactName: "",
+  Position: "",
+  Phone: "",
+  Email: "",
+
+  errorName: "",
+  errorStreet: "",
+  errorCity: "",
+  errorCountry: "",
+  errorContactName: "",
+  errorPosition: "",
+  errorPhone: "",
+  errorEmail: "",
+};
+
+const mailTest = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+const phoneTest = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
 
  class AddInventory extends React.Component {
 
