@@ -4,6 +4,8 @@ import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
+const fs = require('fs');
+
 
 
  class AddInventory extends React.Component {
@@ -49,7 +51,17 @@ import { v4 as uuidv4 } from 'uuid';
               }
         })
             e.target.reset();
+
+    // let writeData =  fs.writeFile('../../../../server/data/inventories.json',JSON.stringify(newItem), function (err) {
+    //     if (err) throw err;
+    //     console.log('complete');
+    //     })
+
+    //     writeData();
+
     }
+
+
 
 
     render() {

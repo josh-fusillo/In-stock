@@ -141,6 +141,7 @@ main {
                                 height: 36px;
                                 border: 1px solid $box-border-color;
                                 padding-left: 1em;
+                                background-color: white;
 
                             }
                         }
@@ -253,6 +254,7 @@ main {
                                 height: 36px;
                                 border: 1px solid $box-border-color;
                                 padding-left: 1em;
+                                background-color: white;
                             }
                         }
                 }
@@ -267,7 +269,6 @@ main {
                 @include tablet {
                     @include commonFlex(none,row,none);
                     justify-content: flex-end;
-                    margin-right: 2em;
                 }
 
                 
@@ -293,11 +294,13 @@ main {
                     height: 36px;
                     border: 1px solid $box-border-color;
                     background-color: $instock-indigo;
+        
 
                     @include tablet {
                         margin-left: 1em;
                         width: 98px;
                         height: 38px;
+                        margin-right: 2em;
                     }
                 }
             }     
