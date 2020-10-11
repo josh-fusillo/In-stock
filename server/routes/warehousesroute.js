@@ -72,6 +72,8 @@ router.post('/', (req, res) => {
   }
 })
 
+// Put request to edit and update a warehouse 
+
 router.put('/:id', (req, res) => {
 const reqID = req.params.id
 const selected = warehouseList.filter(warehouse => warehouse.id === reqID)[0];
