@@ -242,7 +242,6 @@
 .input{
     padding: 0 1rem;
     height: 2.25rem;
-    max-width: 274px;
     width: 100%;
     color: $instock-slate;
     background-color: #FFF;
@@ -252,6 +251,7 @@
 
     @include tablet{
         font-size: $h3-font-size;
+        max-width: 274px;
     }
 
     &:focus{
