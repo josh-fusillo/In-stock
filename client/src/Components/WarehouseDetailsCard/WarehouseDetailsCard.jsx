@@ -8,33 +8,34 @@ import Delete from '../../assets/Icons/delete_outline-24px.svg';
 import Sort from '../../assets/Icons/sort-24px.svg';
 import Status from '../Status/Status';
 import {Link} from 'react-router-dom';
+import IconRight from '../Icons/IconRight';
 
 function WarehouseDetailsCard (props) {
     return (
         <>
-        <div className="main">
-        <div className="warehouseInventory">
-            <div className="warehouseInventory__topContainer">
-                <div className="warehouseInventory__groupLeft">
-                    <h4 className="warehouseInventory__label">INVENTORY ITEM<img className="warehouseInventory__sort" src={Sort} /></h4>
-                    <Link to={`/inventory/inventoryDetails/${props.id}`}><p className="warehouseInventory__item">{props.item}<img src={ChevronRight} /></p></Link>
+        <div className="main warehouseInventory__main">
+            <div className="warehouseInventory">
+                <div className="warehouseInventory__topContainer">
+                    <div className="warehouseInventory__groupLeft">
+                        <h4 className="warehouseInventory__label">INVENTORY ITEM<img className="warehouseInventory__sort" src={Sort} /></h4>
+                        <Link to={`/inventory/inventoryDetails/${props.id}`}><p className="warehouseInventory__item">{props.item}<img src={ChevronRight} /></p></Link>
+                    </div>
+                    <div className="warehouseInventory__groupRight">
+                        <h4 className="warehouseInventory__label">CATEGORY<img className="warehouseInventory__sort" src={Sort} /></h4>
+                        <p className="warehouseInventory__cat">{props.category}</p>
+                    </div>
                 </div>
-                <div className="warehouseInventory__groupRight">
-                    <h4 className="warehouseInventory__label">CATEGORY<img className="warehouseInventory__sort" src={Sort} /></h4>
-                    <p className="warehouseInventory__cat">{props.category}</p>
-                </div>
+                <div className="warehouseInventory__bottomContainer">
+                    <div className="warehouseInventory__groupLeft">
+                        <h4 className="warehouseInventory__label">STATUS<img className="warehouseInventory__sort" src={Sort} /></h4>
+                        <div className="warehouseInventory__statusMob"><Status quantity={props.quantity} /></div>
+                    </div>
+                    <div className="warehouseInventory__groupRight">
+                        <h4 className="warehouseInventory__label">QTY<img className="warehouseInventory__sort" src={Sort} /></h4>
+                        <p className="warehouseInventory__qty">{props.quantity}</p>
+                    </div>  
+                </div>    
             </div>
-            <div className="warehouseInventory__bottomContainer">
-                <div className="warehouseInventory__groupLeft">
-                    <h4 className="warehouseInventory__label">STATUS<img className="warehouseInventory__sort" src={Sort} /></h4>
-                    <div className="warehouseInventory__statusMob"><Status quantity={props.quantity} /></div>
-                </div>
-                <div className="warehouseInventory__groupRight">
-                    <h4 className="warehouseInventory__label">QTY<img className="warehouseInventory__sort" src={Sort} /></h4>
-                    <p className="warehouseInventory__qty">{props.quantity}</p>
-                </div>  
-            </div>    
-        </div>
         
             <div className="warehouseInventory__foot">
 

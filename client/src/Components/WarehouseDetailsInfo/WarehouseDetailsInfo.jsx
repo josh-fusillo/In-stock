@@ -29,7 +29,7 @@ function WarehouseDetailsInfo (props) {
                 <div className="warehouseInfo__vl"></div>
     
                 <div className='warehouseInfoBottom'>
-                 <div className="warehouseInfoBottom__containerLeft">
+                <div className="warehouseInfoBottom__containerLeft">
                         <h4 className="warehouseInfoBottom__label">CONTACT NAME:</h4>
                         <p className="warehouseInfoBottom__data">{props.name}</p>
                         <p className="warehouseInfoBottom__data">{props.position}</p>
@@ -51,7 +51,7 @@ function WarehouseDetailsInfo (props) {
                 <div className="warehouseInfoTwo__vl"></div>
     
                 <div className='warehouseInfoBottom'>
-                 <div className="warehouseInfoBottom__containerLeft">
+                <div className="warehouseInfoBottom__containerLeft">
                         <h4 className="warehouseInfoBottom__label">CONTACT NAME:</h4>
                         <p className="warehouseInfoBottom__data">{props.name}</p>
                         <p className="warehouseInfoBottom__data">{props.position}</p>

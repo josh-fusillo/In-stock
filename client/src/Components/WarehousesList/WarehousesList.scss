@@ -1,10 +1,5 @@
 @import '../../styles/partials/common-styles';
 
-.container {
-    background-color: #F7F8F9;
-    position: relative;
-}
-
 .warehouses{
     border-radius: 3px;
     background-color: $secondary-font-color;
@@ -13,6 +8,14 @@
     box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     border-radius: 3px;
     
+    &__main{
+        height: 275vh;
+
+        @include tablet{
+            height: 125vh;
+        }
+    }
+
 
     &__header{
         &-container{
@@ -34,7 +37,7 @@
         }
 
         &-right{
-            padding: 0 4%;
+            padding-right: 4%;
             @include tablet{
                 display: flex;
                 padding-top: 2rem;
@@ -89,19 +92,18 @@
         font-size: $h4-font-size;
 
         @include tablet{
-            width: 15%;
+            // width: 20%;
+            margin-right: auto;
 
             &:last-child{
-                width: 10%;
+                // width: 10%;
                 justify-content: flex-end;
+                margin-right: 0;
             }
         }
 
-        &-contact,
-        &-address{
-            @include tablet{
-                width: 20%;
-            }
+        &--contactName{
+            margin-left: 4rem;
         }
 
         &-container{
@@ -109,6 +111,7 @@
             background-color:  #F7F8F9;
             height: 2.5rem;
             justify-content: space-between;
+            padding: 0 4%;
 
             @include tablet{
                 display: flex;
@@ -119,6 +122,10 @@
     &__card{
         &-container{
             border-bottom: 1px solid $primary-border-color;
+            
+            &:last-child{
+                border-bottom: none;
+            }
         }
 
         &-wrapper{
@@ -141,7 +148,6 @@
     
         &-detail{
             display: flex;
-            // width: 100%;
     
             @include tablet{
                 width: 100%;
@@ -164,7 +170,6 @@
             }
     
             &-item{
-                margin-right: auto;
                 @include tablet{
                     width: 15%;
                 }
@@ -192,9 +197,15 @@
             &-text{
                 font-size: $m-h3-font-size;
                 width: 35vw;
+
+                &--location{
+                    max-width: 9rem;
+                    @include desktop{
+                        max-width: 11rem;
+                    }
+                }
     
                 @include tablet{
-                    // max-width: 13.75rem;
                     font-size: $h3-font-size;
                 }
             }
@@ -213,7 +224,6 @@
             padding: 1.1875rem 5% 1.6875rem 0;
 
             @include tablet{
-                // width: 10%;
                 justify-content: flex-end;
             }
     
@@ -241,6 +251,7 @@
 
     @include tablet{
         font-size: $h3-font-size;
+        max-width: 274px;
     }
 
     &:focus{
@@ -276,8 +287,4 @@
             justify-content: center;
         }
     }
-}
-
-.warehouses__card-container:last-child {
-    // border-bottom: none;
 }

@@ -289,11 +289,12 @@
         @include tablet {
             display: flex;
             background-color: $inventory-header-color;
-            width: 91%;
+            // width: 91%;
         }
     }
 
     &__startGroup {
+        display: none;
 
         @include tablet{ 
             display: flex;
@@ -302,6 +303,7 @@
     }
 
     &__endGroup {
+        display: none;
 
         @include tablet {
             display: flex;
