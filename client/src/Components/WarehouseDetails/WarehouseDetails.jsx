@@ -46,13 +46,14 @@ class WarehouseDetails extends React.Component {
 
     
 
-    sortItems = (event) => {
-        const {itemList} = this.state.WarehouseInventory;
-        let newItemList = itemList.sort();
-        this.setState({
-            WarehouseInventory: newItemList.sort((a,b) => a.itemName > b.itemName)
-        })
-    }
+    // sortItems = (event) => {
+    //     const {itemList} = this.state.WarehouseInventory;
+    //     console.log("fired");
+    //     let newItemList = itemList.sort();
+    //     this.setState({
+    //         WarehouseInventory: newItemList.sort((a,b) => a.itemName > b.itemName)
+    //     })
+    // }
 
     componentDidMount() {
         this.getWarehouses();
@@ -82,8 +83,9 @@ class WarehouseDetails extends React.Component {
                 phone={this.state.WarehouseDetails.phone}
                 />  
             <WarehouseDetailsCardHeader
-            onClick={this.sortItem} />
-            {this.state.WarehouseInventory && list.map(item => {
+            // onClick={this.sortItems} 
+            InventoryList={list}/>
+            {/* {this.state.WarehouseInventory && list.map(item => {
                 return <WarehouseDetailsCard
                 id={item.id}
                 item={item.itemName}
@@ -93,7 +95,7 @@ class WarehouseDetails extends React.Component {
                 status={item.status} />
                 }
                 )
-                }
+                } */}
             
             </>
         )

@@ -20,6 +20,7 @@
     "parser": "^0.1.4",
     "react-awesome-router": "^2.0.0",
     "react-filter-search": "^1.0.11",
+    "react-form-input-validation": "^2.0.5",
     "router-middleware": "^4.0.2",
     "uuid": "^8.3.1"
   }

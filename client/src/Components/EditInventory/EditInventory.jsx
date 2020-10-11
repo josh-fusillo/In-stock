@@ -28,7 +28,13 @@ import {Link} from 'react-router-dom'
         axios
         .put(`/inventory/${invID}`, editedItem)
         
-
+        .then (res=> {
+            if (res.status===200) {
+            alert('Item successfully updated')
+            } else {
+            alert('Error making changes. Please try updating again.')
+            }
+        })
         e.target.reset();
     }
 

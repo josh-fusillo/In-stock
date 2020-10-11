@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import IconSort from '../Icons/IconSort';
+import Sort from '../../assets/Icons/sort-24px.svg';
 
 class InventoryTitle extends Component {
     render() {
