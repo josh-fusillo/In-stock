@@ -41,7 +41,14 @@ import { v4 as uuidv4 } from 'uuid';
         axios
         .post('/inventory', newItem)
         
-        e.target.reset();
+        .then (res=> {
+            if (res.status===200) {
+                alert('Item successfully added')
+              } else {
+                alert('Error adding item. Please try adding again.')
+              }
+        })
+            e.target.reset();
     }
 
 
