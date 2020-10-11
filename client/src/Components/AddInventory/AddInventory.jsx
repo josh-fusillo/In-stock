@@ -29,7 +29,7 @@ import { v4 as uuidv4 } from 'uuid';
 
         let newItem = {
           id: uuidv4(),
-          warehouseID: warehouseID.id,
+          warehouseID: warehouseID[0].id,
           itemName: e.target.name.value,
           warehouseName: e.target.warehouseName.value,
           description: e.target.description.value,
@@ -40,10 +40,6 @@ import { v4 as uuidv4 } from 'uuid';
   
         axios
         .post('/inventory', newItem)
-
-        .then (
-        console.log(this.state.warehouseList)
-        )
         
         e.target.reset();
     }

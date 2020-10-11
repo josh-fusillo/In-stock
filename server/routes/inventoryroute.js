@@ -55,6 +55,7 @@ router.get('/:id', (req, res) => {
     objectKeys.forEach(key =>{selected[key] = req.body[key]});
     res.json({
       itemName: selected.itemName,
+      warehouseID: selected.warehouseID,
       id: selected.id,
       description: selected.description,
       category: selected.category,
