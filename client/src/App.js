@@ -2,6 +2,7 @@ import React from 'react';
 import './App.scss';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Header from './Components/Header/Header';
+import Footer from './Components/Footer/Footer'
 import InventoryList from './Components/InventoryList/InventoryList';
 import WarehouseEdit from './Components/WarehouseEdit/WarehouseEdit';
 import WarehouseAdd from './Components/WarehouseAdd/WarehouseAdd';
@@ -43,6 +44,7 @@ class App extends React.Component {
         {/* <Route exact path = '/inventory/inventoryList' component = {InventoryListing}/> */}
         <Route exact path = '/' component = {WarehousesList}/>
         </Switch>
+        <Footer/>
 
       </BrowserRouter>
      </div>

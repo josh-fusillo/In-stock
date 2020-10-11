@@ -12,6 +12,7 @@ import {Link} from 'react-router-dom';
 function WarehouseDetailsCard (props) {
     return (
         <>
+        <div className="main">
         <div className="warehouseInventory">
             <div className="warehouseInventory__topContainer">
                 <div className="warehouseInventory__groupLeft">
@@ -31,10 +32,10 @@ function WarehouseDetailsCard (props) {
                 <div className="warehouseInventory__groupRight">
                     <h4 className="warehouseInventory__label">QTY<img className="warehouseInventory__sort" src={Sort} /></h4>
                     <p className="warehouseInventory__qty">{props.quantity}</p>
-                </div>
-                
+                </div>  
             </div>    
         </div>
+        
             <div className="warehouseInventory__foot">
 
                 <Link to={`/warehouses/modals/${props.id}`}><img src={Delete} alt="delete"/></Link>
@@ -42,8 +43,9 @@ function WarehouseDetailsCard (props) {
 
             </div>
         
-    
+            
             <div className="warehouseInventoryCard">
+                <div className='mainTwo'></div>
                 <div className="warehouseInventoryCard__container">
                     <div className="warehouseInventoryCard__startGroup">
                         <Link to={`/inventory/inventoryDetails/${props.id}`}><p className="warehouseInventoryCard__item">{props.item}<img src={ChevronRight} /></p></Link>
@@ -58,12 +60,10 @@ function WarehouseDetailsCard (props) {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            
-
+                </div>
             
             <hr className="warehouseBreak"/>
+        </div>
         </>
     )
 }
