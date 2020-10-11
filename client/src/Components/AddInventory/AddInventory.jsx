@@ -25,9 +25,11 @@ import { v4 as uuidv4 } from 'uuid';
     addInventory = (e) => {
         e.preventDefault();
         let status = document.querySelector('input[type="radio"]:checked');
+        let warehouseID = this.state.warehouseList.filter (warehouse => e.target.warehouseName.value === warehouse.name,)
 
         let newItem = {
           id: uuidv4(),
+          warehouseID: warehouseID.id,
           itemName: e.target.name.value,
           warehouseName: e.target.warehouseName.value,
           description: e.target.description.value,
@@ -38,6 +40,10 @@ import { v4 as uuidv4 } from 'uuid';
   
         axios
         .post('/inventory', newItem)
+
+        .then (
+        console.log(this.state.warehouseList)
+        )
         
         e.target.reset();
     }
