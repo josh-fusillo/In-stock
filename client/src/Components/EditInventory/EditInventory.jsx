@@ -28,10 +28,7 @@ import {Link} from 'react-router-dom'
         axios
         .put(`/inventory/${invID}`, editedItem)
         
-        .then (res=> {
-            console.log(res.data)
-            console.log(params)
-        })
+
         e.target.reset();
     }
 
@@ -61,6 +58,7 @@ import {Link} from 'react-router-dom'
                 {document.querySelector('.edit-inventory__availability-qty').style.display = 'none'};
             }
         }
+
     return (
 
         <main>

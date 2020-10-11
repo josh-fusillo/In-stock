@@ -9,8 +9,6 @@ import { v4 as uuidv4 } from 'uuid';
  class AddInventory extends React.Component {
 
     state = {
-        qty: false,
-
         warehouseList: []
     }
 
@@ -30,7 +28,6 @@ import { v4 as uuidv4 } from 'uuid';
 
         let newItem = {
           id: uuidv4(),
-        //   warehouseID: '10001',
           itemName: e.target.name.value,
           warehouseName: e.target.warehouseName.value,
           description: e.target.description.value,
@@ -42,9 +39,6 @@ import { v4 as uuidv4 } from 'uuid';
         axios
         .post('/inventory', newItem)
         
-        .then (res=> {
-            console.log(res.data)
-        })
         e.target.reset();
     }
 
@@ -126,7 +120,7 @@ import { v4 as uuidv4 } from 'uuid';
 
                                 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input onClick={() => check('n')}className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="out-of-stock"/>
+                                    <input onClick={() => check('n')} className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="out-of-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
@@ -143,7 +137,7 @@ import { v4 as uuidv4 } from 'uuid';
                             <label className="add-inventory__availability-warehouse-label">Warehouse</label>
                             <select className="add-inventory__availability-warehouse-select" name="warehouseName">
                                 <option value="">Please Select</option>
-                                {this.state.warehouseList.map(warehouse => <option value={warehouse.name}>{warehouse.name}</option>)}
+                                {this.state.warehouseList.map(warehouse => <option key={warehouse.id} value={warehouse.name}>{warehouse.name}</option>)}
                             </select>
                         </div>
                     </div>
@@ -159,9 +153,6 @@ import { v4 as uuidv4 } from 'uuid';
 
             </div>
         </main>
-
-
-
     )
     }
 }
