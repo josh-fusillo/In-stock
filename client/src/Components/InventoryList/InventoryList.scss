@@ -6,6 +6,14 @@
     @include titilliumReg;
     box-shadow: 0px 2px 5px $stock-background-color;
 
+    &__main{
+        height: 2425vh;
+
+        @include tablet{
+            height: 1050vh;
+        }
+    }
+
     &__header{
         &-container{
             @include tablet{
@@ -17,6 +25,7 @@
             padding-top: 2rem;
             margin-bottom: 1rem;
             font-size: $m-h1-font-size;
+            padding-left: 4%;
             @include titilliumSemi;
 
             @include tablet{
@@ -25,6 +34,7 @@
         }
 
         &-right{
+            padding: 0 4%;
             @include tablet{
                 display: flex;
                 padding-top: 2rem;
@@ -77,6 +87,7 @@
         align-items: center;
         text-transform: uppercase;
         color: $instock-slate;
+        font-size: $h4-font-size;
 
         @include tablet{
             &-nametype{
@@ -89,14 +100,21 @@
 
             &-status{
                 width: 20%;
+                margin-left: 2rem;
+
+                @include tablet{
+                    margin-left: 3rem;
+                }
             }
 
             &-qty{
                 width: 11%;
+                margin-right: 1rem;
             }
 
             &-location{
                 width: 22%;
+                margin-right: 2.8rem;
             }
 
             &:last-child{
@@ -110,6 +128,7 @@
             background-color: #F7F8F9;
             height: 2.5rem;
             justify-content: space-between;
+            padding: 0 4%;
 
             @include tablet{
                 display: flex;
@@ -120,6 +139,10 @@
     &__card{
         &-container{
             border-bottom: 1px solid $primary-border-color;
+
+            &:last-child{
+                border-bottom: none;
+            }
         }
 
         &-wrapper{
@@ -151,7 +174,6 @@
                 font-size: $m-h3-font-size;
     
                 @include tablet{
-                    // max-width: 13.75rem;
                     font-size: $h3-font-size;
                 }
             }
@@ -168,9 +190,9 @@
                 flex-wrap: wrap;
                 max-height: 13rem;
                 width: 100%;
+                padding-left: 4%;
     
                 @include tablet{
-                    // width: 95%;
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
@@ -213,18 +235,22 @@
     
                     &-type{
                         width: 43%;
+                        margin-right: 1rem;
                     }
     
                     &-status{
                         width: 38%;
+                        margin-right: 1rem;
                     }
     
                     &-qty{
                         width: 20%;
+                        margin-right: 1rem;
                     }
     
                     &-location{
                         width: 42%;
+                        margin-right: 2rem;
                     }
                 }
             }
@@ -233,7 +259,8 @@
         &-control{
             display: flex;
             justify-content: space-between;
-            padding: 1.1875rem 0 1.6875rem 0;
+            padding: 1.1875rem 4% 1.6875rem 0;
+            align-items: center;
 
             @include tablet{
                 justify-content: flex-end;
@@ -245,25 +272,5 @@
                 } 
             }
         }
-    }
-}
-
-.input{
-    padding: 0 1rem;
-    height: 2.25rem;
-    width: 100%;
-    color: $instock-slate;
-    background-color: $secondary-font-color;
-    border: 1px solid $primary-border-color;
-    border-radius: 20px;
-    font-size: $m-h3-font-size;
-
-    @include tablet{
-        font-size: $h3-font-size;
-    }
-
-    &:focus{
-        outline: none;
-        border: 2px solid $instock-indigo;
     }
 }
