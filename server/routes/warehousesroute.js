@@ -27,20 +27,6 @@ router.get('/:id', (req, res) => {
     })
   })
 
-<<<<<<< HEAD
-// delete a warehouse
-router.delete("/:id", (req, res) => {
-  const warehouseID = warehouseList.some(warehouse => warehouse.id === req.params.id);
-  
-  if(warehouseID){
-    res.json(warehouseList.splice((warehouse) => warehouse))
-  }
-})
-
-module.exports = router;
-=======
-
-
 // Post request to add new warehouse 
 
 router.post('/', (req, res) => {
@@ -113,4 +99,3 @@ module.exports = router;
 
 
 
->>>>>>> developer
