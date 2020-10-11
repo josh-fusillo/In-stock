@@ -8,26 +8,31 @@ import axios from 'axios';
 
 
 const initialState ={
-  error: "",
-  emailError: "",
-  name: "",
-  street: "",
-  city: "",
-  country: "",
-  // contact: {
-    contactname: "",
-    position: "",
-    phone: "",
-    email: "",
+  errorName: "",
+  errorStreet: "",
+  errorCity: "",
+  errorCountry: "",
+  errorContactName: "",
+  errorPosition: "",
+  errorPhone: "",
+  errorEmail: "",
 // },
 };
 class WarehouseAdd extends React.Component {
+  // constructor(){
+  // super();
 // function WarehouseAdd() {
 
+// this.state = initialState;
 state = initialState;
+
+// this.handleChange = this.handleChange.bind(this);
+// this.handleSubmit = this.handleSubmit.bind(this);
+// }
 
 handleChange = (event) => {
   this.setState({ [event.target.name]: event.target.value});
+  console.log(event.target.value)
   // let input = this.state.input;
   // input[event.target.name] = event.target.value;
 
@@ -38,12 +43,56 @@ handleChange = (event) => {
 
 
 validate = () => {
-  let error = "";
-  let emailError = "";
+  let errorName = "";
+  let errorStreet = "";
+  let errorCity = "";
+  let errorCountry = "";
+  let errorContactName = "";
+  let errorPosition = "";
+  let errorPhone = "";
+  let errorEmail = "";
+  let isValid = true;
 
-  if(!this.state.name) {
-    error = "This field is required";
+console.log("this.state.name:" + this.state.name)
+console.log(this.state)
+
+  if(!this.state.WarehouseName) {
+    isValid = false;
+    errorName = "This field is required";
   }
+
+  if(!this.state.Street) {
+    errorStreet = "This field is required";
+  }
+
+  if(!this.state.City) {
+    errorCity = "This field is required";
+  }
+
+  if(!this.state.Country) {
+    errorCountry = "This field is required";
+  }
+
+  if(!this.state.ContactName) {
+    errorContactName = "This field is required";
+  }
+
+  if(!this.state.Position) {
+    errorPosition = "This field is required";
+  }
+
+  if(!this.state.Email) {
+    errorEmail = "This field is required";}
+  // } else if(this.state.Email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) {
+  //   errorEmail = "This field is required";
+  // }
+
+  if(!this.state.Phone) {
+    errorPhone = "This field is required";
+  }
+
+
+  
 
   // if(!this.state.email.includes('@')) {
   //   emailError = "Email needs to include an @";
@@ -53,9 +102,9 @@ validate = () => {
   //   this.setState({ error });
   //   return false;
   // }
-
-if (error || emailError) {
-  this.setState({error, emailError});
+console.log("errorName:" + errorName)
+if (errorName || errorStreet || errorCity || errorCountry || errorContactName || errorPosition || errorPhone || errorEmail ) {
+  this.setState({ errorName, errorStreet, errorCity, errorCountry, errorContactName, errorPosition, errorPhone, errorEmail });
   return false;
 }
   // });
@@ -84,14 +133,15 @@ handleSubmit = (event) => {
     .post('/warehouses', addForm)
   .then (res => {
     this.setState(initialState);
+    console.log(res)
     if (res.status===200) {
       alert('Warehouse successfully added')
     } else {
       alert('Error adding warehouse. Please try adding again.')
     }
-    event.target.reset();
   })
   
+  event.target.reset();
 
   }
 };
@@ -185,7 +235,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Warehouse Name'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorName}</div>
 
                           {/* {this.state.error ? (                         
                            <div className='error'>{this.state.error}</div>
@@ -202,7 +252,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Street Address'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorStreet}</div>
 
               </div>
 
@@ -215,7 +265,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='City'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorCity}</div>
 
               </div>
 
@@ -228,7 +278,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Country'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorCountry}</div>
 
               </div>
       
@@ -248,7 +298,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Contact Name'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorContactName}</div>
 
               </div>
 
@@ -261,7 +311,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Position'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorPosition}</div>
 
               </div>
 
@@ -274,7 +324,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Phone Number'
                          />
-                        <div className='error'>{this.state.error}</div>
+                        <div className='error'>{this.state.errorPhone}</div>
 
               </div>
               
@@ -287,7 +337,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Email'
                          />
-                         <div className='error'>{this.state.error}</div>
+                         <div className='error'>{this.state.errorEmail}</div>
 
               </div>
           </div>
