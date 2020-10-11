@@ -297,25 +297,3 @@ main {
         }
     }     
 }
-
-.footer {
-    @include titilliumReg;
-    font-size: 11px;
-    color: #5C667E;
-
-    &-label {
-        padding-top: 2.5em;
-        width: 50%;
-        margin-left: auto;
-        margin-right: auto;
-
-        @include tablet {
-        padding-top: 18em;
-        }
-
-        &__text {
-            text-align: center;
-
-        }
-    }
-}

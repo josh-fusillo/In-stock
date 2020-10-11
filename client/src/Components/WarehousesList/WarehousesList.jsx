@@ -95,11 +95,7 @@ class WarehousesList extends Component {
 
 
                 </div>
-                <footer className="footer">
-                    <div className="footer-cont">
-                    <p className="footer-cont__text">© InStock Inc. All Rights Reserved.</p>
-                </div>
-        </footer>
+
             </div>
         )
     }

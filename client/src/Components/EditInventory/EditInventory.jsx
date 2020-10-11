@@ -5,6 +5,10 @@ import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import {Link} from 'react-router-dom'
 
  class EditInventory extends React.Component  {
+
+    state = {
+        warehouseList: []
+    }
   
 
     editInventory = (e) => {
@@ -14,6 +18,7 @@ import {Link} from 'react-router-dom'
         const invID = params.id;
         let editedItem = {
           itemName: e.target.name.value,
+          warehouseName: e.target.warehouseName.value,
           description:  e.target.description.value,
           category: e.target.category.value,
           status: status.value,
@@ -23,14 +28,37 @@ import {Link} from 'react-router-dom'
         axios
         .put(`/inventory/${invID}`, editedItem)
         
-        .then (res=> {
-            console.log(res.data)
-            console.log(params)
-        })
+
         e.target.reset();
     }
+
+    componentDidMount() {
+        axios
+            .get(`http://localhost:8080/warehouses/`)
+            .then(res => {
+                this.setState({
+                    warehouseList: res.data 
+                })
+            })
+    };
     
     render() {
+
+        window.onload = function() {
+            document.querySelector('.edit-inventory__availability-qty').style.display = 'none';
+        }
+
+        function check (stock) {
+
+            if (stock==='y') {
+                {document.querySelector('.edit-inventory__availability-qty').style.display = 'flex'};
+            }
+    
+            else {
+                {document.querySelector('.edit-inventory__availability-qty').style.display = 'none'};
+            }
+        }
+
     return (
 
         <main>
@@ -80,12 +108,12 @@ import {Link} from 'react-router-dom'
 
                             <div className="edit-inventory__availability-status-options">
                                 <div className="edit-inventory__availability-status-options-selectors">
-                                    <input className="edit-inventory__availability-status-options-selectors-field" name="availibility" value="In Stock" type="radio"/>
+                                    <input onClick={() => check('y')} className="edit-inventory__availability-status-options-selectors-field" name="availibility" value="In Stock" type="radio"/>
                                     <label className="edit-inventory__availability-status-options-selectors-label">In Stock</label>
                                 </div>
 
                                 <div className="edit-inventory__availability-status-options-selectors">
-                                    <input className="edit-inventory__availability-status-options-selectors-field" name="availibility" value= "Out of Stock" type="radio"/>
+                                    <input onClick={() => check('n')}  className="edit-inventory__availability-status-options-selectors-field" name="availibility" value= "Out of Stock" type="radio"/>
                                     <label className="edit-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
@@ -100,7 +128,10 @@ import {Link} from 'react-router-dom'
                 
                         <div className="edit-inventory__availability-warehouse"> 
                             <label className="edit-inventory__availability-warehouse-label">Warehouse</label>
-                            <select className="edit-inventory__availability-warehouse-select" name="select"/>
+                            <select className="edit-inventory__availability-warehouse-select" name="warehouseName">
+                                <option value="">Please Select</option>
+                                {this.state.warehouseList.map(warehouse => <option value={warehouse.name}>{warehouse.name}</option>)}
+                            </select>
                         </div>
                     </div>
     
@@ -113,12 +144,6 @@ import {Link} from 'react-router-dom'
                 </div>
                 
             </form>
-
-            <footer className="footer">
-                <div className="footer-label">
-                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
-                </div>
-            </footer>
 
         </main>
     )

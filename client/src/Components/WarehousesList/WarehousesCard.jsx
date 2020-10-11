@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 export default function WarehousesCard (props) {    
         return (
-        <div classname="main">
+        <div className="main">
             <div className="warehouses__card-container">
                 <div className="warehouses__card-content-wrapper">
                     <div className="warehouses__card-detail">
