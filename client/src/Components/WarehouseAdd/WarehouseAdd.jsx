@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
+import Error from '../../assets/Icons/error-24px.svg';
 // import ReactFormInputValidation from 'react-form-input-validation';
 
 
@@ -16,29 +17,15 @@ const initialState ={
   errorPosition: "",
   errorPhone: "",
   errorEmail: "",
-// },
 };
+
 class WarehouseAdd extends React.Component {
-  // constructor(){
-  // super();
-// function WarehouseAdd() {
 
-// this.state = initialState;
 state = initialState;
-
-// this.handleChange = this.handleChange.bind(this);
-// this.handleSubmit = this.handleSubmit.bind(this);
-// }
 
 handleChange = (event) => {
   this.setState({ [event.target.name]: event.target.value});
   console.log(event.target.value)
-  // let input = this.state.input;
-  // input[event.target.name] = event.target.value;
-
-  // this.setState({
-  //   input
-  // });
 }
 
 
@@ -92,16 +79,12 @@ console.log(this.state)
   }
 
 
-  
-
-  // if(!this.state.email.includes('@')) {
-  //   emailError = "Email needs to include an @";
-  // }
 
   // if (error) {
   //   this.setState({ error });
   //   return false;
   // }
+
 console.log("errorName:" + errorName)
 if (errorName || errorStreet || errorCity || errorCountry || errorContactName || errorPosition || errorPhone || errorEmail ) {
   this.setState({ errorName, errorStreet, errorCity, errorCountry, errorContactName, errorPosition, errorPhone, errorEmail });
@@ -115,7 +98,6 @@ handleSubmit = (event) => {
   event.preventDefault();
   const isValid = this.validate();
   if (isValid) {
-    // console.log(this.state);
     let addForm = {
       id: event.target.id.value,
       name: event.target.WarehouseName.value,
@@ -144,70 +126,16 @@ handleSubmit = (event) => {
   event.target.reset();
 
   }
-};
-
-
-// this.form = new ReactFormInputValidation(this, { locale: "en" });
-// this.form.useRules({
-//   name: "required"
-// });
-
-// this.form.onformsubmit = (fields) => {
-//   fields.preventDefault();
-//   console.log(fields);
-//   // axios
-//   // .post('/warehouses')
-//   // .then (res => {
-//   //   if (res.status===200) {
-//   //     alert('Warehouse successfully added')
-//   //   } else {
-//   //     alert('Error adding warehouse. Please try adding again.')
-//   //   }
-//   // })
-//   fields.target.reset();
-// }
-
-
-
-
-
-// let addWarehouse = (event) => {
-//   event.preventDefault();
-
-//     let addForm = {
-//       id: event.target.id.value,
-//       name: event.target.WarehouseName.value,
-//       street: event.target.Street.value,
-//       city: event.target.City.value,
-//       country: event.target.Country.value,
-//       contact: {
-//         name: event.target.ContactName.value,
-//         position: event.target.Position.value,
-//         phone: event.target.Phone.value,
-//         email: event.target.Email.value
-//       }
-//     }
   
-
-//     axios
-//     .post('/warehouses', addForm)
-//     .then (res => {
-//       if (res.status===200) {
-//         alert('Warehouse successfully added')
-//       } else {
-//         alert('Error adding warehouse. Please try adding again.')
-//       }
-//     })
-//     event.target.reset();
-// }
+};
+  
 render() {
+
 return (
   <main>
     <div className = 'wrap'>
     <form 
       className='add'
-      // noValidate
-      // onSubmit={addWarehouse}>
       onSubmit={this.handleSubmit}>
 
 
@@ -228,19 +156,22 @@ return (
 
               <div className = 'add-warehouse__details-info'>
                   <label className = 'add-warehouse__details-info-label'>Warehouse Name</label>
-                  <input className = 'add-warehouse__details-info-input' 
+                  <input className = 'add-warehouse__details-info-input error__outline' 
                          type='text'
                          name='WarehouseName' 
                          value={this.props.name}
                          onChange={this.handleChange}
                          placeholder='Warehouse Name'
                          />
-                        <div className='error'>{this.state.errorName}</div>
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorName}
+                          {this.state.errorName ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
 
-                          {/* {this.state.error ? (                         
-                           <div className='error'>{this.state.error}</div>
-                         ) : null}
-                         {this.state.errors.name ? this.state.errors.name : ""} */}
+
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -252,7 +183,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Street Address'
                          />
-                        <div className='error'>{this.state.errorStreet}</div>
+                        <div className='error__text'>{this.state.errorStreet}</div>
 
               </div>
 
@@ -265,7 +196,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='City'
                          />
-                        <div className='error'>{this.state.errorCity}</div>
+                        <div className='error__text'>{this.state.errorCity}</div>
 
               </div>
 
@@ -278,7 +209,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Country'
                          />
-                        <div className='error'>{this.state.errorCountry}</div>
+                        <div className='error__text'>{this.state.errorCountry}</div>
 
               </div>
       
@@ -298,7 +229,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Contact Name'
                          />
-                        <div className='error'>{this.state.errorContactName}</div>
+                        <div className='error__text'>{this.state.errorContactName}</div>
 
               </div>
 
@@ -311,7 +242,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Position'
                          />
-                        <div className='error'>{this.state.errorPosition}</div>
+                        <div className='error__text'>{this.state.errorPosition}</div>
 
               </div>
 
@@ -324,7 +255,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Phone Number'
                          />
-                        <div className='error'>{this.state.errorPhone}</div>
+                        <div className='error__text'>{this.state.errorPhone}</div>
 
               </div>
               
@@ -337,7 +268,7 @@ return (
                          onChange={this.handleChange}
                          placeholder='Email'
                          />
-                         <div className='error'>{this.state.errorEmail}</div>
+                         <div className='error__text'>{this.state.errorEmail}</div>
 
               </div>
           </div>
@@ -347,7 +278,9 @@ return (
 
 
         <div className='add-buttons'>
-          <button type='submit' className='add-buttons__cancel'>Cancel</button>
+         <Link to={{ pathname: '/warehouse/warehouseList'}}>
+          <button type='cancel' className='add-buttons__cancel'>Cancel</button>
+        </Link>
           <button type='submit' className='add-buttons__add'>+ Add Warehouse</button>
         </div>
       </div>

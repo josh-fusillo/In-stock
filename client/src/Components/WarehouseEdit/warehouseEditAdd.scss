@@ -274,24 +274,30 @@ main {
 }
 
 
-// input {
-//     border: 2px solid;
-//     border-radius: 4px;
-//     font-size: 1rem;
-//     margin: 0.25rem;
-//     min-width: 125px;
-//     padding: 0.5rem;
-//     transition: border-color 0.5s ease-out;
-//   }
-
-//   input:required:after {
-//     box-shadow: 4px 4px 2px rgba(200, 0, 0, 0.85);    
-//     border: 1px solid red;
-//     outline: red;
-//   }
-
-
   .error {
-      color: red;
+    display: flex;
+    margin-top: 3px;
+
+    &__icon {
+        float: left;
+        align-items: center;
+        justify-content: flex-start;
+        width: 15.33px;
+        height: 15.33px;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    &__text {
+      align-items: center;
+      @include titilliumReg;
+      color:#C94515;
       font-size: 12px;
+      margin-left: 3px;
+      padding: 0;
+    }
+
+    &__outline {
+        color: #C94515;
+    }
   }
