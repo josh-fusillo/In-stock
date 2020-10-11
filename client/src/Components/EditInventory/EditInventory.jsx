@@ -46,6 +46,21 @@ import {Link} from 'react-router-dom'
     };
     
     render() {
+
+        window.onload = function() {
+            document.querySelector('.edit-inventory__availability-qty').style.display = 'none';
+        }
+
+        function check (stock) {
+
+            if (stock==='y') {
+                {document.querySelector('.edit-inventory__availability-qty').style.display = 'flex'};
+            }
+    
+            else {
+                {document.querySelector('.edit-inventory__availability-qty').style.display = 'none'};
+            }
+        }
     return (
 
         <main>
@@ -95,12 +110,12 @@ import {Link} from 'react-router-dom'
 
                             <div className="edit-inventory__availability-status-options">
                                 <div className="edit-inventory__availability-status-options-selectors">
-                                    <input className="edit-inventory__availability-status-options-selectors-field" name="availibility" value="In Stock" type="radio"/>
+                                    <input onClick={() => check('y')} className="edit-inventory__availability-status-options-selectors-field" name="availibility" value="In Stock" type="radio"/>
                                     <label className="edit-inventory__availability-status-options-selectors-label">In Stock</label>
                                 </div>
 
                                 <div className="edit-inventory__availability-status-options-selectors">
-                                    <input className="edit-inventory__availability-status-options-selectors-field" name="availibility" value= "Out of Stock" type="radio"/>
+                                    <input onClick={() => check('n')}  className="edit-inventory__availability-status-options-selectors-field" name="availibility" value= "Out of Stock" type="radio"/>
                                     <label className="edit-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
@@ -131,12 +146,6 @@ import {Link} from 'react-router-dom'
                 </div>
                 
             </form>
-
-            <footer className="footer">
-                <div className="footer-label">
-                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
-                </div>
-            </footer>
 
         </main>
     )

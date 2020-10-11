@@ -47,31 +47,32 @@ import { v4 as uuidv4 } from 'uuid';
         })
         e.target.reset();
     }
-    
 
 
     render() {
+
         window.onload = function() {
             document.querySelector('.add-inventory__availability-qty').style.display = 'none';
         }
 
-        function check(e) {
-            // let status = document.querySelector('input[type="radio"]:checked');
-            if (document.querySelector('input[type="radio"]:checked')) {
-                document.querySelector('.add-inventory__availability-qty').style.display = 'none';
-            }
+        function check (stock) {
 
+            if (stock==='y') {
+                {document.querySelector('.add-inventory__availability-qty').style.display = 'flex'};
+            }
+    
             else {
-                // document.querySelector('.add-inventory__availability-qty').style.display = 'none';
+                {document.querySelector('.add-inventory__availability-qty').style.display = 'none'};
             }
         }
 
-        // check();
+
 
 
     return (
 
         <main>
+            <div className="form-container">
             <form className="add" onSubmit={this.addInventory} >
 
                 <div className="add-head" >
@@ -118,14 +119,14 @@ import { v4 as uuidv4 } from 'uuid';
 
                             <div className="add-inventory__availability-status-options">
                                 
-                                <div className="add-inventory__availability-status-options-selectors">
-                                    <input onClick={check()} className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="in-stock"/>
+                                <div  className="add-inventory__availability-status-options-selectors">
+                                    <input onClick={() => check('y')} className="add-inventory__availability-status-options-selectors-field in-stock" name="availability" type="radio" value="in-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label" >In Stock</label>
                                 </div>
 
                                 
                                 <div className="add-inventory__availability-status-options-selectors">
-                                    <input className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="out-of-stock"/>
+                                    <input onClick={() => check('n')}className="add-inventory__availability-status-options-selectors-field" name="availability" type="radio" value="out-of-stock"/>
                                     <label className="add-inventory__availability-status-options-selectors-label">Out of Stock</label>
                                 </div>
                             </div>
@@ -154,16 +155,13 @@ import { v4 as uuidv4 } from 'uuid';
                     <button className="add-buttons__cancel"> Cancel </button>
                     <button className="add-buttons__add" type="submit"> + Add Item </button>
                 </div>
-                
             </form>
 
-            <footer className="footer">
-                <div className="footer-label">
-                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
-                </div>
-            </footer>
-
+            </div>
         </main>
+
+
+
     )
     }
 }
