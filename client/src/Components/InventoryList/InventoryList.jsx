@@ -70,7 +70,8 @@ export default class InventoryList extends Component {
                         </div>
                     </div>
 
-                    <InventoryTitle />
+                    <InventoryTitle
+                    InventoryList={this.state.inventoryInfo} />
 
                     <FilterResults
                         value={value}
