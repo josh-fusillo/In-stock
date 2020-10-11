@@ -1,11 +1,12 @@
 @import '../partials/common-styles';
 
 .container {
-    width: 100%;
+    width: 92%;
     padding: 0 1rem;
-    margin: 0 auto;
+    margin-left: 4%;
     position: absolute;
-    margin-top: -60px;
+    margin-top: -5rem;
+    z-index: 1;
 
     @include tablet{
         padding: 0 2rem;

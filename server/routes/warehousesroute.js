@@ -26,8 +26,6 @@ router.get('/:id', (req, res) => {
     })
   })
 
-
-
 // Post request to add new warehouse 
 
 router.post('/', (req, res) => {
