@@ -7,7 +7,7 @@ import {Link} from 'react-router-dom';
 
 export default function WarehousesCard (props) {    
         return (
-        <div className="main">
+        // <div className="main">
             <div className="warehouses__card-container">
                 <div className="warehouses__card-content-wrapper">
                     <div className="warehouses__card-detail">
@@ -21,7 +21,7 @@ export default function WarehousesCard (props) {
                             </div>
                             <div className="warehouses__card-detail-item warehouses__card-detail-item-address">
                                 <div className="warehouses__card-detail-label">Address</div>
-                                <div className="warehouses__card-detail-text">{props.address}, {props.city}, {props.country}</div>
+                                <div className="warehouses__card-detail-text warehouses__card-detail-text--location">{props.address}, {props.city}, {props.country}</div>
                             </div>
 
                             <div className="warehouses__card-detail-item">
@@ -50,7 +50,7 @@ export default function WarehousesCard (props) {
                     </div>
                 </div>
             </div>
-        </div>
+        // </div>
         )
     
 }

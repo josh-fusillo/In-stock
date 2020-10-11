@@ -19,5 +19,11 @@
             max-width: 10.5rem;
         }
     }
+
+    &-table{
+        @include tablet{
+            width: 100%;
+        }
+    }
 }
 

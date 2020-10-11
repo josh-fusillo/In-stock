@@ -10,17 +10,17 @@ class WarehousesTitle extends Component {
                     <IconSort />
                 </div>
 
-                <div className="warehouses__title warehouses__title-address">
+                <div className="warehouses__title warehouses__title--address">
                     <h4 className="warehouses__title">address</h4>
                     <IconSort />
                 </div>
 
-                <div className="warehouses__title">
+                <div className="warehouses__title warehouses__title--contactName">
                     <h4 className="warehouses__title">contact name</h4>
                     <IconSort />
                 </div>
 
-                <div className="warehouses__title warehouses__title-contact">
+                <div className="warehouses__title warehouses__title--contact">
                     <h4 className="warehouses__title">contact information</h4>
                     <IconSort />
                 </div>
