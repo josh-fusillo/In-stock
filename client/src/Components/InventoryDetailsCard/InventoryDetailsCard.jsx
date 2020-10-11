@@ -8,6 +8,7 @@ import Status from '../Status/Status';
 function InventoryDetailsCard (props) {
     return (
         <>
+        <main>
         <div className="inventoryDetailsHeader">
             <img className="inventoryDetailsHeader__arrow" src={ArrowBack} alt=""/>
             <h1 className="inventoryDetailsHeader__title">{props.itemName}</h1>
@@ -16,7 +17,7 @@ function InventoryDetailsCard (props) {
             </Link>
         </div>
 
-        <hr className="inventoryDetailsBreak"/>
+        <hr className="inventoryDetailsBreakOne"/>
 
         <div className="inventoryDetails">
             <div className="inventoryDetails__topContainer">
@@ -47,6 +48,12 @@ function InventoryDetailsCard (props) {
                 </div> 
             </div>
         </div>
+        <footer className="footerOne">
+                <div className="footer-label">
+                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </main>
         </>
     )
 }

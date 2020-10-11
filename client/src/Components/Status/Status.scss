@@ -7,8 +7,8 @@
     border-color: $stock-background-color;
     border-radius: 20px;
     border: 0;
-    width: 18vw;
-    height: 4vh;
+    width: 80px;
+    height: 25px;
 
     @include tablet {
         @include titilliumReg;
@@ -18,13 +18,14 @@
         border-color: $stock-background-color;
         border-radius: 20px;
         border: 0;
-        width: 9vw;
-        height: 3vw;
+        width: 70px;
+        height: 25px;
     }
 
     @include desktop {
         margin-left: 0;
-        width: 7vw;
+        width: 80px;
+        height: 30px;
     }
 }
 
@@ -35,8 +36,8 @@
     border-color: rgba(201, 69, 21, 0.07);
     border-radius: 20px;
     border: 0;
-    width: 25vw;
-    height: 4vh;
+    width: 100px;
+    height: 25px;
 
     @include tablet {
         @include titilliumReg;
@@ -46,13 +47,14 @@
         border-color: rgba(201, 69, 21, 0.07);
         border-radius: 20px;
         border: 0;
-        width: 12vw;
-        height: 3vw;
+        width: 90px;
+        height: 25px;
     }
 
     @include desktop {
         margin-left: 0;
-        width: 8vw;
+        width: 100px;
+        height: 30px;
     }
 }
 
