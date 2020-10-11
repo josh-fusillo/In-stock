@@ -99,10 +99,7 @@ return (
 
           <div className = 'add-border-container'>
 
-      <div className = 'add__divider2'></div>
-
-
-          <div className = 'add-warehouse__details'>
+          <div className = 'add-warehouse__details add-warehouse__details-contact'>
               <h2 className = 'add-warehouse__details-header'>Contact Details</h2>
 
               <div className = 'add-warehouse__details-info'>
@@ -163,5 +160,4 @@ return (
   </main>
 )
 }
-// }
 export default WarehouseAdd;

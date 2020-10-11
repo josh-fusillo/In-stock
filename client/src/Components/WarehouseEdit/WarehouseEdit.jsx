@@ -106,7 +106,7 @@ return (
       
           </div>
 
-      <div className = 'add__divider2'></div>
+        <div className = 'add-border-container'>
 
 
           <div className = 'add-warehouse__details'>
@@ -152,7 +152,7 @@ return (
                          />
               </div>
           </div>
-
+        </div>
       </div>
 
         <div className='add-buttons'>
@@ -167,7 +167,6 @@ return (
             <p className="footer-cont__text">© InStock Inc. All Rights Reserved.</p>
           </div>
         </footer>
-
     </div>
   </main>
 )
