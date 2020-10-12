@@ -47,10 +47,8 @@ validate = () => {
   let errorPosition = "";
   let errorPhone = "";
   let errorEmail = "";
-  let isValid = true;
 
   if(!this.state.WarehouseName) {
-    isValid = false;
     errorName = "This field is required";
   }
 
@@ -75,7 +73,6 @@ validate = () => {
   }
 
   if(!this.state.Email) {
-    console.log(this.state.Email)
     errorEmail = "This field is required";
   } else if(!mailTest.test(this.state.Email)) {
     errorEmail = "Email address is not a valid email";
@@ -100,7 +97,6 @@ handleSubmit = (event) => {
 
  
   const isValid = this.validate();
-  console.log(this.state)
   if (isValid) {
     let addForm = {
       id: event.target.id.value,
@@ -119,7 +115,6 @@ handleSubmit = (event) => {
     .post('/warehouses', addForm)
   .then (res => {
     this.setState(initialState);
-    console.log(res)
     if (res.status===200) {
       alert('Warehouse successfully added')
     } else {
@@ -130,7 +125,6 @@ handleSubmit = (event) => {
   event.target.reset();
 
   }
-  
 };
   
 render() {

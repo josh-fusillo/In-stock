@@ -3,6 +3,8 @@ import axios from 'axios';
 import './editInventory.scss';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import {Link} from 'react-router-dom'
+import Error from '../../assets/Icons/error-24px.svg';
+
 
  class EditInventory extends React.Component  {
 
