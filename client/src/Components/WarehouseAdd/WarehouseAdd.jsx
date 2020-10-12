@@ -4,24 +4,33 @@ import '../WarehouseEdit/warehouseEditAdd.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import Error from '../../assets/Icons/error-24px.svg';
-// import ReactFormInputValidation from 'react-form-input-validation';
 
 
 
-const initialState ={
-  errorName: "",
-  errorStreet: "",
-  errorCity: "",
-  errorCountry: "",
-  errorContactName: "",
-  errorPosition: "",
-  errorPhone: "",
-  errorEmail: "",
-};
+const mailTest = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
+const phoneTest = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
 
 class WarehouseAdd extends React.Component {
 
-state = initialState;
+state ={
+    Name: "",
+    Street: "",
+    City: "",
+    Country: "",
+    ContactName: "",
+    Position: "",
+    Phone: "",
+    Email: "",
+  
+    errorName: "",
+    errorStreet: "",
+    errorCity: "",
+    errorCountry: "",
+    errorContactName: "",
+    errorPosition: "",
+    errorPhone: "",
+    errorEmail: "",
+  };
 
 handleChange = (event) => {
   this.setState({ [event.target.name]: event.target.value});
@@ -37,13 +46,8 @@ validate = () => {
   let errorPosition = "";
   let errorPhone = "";
   let errorEmail = "";
-  let isValid = true;
-
-console.log("this.state.name:" + this.state.name)
-console.log(this.state)
 
   if(!this.state.WarehouseName) {
-    isValid = false;
     errorName = "This field is required";
   }
 
@@ -68,33 +72,29 @@ console.log(this.state)
   }
 
   if(!this.state.Email) {
-    errorEmail = "This field is required";}
-  // } else if(this.state.Email !== /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) {
-  //   errorEmail = "This field is required";
-  // }
+    errorEmail = "This field is required";
+  } else if(!mailTest.test(this.state.Email)) {
+    errorEmail = "Email address is not a valid email";
+  }
 
   if(!this.state.Phone) {
     errorPhone = "This field is required";
+  } else if(!phoneTest.test(this.state.Phone)) {
+    errorPhone = "Please enter in format xxx-xxx-xxxx";
   }
 
-
-
-  // if (error) {
-  //   this.setState({ error });
-  //   return false;
-  // }
-
-console.log("errorName:" + errorName)
 if (errorName || errorStreet || errorCity || errorCountry || errorContactName || errorPosition || errorPhone || errorEmail ) {
-  this.setState({ errorName, errorStreet, errorCity, errorCountry, errorContactName, errorPosition, errorPhone, errorEmail });
+  this.setState({ errorName, errorStreet, errorCity, errorCountry, errorContactName, errorPosition, errorPhone, errorEmail});
   return false;
 }
-  // });
   return true;
 };
 
 handleSubmit = (event) => {
   event.preventDefault();
+  this.setState(this.state);
+
+ 
   const isValid = this.validate();
   if (isValid) {
     let addForm = {
@@ -113,8 +113,7 @@ handleSubmit = (event) => {
     axios
     .post('/warehouses', addForm)
   .then (res => {
-    this.setState(initialState);
-    console.log(res)
+    this.setState(this.state);
     if (res.status===200) {
       alert('Warehouse successfully added')
     } else {
@@ -125,7 +124,6 @@ handleSubmit = (event) => {
   event.target.reset();
 
   }
-  
 };
   
 render() {
@@ -169,8 +167,6 @@ return (
                         ) : null}
                         </div>
                         </div>
-
-
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -182,8 +178,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Street Address'
                          />
-                        <div className='error__text'>{this.state.errorStreet}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorStreet}
+                          {this.state.errorStreet ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -195,8 +196,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='City'
                          />
-                        <div className='error__text'>{this.state.errorCity}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorCity}
+                          {this.state.errorCity ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -208,8 +214,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Country'
                          />
-                        <div className='error__text'>{this.state.errorCountry}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorCountry}
+                          {this.state.errorCountry ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
       
           </div>
@@ -228,8 +239,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Contact Name'
                          />
-                        <div className='error__text'>{this.state.errorContactName}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorContactName}
+                          {this.state.errorContactName ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -241,8 +257,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Position'
                          />
-                        <div className='error__text'>{this.state.errorPosition}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorPosition}
+                          {this.state.errorPosition ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
 
               <div className = 'add-warehouse__details-info'>
@@ -254,8 +275,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Phone Number'
                          />
-                        <div className='error__text'>{this.state.errorPhone}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorPhone}
+                          {this.state.errorPhone ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
               
               <div className = 'add-warehouse__details-info'>
@@ -267,8 +293,13 @@ return (
                          onChange={this.handleChange}
                          placeholder='Email'
                          />
-                         <div className='error__text'>{this.state.errorEmail}</div>
-
+                        <div className='error'>
+                        <div className='error__text'>{this.state.errorEmail}
+                          {this.state.errorEmail ? (                         
+                        <img className='error__icon' src={Error} alt="Error" />
+                        ) : null}
+                        </div>
+                        </div>
               </div>
           </div>
 

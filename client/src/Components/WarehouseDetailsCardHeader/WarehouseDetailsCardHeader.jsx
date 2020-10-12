@@ -38,19 +38,18 @@ function WarehouseDetailsCardHearder (props) {
         <div className="warehouseInventoryTabletDesk">
             <div className="warehouseInventoryTabletDesk__headers">
                 <div className="warehouseInventoryTabletDesk__startGroup">
-                    <h4 className="warehouseInventoryTabletDesk__label">INVENTORY ITEM<img className="warehouseInventoryTabletDesk__sort" onClick={sortItems} src={Sort} /></h4>
-                    <h4 className="warehouseInventoryTabletDesk__label">CATEGORY<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsCategory} src={Sort} /></h4>
-                    <h4 className="warehouseInventoryTabletDesk__label">STATUS<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsStock} src={Sort} /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">INVENTORY ITEM<img className="warehouseInventoryTabletDesk__sort" onClick={sortItems} src={Sort} alt="sort" /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">CATEGORY<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsCategory} src={Sort} alt="sort"/></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">STATUS<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsStock} src={Sort} alt="sort"/></h4>
                 </div>  
                 <div className="warehouseInventoryTabletDesk__endGroup">
-                    <h4 className="warehouseInventoryTabletDesk__label">QUANTITY<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsStock} src={Sort} /></h4>
+                    <h4 className="warehouseInventoryTabletDesk__label">QUANTITY<img className="warehouseInventoryTabletDesk__sort" onClick={sortItemsStock} src={Sort} alt="sort"/></h4>
                     <h4 className="warehouseInventoryTabletDesk__labelActions">ACTIONS</h4>
                 </div>
             </div>
         </div>
         {sorted === 'items' ? itemList.map(item => 
          <WarehouseDetailsCard 
-            id={item.id}
             id={item.id}
             item={item.itemName}
             description={item.description}

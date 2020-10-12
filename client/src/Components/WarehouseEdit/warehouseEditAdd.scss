@@ -8,8 +8,9 @@ main {
 
    .wrap {
        display: flex;
+       justify-content: center;
        background-color: $gallery-background-color;
-       height: 900px;
+       height: 965px;
 
        @include tablet {
            height: 800px;
@@ -17,6 +18,7 @@ main {
    
    .add {
        position: absolute;
+       background-color: white;
        width: 92%;
        border-radius: 3px;
        margin-top: -5em;
@@ -120,13 +122,6 @@ main {
                     width: 100%;
                     margin: 3% 0;
                    }
-
-                //    &-contact {
-                //        @include tablet {
-                //         margin-top: -0.1em;
-                //        }
-                //    }
-           
    
                    &-header {
                        @include titilliumSemi;
