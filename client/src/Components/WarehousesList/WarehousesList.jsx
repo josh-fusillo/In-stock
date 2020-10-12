@@ -19,15 +19,12 @@ class WarehousesList extends Component {
 
     getWarehousesList = () => {
         axios
-            .get(`http://localhost:8080/warehouses/`)
-            .then(res => {
-                this.setState({
-                    warehousesInfo: res.data
-                    
-                })
-                console.log(this.state.warehousesInfo)
-
+        .get(`http://localhost:8080/warehouses/`)
+        .then(res => {
+            this.setState({
+                warehousesInfo: res.data
             })
+        })
     };
 
     handleDelete = async () => {
@@ -120,23 +117,12 @@ class WarehousesList extends Component {
                                                     phone={data.contact.phone}
                                                     email={data.contact.email}
                                                     whData={data}
-                                                    // openDeleteModel={this.openDeleteModel}
-                                                    // closeDeleteModel={this.closeDeleteModel}
                                                     openDeleteModel={this.openDeleteModel}
                                                 />
                                             ))}
                                         </div>
                                     )} />
 
-                                    {/* {this.state.value && (
-                                        <WarehouseModal
-                                            onDelete={this.handleDelete}
-                                            closeDeleteModel={this.closeDeleteModel}
-                                            currentItemName={this.state.currentItemName}
-                                        />
-                                    ) */}
-
-                                
                             </div>
                         </div>
 

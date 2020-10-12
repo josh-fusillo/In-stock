@@ -1,11 +1,19 @@
 import React from 'react';
 import IconRight from '../Icons/IconRight';
+import axios from 'axios';
 import {Link} from 'react-router-dom';
 import InventoryModal from '../Modals/InventoryModal';
 import Edit from '../../assets/Icons/edit-24px.svg';
 import Status from '../Status/Status';
 
 export default function InventoryCard (props) {
+
+    let deleteItem = (e) => {
+        const {match: {params}} = this.props;
+        const invID = params.id;
+        axios
+        .delete(`/inventory/${invID}`)
+    }
     
         return (
             <div className="inventory__card-container wrapper">
@@ -56,4 +64,6 @@ export default function InventoryCard (props) {
         )
     
 }
+
+
 

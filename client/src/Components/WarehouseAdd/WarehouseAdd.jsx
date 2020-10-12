@@ -5,8 +5,6 @@ import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import Error from '../../assets/Icons/error-24px.svg';
 
-
-
 const mailTest = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 const phoneTest = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
 
@@ -36,7 +34,6 @@ handleChange = (event) => {
   this.setState({ [event.target.name]: event.target.value});
   console.log(event.target.value)
 }
-
 
 validate = () => {
   let errorName = "";

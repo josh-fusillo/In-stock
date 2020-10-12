@@ -73,6 +73,7 @@ function WarehouseDetailsCardHearder (props) {
             quantity={item.quantity}
             status={item.status} />) : props.InventoryList.map(item => 
             <WarehouseDetailsCard 
+            key={item.id}
             id={item.id}
             item={item.itemName}
             description={item.description}

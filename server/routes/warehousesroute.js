@@ -87,6 +87,20 @@ res.json(warehouseList[index]);
   }
 })
 
+// Delete request to delete a warehouse 
+
+router.delete('/:id', (req, res) => {
+  const selected = warehouseList.find (item => item.id === req.params.id);
+
+  const indexValue = warehouseList.indexOf(selected);
+
+  warehouseList.splice(indexValue, 1);
+
+  res.send('item has been deleted')
+
+})
+
+
 
 module.exports = router; 
 

@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 import Error from '../../assets/Icons/error-24px.svg';
 
 
+
  class AddInventory extends React.Component {
 
     state = {
@@ -17,7 +18,6 @@ import Error from '../../assets/Icons/error-24px.svg';
         status: "",
         quantity: "",
         warehouseName: "",
-      
         errorName: "",
         errorDescription: "",
         errorCategory: "",
@@ -28,7 +28,6 @@ import Error from '../../assets/Icons/error-24px.svg';
 
     handleChange = (event) => {
         this.setState({ [event.target.name]: event.target.value});
-        console.log(event.target.value)
       }
 
 
@@ -82,11 +81,13 @@ import Error from '../../assets/Icons/error-24px.svg';
     handleSubmit = (e) => {
         e.preventDefault();
         let status = document.querySelector('input[type="radio"]:checked');
+        let warehouseID = this.state.warehouseList.filter (warehouse => e.target.warehouseName.value === warehouse.name,)
 
         const isValid = this.validate();
         if (isValid) {
         let newItem = {
           id: uuidv4(),
+          warehouseID: warehouseID[0].id,
           itemName: e.target.name.value,
           warehouseName: e.target.warehouseName.value,
           description: e.target.description.value,
@@ -109,6 +110,8 @@ import Error from '../../assets/Icons/error-24px.svg';
             e.target.reset();
         }
     };
+
+
 
 
     render() {
@@ -252,7 +255,7 @@ import Error from '../../assets/Icons/error-24px.svg';
 
 
                 <div className="add-buttons">
-                    <button className="add-buttons__cancel"> Cancel </button>
+                   <Link to="/warehouse/inventorylist"><button className="add-buttons__cancel"> Cancel </button></Link> 
                     <button className="add-buttons__add" type="submit"> + Add Item </button>
                 </div>
             </form>

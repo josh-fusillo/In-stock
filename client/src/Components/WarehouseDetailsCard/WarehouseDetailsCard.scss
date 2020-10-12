@@ -166,7 +166,6 @@
 .warehouseInventory {
 
     display: flex;
-    // border-bottom: 1px solid $primary-border-color;
     width: 91%;
     margin-left: 5vw;
     background-color: #ffffff;
@@ -373,7 +372,6 @@
     @include tablet {
         display: block;
         margin-left: 4vw;
-        // border-bottom: 1px solid $primary-border-color;
         width: 91%;
         
     }
