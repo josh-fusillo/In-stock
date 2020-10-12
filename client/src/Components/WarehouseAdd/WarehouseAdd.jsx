@@ -5,32 +5,32 @@ import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import Error from '../../assets/Icons/error-24px.svg';
 
-const initialState ={
-  Name: "",
-  Street: "",
-  City: "",
-  Country: "",
-  ContactName: "",
-  Position: "",
-  Phone: "",
-  Email: "",
 
-  errorName: "",
-  errorStreet: "",
-  errorCity: "",
-  errorCountry: "",
-  errorContactName: "",
-  errorPosition: "",
-  errorPhone: "",
-  errorEmail: "",
-};
 
 const mailTest = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/
 const phoneTest = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/
 
 class WarehouseAdd extends React.Component {
 
-state = initialState;
+state ={
+    Name: "",
+    Street: "",
+    City: "",
+    Country: "",
+    ContactName: "",
+    Position: "",
+    Phone: "",
+    Email: "",
+  
+    errorName: "",
+    errorStreet: "",
+    errorCity: "",
+    errorCountry: "",
+    errorContactName: "",
+    errorPosition: "",
+    errorPhone: "",
+    errorEmail: "",
+  };
 
 handleChange = (event) => {
   this.setState({ [event.target.name]: event.target.value});
@@ -93,7 +93,7 @@ if (errorName || errorStreet || errorCity || errorCountry || errorContactName ||
 
 handleSubmit = (event) => {
   event.preventDefault();
-  this.setState(initialState);
+  this.setState(this.state);
 
  
   const isValid = this.validate();
@@ -114,7 +114,7 @@ handleSubmit = (event) => {
     axios
     .post('/warehouses', addForm)
   .then (res => {
-    this.setState(initialState);
+    this.setState(this.state);
     if (res.status===200) {
       alert('Warehouse successfully added')
     } else {

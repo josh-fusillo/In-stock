@@ -103,6 +103,7 @@ if (errorName || errorStreet || errorCity || errorCountry || errorContactName ||
 
     const isValid = this.validate();
     if (isValid) {
+      
     const {match: {params}} = this.props;
     const whID = params.id;
     let warehouseName = event.target.WarehouseName.value;

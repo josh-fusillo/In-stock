@@ -16,32 +16,32 @@ import InventoryModal from './Components/Modals/InventoryModal';
 
 class App extends React.Component {
   render() {
-  return (
+    return (
      <div className="App">
        <BrowserRouter>
         <Header />       
         <Switch> 
+          <Redirect exact from = '/' to = '/warehouse/warehouseList'/>
+
           <Route exact path = '/warehouse/warehouseDetails/' component = {WarehouseDetails}/>
           <Route exact path = '/warehouse/inventoryList' component = {InventoryList}/>
-          <Route exact path = '/warehouse/warehouseEdit/:id' component = {WarehouseEdit}/>
           <Route exact path = '/warehouse/warehouseAdd' component = {WarehouseAdd}/> 
-          <Route exact path = '/inventory/inventoryDetails/:id' component = {InventoryDetails}/>
           <Route exact path = '/inventory/addInventory' component = {AddInventory}/> 
-          <Route exact path = '/inventory/editInventory/:id' component = {EditInventory}/> 
           
-          <Redirect exact from = '/' to = '/warehouse/warehouseList'/>
           <Route exact path = '/warehouses/:id' component = {WarehouseDetails}/>
+          <Route exact path = '/warehouse/warehouseEdit/:id' component = {WarehouseEdit}/>
           <Route exact path = '/warehouses/modal/:id' component={InventoryModal}/>
+          <Route exact path = '/inventory/inventoryDetails/:id' component = {InventoryDetails}/>
           <Route exact path = '/inventory/:id' component = {InventoryDetails}/>
+          <Route exact path = '/inventory/editInventory/:id' component = {EditInventory}/> 
           
           <Route exact path = '/warehouse/warehouseList' component = {WarehousesList}/>
           <Route exact path = '/inventory/warehouseinventoryList' component = {WarehouseInventoryList}/>
-          <Route exact path = '/' component = {WarehousesList}/>
         </Switch>
         <Footer/>
       </BrowserRouter>
      </div>
-  );
+    );
   }
 }
 

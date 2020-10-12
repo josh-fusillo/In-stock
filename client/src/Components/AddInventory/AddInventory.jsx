@@ -7,27 +7,23 @@ import { v4 as uuidv4 } from 'uuid';
 import Error from '../../assets/Icons/error-24px.svg';
 
 
-const initialState ={
-  Name: "",
-  Description: "",
-  Category: "",
-  Status: "",
-  Quantity: "",
-  Warehouse: "",
-
-  errorName: "",
-  errorDescription: "",
-  errorCategory: "",
-  errorStatus: "",
-  errorQuantity: "",
-  errorWarehouse: ""
-};
-
  class AddInventory extends React.Component {
 
     state = {
         warehouseList: [],
-        formValidation: {initialState}
+        name: "",
+        description: "",
+        category: "",
+        status: "",
+        quantity: "",
+        warehouseName: "",
+      
+        errorName: "",
+        errorDescription: "",
+        errorCategory: "",
+        errorStatus: "",
+        errorQuantity: "",
+        errorWarehouse: ""
     }
 
     handleChange = (event) => {
@@ -43,36 +39,30 @@ const initialState ={
         let errorStatus = "";
         let errorQuantity = "";
         let errorWarehouse = "";
-        let isValid = true;
       
-        if(!this.state.Name) {
-          isValid = false;
+        if(!this.state.name) {
           errorName = "This field is required";
         }
       
-        if(!this.state.Description) {
+        if(!this.state.description) {
           errorDescription = "This field is required";
         }
       
-        if(!this.state.Category) {
+        if(!this.state.category) {
           errorCategory = "This field is required";
         }
       
-        if(!this.state.Status) {
-          errorStatus = "This field is required";
-        }
-      
-        if(!this.state.Quantity) {
+        if(!this.state.quantity) {
           errorQuantity = "This field is required";
         }
       
-        if(!this.state.Warehouse) {
+        if(!this.state.warehouseName) {
           errorWarehouse = "This field is required";
         }
     
       
       if (errorName || errorDescription || errorCategory || errorStatus || errorQuantity || errorWarehouse ) {
-        this.setState({ formValidation: errorName, errorDescription, errorCategory, errorStatus, errorQuantity, errorWarehouse });
+        this.setState({  errorName, errorDescription, errorCategory, errorStatus, errorQuantity, errorWarehouse });
         return false;
       }
         return true;
@@ -92,8 +82,6 @@ const initialState ={
     handleSubmit = (e) => {
         e.preventDefault();
         let status = document.querySelector('input[type="radio"]:checked');
-        this.setState(this.state.formValidation.initialState);
-        console.log(this.state.formValidation.initialState)
 
         const isValid = this.validate();
         if (isValid) {
@@ -111,7 +99,7 @@ const initialState ={
         .post('/inventory', newItem)
         
         .then (res=> {
-            this.setState(this.state.formValidation.initialState);
+            this.setState(this.state);
             if (res.status===200) {
                 alert('Item successfully added')
               } else {
