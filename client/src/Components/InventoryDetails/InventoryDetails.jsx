@@ -12,7 +12,6 @@ class InventoryDetails extends React.Component {
         const itemId = this.props.match.params.id;
         axios.get('/inventory/' + itemId)
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     item : res.data
                 })
