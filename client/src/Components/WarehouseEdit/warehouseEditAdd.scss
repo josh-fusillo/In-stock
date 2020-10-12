@@ -1,0 +1,298 @@
+@import '../../styles/partials/common-styles';
+
+
+main {
+    position: relative;
+    margin-top: 0px;   
+
+
+   .wrap {
+       display: flex;
+       justify-content: center;
+       background-color: $gallery-background-color;
+       height: 965px;
+
+       @include tablet {
+           height: 800px;
+       }
+   
+   .add {
+       position: absolute;
+       background-color: white;
+       width: 92%;
+       border-radius: 3px;
+       margin-top: -5em;
+       margin-bottom: 100px;
+       border: 1px solid $gallery-background-color;
+       box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+       
+
+       @include tablet {
+        margin-top: -5.9em;
+        }
+
+       @include desktop {
+           width: 80%;
+           margin-left: 10%;
+        }
+
+        &-border-container {
+            border-top: 1px solid $primary-border-color;
+
+                @include tablet {
+                    display: flex;
+                    border-top: none;
+                    border-left: 1px solid $box-border-color;
+                    width: 100%;
+                    height: 390px;
+                    margin: 7.1% 0;
+                    padding-left: 13px;
+                    align-items: center;
+                }
+        }
+
+        &__divider1 {
+            border-bottom: 1px solid $primary-border-color;
+            margin-top: -5px;
+            margin-bottom: -5px;
+            width: 91vw;
+
+            @include tablet {
+                margin-top: -18px;
+                width: 92vw;
+            }
+
+            @include desktop {
+                margin-top: 0;
+                width: 79.9vw;
+            }
+       }
+   
+       &-top {
+
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 30px;
+
+           &__arrow {
+               margin-right: -12px;
+               display: flex;
+               margin-top: 38px;
+
+               @include tablet {
+                   margin-right: -30px;
+               }
+           }
+   
+           &__header {
+               margin: 0 6%;
+               padding: 1em 0;;
+               @include titilliumSemi;
+               font-size: $m-h1-font-size;
+   
+               @include tablet {
+                   font-size: $h1-font-size;
+                   margin: 0.5% 6%;
+                   margin-top: -5px;
+               }
+
+               @include desktop {
+                   margin: -1% 4%;
+               }
+
+           }
+       }
+   
+           &-warehouse {
+               @include tablet {
+                   @include commonFlex(space-between,row,none);
+                   margin: -3.2% 0;
+                   margin-left: 9px;
+               }
+
+               @include desktop {
+                   margin: -1.5% 0;
+               }
+       
+   
+               &__details {
+                   padding-bottom : 1.5em;
+   
+                   @include tablet {
+                    width: 100%;
+                    margin: 3% 0;
+                   }
+   
+                   &-header {
+                       @include titilliumSemi;
+                       font-size: $m-h2-font-size;
+                       margin: 0 6%;
+                       padding: 1em 0;
+   
+                       @include tablet {
+                           font-size: $h2-font-size;
+                       }
+                   }
+           
+                   &-info {
+                       margin-bottom: 16px;
+                       @include commonFlex(none,column,none);
+                       margin: 0 6%;
+                       margin-bottom: 1em;
+                       
+               
+                       &-label {
+                           margin-bottom: 4px;
+                           @include titilliumSemi;
+                           font-size: $m-h3-font-size;
+   
+                           @include tablet {
+                           font-size: $h3-font-size; 
+                           margin-bottom: 5px;
+                           margin-top: 7px;                       
+                           }
+                       }   
+           
+                       &-input {
+                           border-radius: 20px;
+                           height: 36px;
+                           border: 1px solid $box-border-color;
+                           padding-left: 1em;
+
+                           @include tablet {
+                               width: 38vw;
+                           }
+
+                           @include desktop {
+                               width: 34.5vw;
+                               height: 40px;
+                           }
+                       }
+                   }
+               }
+           } 
+   
+   
+       &-buttons {
+           @include titilliumSemi;
+           @include commonFlex(space-around,row,none);
+           font-size: $m-p-font-size;
+           background-color: $light-grey;
+           padding: 1em 0;
+           width: 91.5vw;
+           height: 68px;
+           margin-top: -1.3em;
+
+   
+           @include tablet {
+               @include commonFlex(none,row,none);
+               justify-content: flex-end;
+               margin-right: 2em;
+               margin-top: -2.2em;
+               height: 68px;
+               width: 91.8vw;
+               padding: 1.25em 2.4em;
+           }
+
+           @include desktop {
+                width: 79.9vw;
+           }
+   
+           &__cancel {
+               font-family: 'Titillium';
+               width: 139px;
+               border-radius: 20px;
+               height: 36px;
+               border: 1px solid $primary-border-color;
+               background-color: white;
+               margin-right: -15px;
+   
+               @include tablet {
+                   width: 72px;
+                   height: 38px;
+               }
+           }
+   
+           &__add {
+               font-family: 'Titillium';
+               color: white;
+               width: 139px;
+               border-radius: 20px;
+               height: 36px;
+               border: 1px solid $box-border-color;
+               background-color: $instock-indigo;
+               margin-left: -15px;
+   
+               @include tablet {
+                   margin-left: 2.5em;
+                   width: 140px;
+                   height: 38px;
+                   justify-content: flex-end;
+                   margin-right: -5px;
+               }
+
+               @include desktop {
+                margin-right: 10px;
+               }
+           }
+       }   
+     }  
+   }
+}
+
+.footer {
+    @include titilliumReg;
+    font-size: 0.6875rem;
+    color: #5C667E;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    &-cont {
+        width: 370px;
+        height: 16px;
+
+        @include tablet {
+            padding-top: 18em;
+            width: 765px;
+        }
+
+        @include desktop {
+            width: 1285px;
+        }
+
+        &__text {
+            text-align: center;
+            justify-content: center;
+        }
+    }
+}
+
+
+  .error {
+    display: flex;
+    margin-top: 3px;
+
+    &__icon {
+        float: left;
+        align-items: center;
+        justify-content: flex-start;
+        width: 15.33px;
+        height: 15.33px;
+        margin-right: 5px;
+        margin-top: 2px;
+    }
+
+    &__text {
+      align-items: center;
+      @include titilliumReg;
+      color:#C94515;
+      font-size: 12px;
+      margin-left: 3px;
+      padding: 0;
+    }
+
+    &__outline {
+        color: #C94515;
+    }
+  }

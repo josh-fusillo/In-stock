@@ -1,0 +1,60 @@
+@import '../../styles/partials/common-styles';
+
+.statusTrue {
+    font-size: $m-h4-font-size;
+    color: $stock-color;
+    background-color: $stock-background-color;
+    border-color: $stock-background-color;
+    border-radius: 20px;
+    border: 0;
+    width: 80px;
+    height: 25px;
+
+    @include tablet {
+        @include titilliumReg;
+        font-size: $h4-font-size;
+        color: $stock-color;
+        background-color: $stock-background-color;
+        border-color: $stock-background-color;
+        border-radius: 20px;
+        border: 0;
+        width: 70px;
+        height: 25px;
+    }
+
+    @include desktop {
+        margin-left: 0;
+        width: 80px;
+        height: 30px;
+    }
+}
+
+.statusFalse {
+    font-size: $m-h4-font-size;
+    color: Red;
+    background-color: rgba(201, 69, 21, 0.07);
+    border-color: rgba(201, 69, 21, 0.07);
+    border-radius: 20px;
+    border: 0;
+    width: 100px;
+    height: 25px;
+
+    @include tablet {
+        @include titilliumReg;
+        font-size: $h4-font-size;
+        color: Red;
+        background-color: rgba(201, 69, 21, 0.07);
+        border-color: rgba(201, 69, 21, 0.07);
+        border-radius: 20px;
+        border: 0;
+        width: 90px;
+        height: 25px;
+    }
+
+    @include desktop {
+        margin-left: 0;
+        width: 100px;
+        height: 30px;
+    }
+}
+

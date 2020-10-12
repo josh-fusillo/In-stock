@@ -1,0 +1,137 @@
+@import '../../styles/partials/common-styles';
+
+
+.modal{
+    
+    &__header {
+        font-size: 1.75rem;
+        width: 22rem;
+        margin-top: 2rem;
+
+        @include tablet {
+          width: 100%;
+          margin-left: 2rem;
+          margin-right: 0;
+
+        }
+    }
+
+    &__text {
+        font-size: 0.938rem;;
+        margin-top: 1rem;
+        line-height: 1.625rem;
+        
+        @include tablet {
+          width: 85%;
+          font-size: 1rem;
+          margin-left: 2rem;
+          margin-right: 0;
+        }
+    }
+}
+
+
+  .delete__button {
+    background-image: url('../../assets/Icons/delete_outline-24px.svg');
+    height: 50px;
+    width: 50px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: $secondary-font-color;
+    border: none;
+    
+    @include tablet {
+      margin-top: .5rem;
+    }
+  }
+  
+
+.delete__modal {
+  background-color: $secondary-font-color;
+  max-width: 375px;
+  margin-right: .75rem;
+  width: 370px;
+  height: 667px;
+  padding: 10px 30px;
+  border-radius: 3px; 
+  pointer-events: auto;  
+  box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+  @include tablet {    
+    height: 17rem;
+    max-width: 768px;
+    width: 45rem;
+    left: calc(29.25% - 200px);
+    top: 9.7rem;      
+    
+  }
+
+  @include desktop {
+    width: 42rem;
+    height: 16.375rem;
+    left: calc(40% - 200px);
+    top: 11.7rem;
+    margin: auto;
+
+  }
+}
+
+
+.modal-cancel.button {
+    position: relative;
+    top: 24.5rem;
+     
+       
+    color: $instock-slate;
+    padding: .5rem 3.5rem;
+    border: 1px solid #BDC5D5;
+    border-radius: 1rem;
+    font-size: 13px;
+    font-weight: normal;
+
+    @include tablet {
+      top: 2rem;
+      padding: .5rem 1rem;
+      left: 28rem;
+
+    }
+  }
+
+.modal-delete.button {
+  position: relative;
+  top: 24.5rem;
+  bottom: 20px;
+  left: 1rem; 
+  background-color: $delete-color;
+  color: #fff;
+  padding: .5rem 3.5rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 14px;
+  font-weight: normal;
+
+  @include tablet {
+    top: 2rem;
+    left: 29rem;
+    padding: .5rem 1rem;
+    
+  }
+}
+
+.close__X {
+  position: relative;
+  left: 19.5rem;
+  bottom: 15rem;
+
+  @include tablet {
+    left: 32.5rem;
+  bottom: 9rem;
+  }
+
+  @include desktop {
+    left: 28.5rem;
+  }
+
+}
+
+

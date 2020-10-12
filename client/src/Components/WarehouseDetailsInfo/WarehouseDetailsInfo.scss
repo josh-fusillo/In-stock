@@ -1,0 +1,106 @@
+@import '../../styles/partials/common-styles';
+
+.warehouseInfoBreakStyle {
+    width: 91%;
+    color: $primary-border-color;
+    margin-left: 4%;
+    position: absolute;
+    top: 5%;
+
+    @include tablet {
+        margin-bottom: 0vh;
+        top: 0;
+        
+    }
+}
+
+.warehouseHeader {
+    display: flex;
+    align-items: center;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    width: 91%;
+    margin-left: 4%;
+    background-color: #ffffff;
+    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+    padding: 8vh 0 8vh;
+    border-radius: 3px 3px 0px 0px;
+    height: 10%;
+    top: -40%;
+    position: absolute;
+    @include tablet {
+        margin-top: 2vh;
+        margin-bottom: 2vh;
+        top: -270%;
+        padding: 8vh 0 6vh;
+        border-bottom: 2px solid $primary-border-color;
+    }
+
+    @include desktop {
+        top: -153%;
+        padding: 4vh 0 6vh;
+    }
+    &__arrow {
+        margin-left: 4vw;
+    }
+    &__title {
+        @include titilliumSemi;
+        font-size: 1.75rem;
+        color: $instock-black;
+        margin-left: 2vw;
+
+        @include desktop {
+            font-size: $h1-font-size;
+        }
+    }
+    &__btn {
+        background-color: $instock-indigo;
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        border-color: $instock-indigo;
+        border-style: solid;
+        margin-left: 28vw;
+        
+
+        @include tablet {
+            display: flex;
+            align-items: center;
+            height: 4vh;
+            width: 10vw;
+            border-radius: 20px;
+            margin-left: 50vw;
+        }
+
+        @include desktop {
+            margin-left: 57vw;
+            width: 8vw;
+            border-radius: 30px;
+        }
+    }
+    &__btnText {
+        display: none;
+
+        @include tablet {
+            @include titilliumReg;
+            display: block;
+            color: white;
+            padding-left: 1vw;
+        }
+    }
+    &__icon {
+
+        height: 3vh;
+
+        @include tablet {
+            padding-left: 1.5vw;
+            height: 2vh;
+        }
+    } 
+}
+
+.warehouseInfo__break {
+    width: 91%;
+    color: $primary-border-color;
+    margin-left: 4%;
+}
