@@ -92,11 +92,9 @@
         font-size: $h4-font-size;
 
         @include tablet{
-            // width: 20%;
             margin-right: auto;
 
             &:last-child{
-                // width: 10%;
                 justify-content: flex-end;
                 margin-right: 0;
             }

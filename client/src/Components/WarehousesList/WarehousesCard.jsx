@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 
 export default function WarehousesCard (props) {    
         return (
-        // <div className="main">
             <div className="warehouses__card-container">
                 <div className="warehouses__card-content-wrapper">
                     <div className="warehouses__card-detail">
@@ -40,12 +39,6 @@ export default function WarehousesCard (props) {
                     </div>
                     <div className="warehouses__card-control">
                         <WarehouseModal whDataModal={props.whData} onDelete={props.handleDelete}/>
-                            {/* openDeleteModel={props.openDeleteModel(props.warehouseId)}
-                            closeDeleteModel={props.clsoeDeleteModel} 
-                            onDelete={props.handleDelete} */}
-                        {/* <Delete 
-                            onClick={() => props.openDeleteModel(props.whData.id, props.whData.name)}
-                        /> */}
 
                         <Link  to={`/warehouse/warehouseEdit/${props.id}`}>
                             <img src={Edit} alt="Edit icon" />

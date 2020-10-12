@@ -15,8 +15,6 @@ class WarehouseDetails extends React.Component {
         ],
     }
 
-    
-
     getWarehouses = () => {
         const warehouseId = this.props.match.params.id;
         axios.get('/warehouses/' + warehouseId)

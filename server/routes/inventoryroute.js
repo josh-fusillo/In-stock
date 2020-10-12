@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 const fs = require('fs');
 router.use(bodyParser.json())
 
-// Get request for all inventory
+// Get request for all inventory items
 
 router.get("/", (_req, res) => {	res.json(inventoryList);});
 
@@ -23,6 +23,8 @@ router.get('/:id', (req, res) => {
     warehouseId: selected.warehouseID
     })
   })
+
+  // Get request for posting an inventory item
 
   router.post('/', (req, res) => {
     const {
@@ -49,6 +51,8 @@ router.get('/:id', (req, res) => {
     inventoryList.push(req.body);
   })
 
+    // Get request for updating an inventory item
+
   router.put('/:id', (req, res) => {
     const selected = inventoryList.find (item => item.id === req.params.id);
     const objectKeys = Object.keys(req.body);
@@ -64,6 +68,8 @@ router.get('/:id', (req, res) => {
       warehouse: selected.warehouseName
       })
   })
+
+      // Get request for deleting an inventory item
 
   router.delete('/:id', (req, res) => {
     const selected = inventoryList.find (item => item.id === req.params.id);

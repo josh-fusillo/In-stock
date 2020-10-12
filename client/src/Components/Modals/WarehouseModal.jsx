@@ -42,27 +42,3 @@ export default class WarehouseModal extends Component {
         )
     }
 }
-
-// const WarehouseModal = ({
-//     onDelete,
-//     closeDeleteModel,
-//     currentItemName
-// }) => {
-//     return (
-//         <section>
-//             <input type="button" className="delete__button" onClick={closeDeleteModel} />
-//             <Modal effect="fadeInDown" onClickAway={closeDeleteModel}>
-//                 <div className="delete__modal">
-//                     <h1 className="modal__header">Delete {currentItemName} warehouse?</h1>
-//                     <p className="modal__text">Please confirm that you'd like to delete the {currentItemName} from the list of warehouses.  You won't be able to undo this action.</p>
-//                     <button className="modal-cancel button" onClick={closeDeleteModel}>Cancel</button>
-//                     {/* <button onClick={(event) => this.closeModal(event, this.props.whModel.id)} className="modal-delete button">Delete</button> */}
-//                     <button onClick={onDelete} className="modal-delete button">Delete</button>
-//                     <a href="" onClick={closeDeleteModel}><img className="close__X" src={closeButton} alt="Close Button" /></a>
-//                 </div>
-//             </Modal>
-//         </section>
-//     )
-// };
-
-// export default WarehouseModal;
