@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const inventoryList = require('../data/inventories.json');
 const bodyParser = require('body-parser')
+const fs = require('fs');
 router.use(bodyParser.json())
 
 // Get request for all inventory
@@ -46,7 +47,6 @@ router.get('/:id', (req, res) => {
       }
     ])
     inventoryList.push(req.body);
-    console.log(req)
   })
 
   router.put('/:id', (req, res) => {

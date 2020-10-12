@@ -3,11 +3,7 @@
 main {
  position: relative;
  background-color: $light-grey;
- height:125vh;
-
- @include tablet {
-     height: 100vh;
- }
+ height: 50em;
 
     .form-container {
 

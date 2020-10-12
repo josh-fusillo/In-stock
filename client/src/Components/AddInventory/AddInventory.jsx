@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom';
 import arrowLogo from '../../assets/Icons/arrow_back-24px.svg';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-const fs = require('fs');
 
 
 
@@ -51,13 +50,6 @@ const fs = require('fs');
               }
         })
             e.target.reset();
-
-    // let writeData =  fs.writeFile('../../../../server/data/inventories.json',JSON.stringify(newItem), function (err) {
-    //     if (err) throw err;
-    //     console.log('complete');
-    //     })
-
-    //     writeData();
 
     }
 
@@ -167,7 +159,7 @@ const fs = require('fs');
 
 
                 <div className="add-buttons">
-                    <button className="add-buttons__cancel"> Cancel </button>
+                   <Link to="/warehouse/inventorylist"><button className="add-buttons__cancel"> Cancel </button></Link> 
                     <button className="add-buttons__add" type="submit"> + Add Item </button>
                 </div>
             </form>

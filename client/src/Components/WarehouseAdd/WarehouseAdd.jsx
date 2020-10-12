@@ -28,7 +28,6 @@ handleChange = (event) => {
   console.log(event.target.value)
 }
 
-
 validate = () => {
   let errorName = "";
   let errorStreet = "";

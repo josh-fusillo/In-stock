@@ -22,6 +22,7 @@ export default class InventoryModal extends Component {
             visible: false
         });
     }
+    
     render() {
         return (
             <section>
