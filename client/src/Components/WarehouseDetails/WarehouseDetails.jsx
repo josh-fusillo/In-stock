@@ -2,12 +2,10 @@ import React from 'react';
 import axios from 'axios';
 import './WarehouseDetails.scss';
 import WarehouseDetailsInfo from '../WarehouseDetailsInfo/WarehouseDetailsInfo';
-import WarehouseDetailsCard from '../WarehouseDetailsCard/WarehouseDetailsCard';
 import WarehouseDetailsCardHeader from '../WarehouseDetailsCardHeader/WarehouseDetailsCardHeader';
 
 class WarehouseDetails extends React.Component {
-    state = {   
-        sort: 'asc',      
+    state = {        
         WarehouseDetails: [
             
         ],
@@ -21,23 +19,17 @@ class WarehouseDetails extends React.Component {
 
     getWarehouses = () => {
         const warehouseId = this.props.match.params.id;
-        console.log("This", this)
         axios.get('/warehouses/' + warehouseId)
             .then(res => {
-                console.log("data", res.data)
                 this.setState({
                     WarehouseDetails: res.data
                 })
-                // .catch(err => {
-                //     console.log(err);
-                // })
             }); 
     }
 
     getInventory = () => {
         axios.get('/inventory')
             .then(res => {
-                console.log(res.data)
                 this.setState({
                     WarehouseInventory: res.data
                 })
@@ -51,7 +43,6 @@ class WarehouseDetails extends React.Component {
 
 
     render() {
-        const {itemList, sort} = this.state.WarehouseInventory;
 
         const list = this.state.WarehouseInventory.filter(item => item.warehouseID === this.props.match.params.id)
         return(

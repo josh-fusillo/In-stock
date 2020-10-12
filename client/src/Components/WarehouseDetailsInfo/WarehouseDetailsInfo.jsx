@@ -1,11 +1,7 @@
 import React from 'react';
 import '../WarehouseDetailsInfo/WarehouseDetailsInfo.scss';
 import ArrowBack from '../../assets/Icons/arrow_back-24px.svg';
-import Edit from '../../assets/Icons/edit-24px.svg';
 import EditWhite from '../../assets/Icons/edit-24px-white.svg'
-import ChevronRight from '../../assets/Icons/chevron_right-24px.svg';
-import Delete from '../../assets/Icons/delete_outline-24px.svg';
-import Sort from '../../assets/Icons/sort-24px.svg';
 import {Link} from 'react-router-dom';
 
 function WarehouseDetailsInfo (props) {

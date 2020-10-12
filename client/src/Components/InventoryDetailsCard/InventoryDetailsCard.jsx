@@ -48,11 +48,6 @@ function InventoryDetailsCard (props) {
                 </div> 
             </div>
         </div>
-        <footer className="footerOne">
-                <div className="footer-label">
-                    <p className="footer-label__text">© InStock Inc. All Rights Reserved.</p>
-                </div>
-            </footer>
         </main>
         </>
     )

@@ -8,7 +8,7 @@
     align-items: center;
     margin-top: 2vh;
     margin-bottom: 2vh;
-    top: -20%;
+    top: -11%;
     height: 10%;
     width: 91%;
     padding: 8vh 0 8vh;
@@ -19,12 +19,13 @@
     @include tablet {
         margin-top: 2vh;
         margin-bottom: 2vh;
-        top: -17.75%;
+        padding: 5vh 0 5vh;
+        top: -11.75%;
     }
 
     @include desktop {
         padding: 5vh 0 5vh;
-        top: -13.75%;
+        top: -11.75%;
     }
 
     &__arrow {
@@ -104,7 +105,7 @@
     color: $primary-border-color;
     margin-left: 5%;
     margin-bottom: 2vh;
-    top: 4%;
+    top: 4.5%;
 
     @include tablet {
         margin-bottom: 2vh;
